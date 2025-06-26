@@ -35,7 +35,7 @@ I'm **Sathyaseelan K**, an aspiring Full Stack Developer & AI enthusiast from Ta
   - 🔗 Links to my projects and GitHub repositories
   - 💌 Contact form for collaboration
 
-You can [view it live](https://sathyaseelan2006.github.io/myportfolio/) (add your GitHub Pages/Netlify link) or clone it to explore:
+You can [view it live](https://sathyaseelan2006.github.io/myportfolio/) 
 
 ```bash
 git clone https://github.com/sathyaseelan-dev/portfolio.git
