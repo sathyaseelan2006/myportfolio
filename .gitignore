@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+server/.env
+
+# Local data and cache
+server/data/
+.cache/
+.netlify/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Misc
+*.tmp
+
