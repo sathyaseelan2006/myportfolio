@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sathyaseelan | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Sathyaseelan</div>
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm <span class="typed-text"></span><span class="cursor">|</span></h1>
+    <h2>B.Tech IT Student</h2>
+    <p>Passionate developer seeking challenges to showcase my talent in technology & innovation. Specializing in web development and AI applications.</p>
+    <div class="hero-buttons">
+      <a href="sathyaseelan-resume.pdf" class="btn">View Resume</a>
+      <a href="sathyaseelan-resume.pdf" class="btn" download>Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and web development.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    
+    <!-- Skills Radar Chart -->
+    <div class="skills-radar-section">
+      <h3>Skills Overview</h3>
+      <div class="radar-container">
+        <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+      </div>
+    </div>
+    
+    <!-- Animated Skill Bars -->
+    <div class="skills-bars-section">
+      <h3>Technical Proficiency</h3>
+      <div class="skills-container">
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="skill-info">
+              <h4>Python</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="90"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <div class="skill-info">
+              <h4>Java</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="50"></div>
+          </div>
+        </div>
+       <!--
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="skill-info">
+              <h4>React</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="80"></div>
+          </div>
+        </div>--> 
+        
+      <!-- <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="skill-info">
+              <h4>Node.js</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="75"></div>
+          </div>
+        </div>--> 
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-php"></i>
+            </div>
+            <div class="skill-info">
+              <h4>PHP</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="30"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="skill-info">
+              <h4>MySQL</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="70"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fab fa-data"></i>
+            </div>
+            <div class="skill-info">
+              <h4>Data Science</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="75"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="skill-info">
+              <h4>Machine Learning</h4>
+              <span class="skill-percentage">0%</span>
+            </div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-percentage="82"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    
+    <!-- Featured Project -->
+    <div class="featured-project">
+      <div class="featured-project-content">
+        <div class="featured-project-info">
+          <h3>Air Pollution Monitoring System</h3>
+          <p class="project-description">A comprehensive IoT-based air quality monitoring system that tracks multiple pollutants in real-time. Features sensor integration, data visualization, alert systems, and environmental impact analysis.</p>
+          <div class="project-meta">
+            <span class="completion-date"><i class="fas fa-calendar"></i> Completed: January 2025</span>
+            <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">IoT</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Data Analysis</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sathyaseelan2006/air-pollution-monitoring-system" target="_blank" rel="noopener" class="btn project-btn">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <a href="https://air-pollution-demo.vercel.app" target="_blank" rel="noopener" class="btn project-btn demo-btn">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+        <div class="featured-project-image">
+          <img src="https://via.placeholder.com/400x300/27ae60/ffffff?text=Air+Pollution+Monitor" alt="Air Pollution Monitoring System" loading="lazy">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Filter -->
+    <div class="project-filter">
+      <h3>Filter Projects</h3>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button class="filter-btn" data-filter="php">PHP</button>
+      </div>
+    </div>
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" data-category="web php" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=LMS+System" alt="Learning Management System" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="overlay-btn">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://lms-demo.vercel.app" target="_blank" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Learning Management System</h3>
+          <p>A comprehensive platform for online education with course management, student tracking, and role-based dashboards.</p>
+          <div class="project-meta">
+            <span class="completion-date"><i class="fas fa-calendar"></i> November 2024</span>
+            <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://lms-demo.vercel.app" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card" data-category="ai javascript" data-tags="AI,Assistant,JavaScript,Frontend">
+        <div class="project-image">
+          <img src="ludo-logo.png" alt="LUDO AI - Personal Assistant" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <a href="https://github.com/sathyaseelan2006/fts" target="_blank" class="overlay-btn" title="GitHub (add real link)">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" target="_blank" class="overlay-btn" title="Demo (placeholder)">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>LUDO AI - Personal Assistant</h3>
+          <p>A lightweight, portfolio-integrated personal assistant for answering queries about projects, skills, and contact info. Built with vanilla JS and a pluggable backend.</p>
+          <div class="project-meta">
+            <span class="completion-date"><i class="fas fa-calendar"></i> February 2025</span>
+            <span class="project-status"><i class="fas fa-check-circle"></i> Completed</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">AI</span>
+            <span class="tag">UX</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" class="project-link" title="GitHub (add real link)">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" target="_blank" class="project-link" title="Demo (placeholder)">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai python" data-tags="Python,OpenCV,MediaPipe,Computer Vision">
+        <div class="project-image">
+          <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Hand+Gesture+Calculator" alt="Hand Gesture Calculator" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="overlay-btn">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Hand Gesture Calculator</h3>
+          <p>A real-time calculator that responds to hand gestures using computer vision and Python. Performs mathematical operations through gesture recognition.</p>
+          <div class="project-meta">
+            <span class="completion-date"><i class="fas fa-calendar"></i> October 2024</span>
+            <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MediaPipe</span>
+            <span class="tag">Computer Vision</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="project-card" data-category="ai python" data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
+        <div class="project-image">
+          <img src="Screenshot 2025-07-31 210140.png" alt="AI-powered Face Recognition Attendance System" loading="lazy">
+          <div class="project-overlay">
+            <div class="project-overlay-content">
+              <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" class="overlay-btn">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+              <div class="featured-project-info">
+                <h3>AI-powered Face Recognition Attendance System</h3>
+                <p class="project-description">An advanced automated attendance system using facial recognition technology with OpenCV and Python. Features real-time face detection, database integration, and comprehensive reporting.</p>
+                <div class="project-meta">
+                  <span class="completion-date"><i class="fas fa-calendar"></i> Completed: May 2025</span>
+                  <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
+                </div>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">DeepFace</span>
+                  <span class="tag">Flask</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">AI/ML</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> Code
+                  </a>
+                  <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" class="project-link">
+                    <i class="fas fa-external-link-alt"></i> Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements & Certifications</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Coursera: Supervised Machine Learning</h3>
+        <p>Regression and Classification — DeepLearning.AI & Stanford Online</p>
+        <span class="achievement-date">Sep 4, 2025</span>
+        <!-- Optional: replace href with your actual certificate image/pdf path -->
+        <div class="achievement-actions">
+          <a href="coursera-certificate.pdf" target="_blank" rel="noopener" class="btn">View Certificate</a>
+        </div>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>Coursera: Cyber security for everyone</h3>
+        <p>University of Maryland</p>
+        <span class="achievement-date">Feb 22,2025</span>
+        <div class="achievement-actions">
+          <a href="Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener" class="btn">View Certificate</a>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>Course completed</h3>
+        <p>Introduction to Networking</p>
+        <span class="achievement-date">2025</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Education Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2023 - Present</div>
+        <div class="timeline-content">
+          <h3>B.Tech in Information Technology</h3>
+          <p>M Kumarasamy College of Engineering</p>
+          <p>CGPA: 7.8 (Current)</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2022 - 2023</div>
+        <div class="timeline-content">
+          <h3>Higher Secondary Education</h3>
+          <p>Chelammal Vidhyaashram senior secondary school</p>
+          <p>Percentage: 86%</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2020 - 2021</div>
+        <div class="timeline-content">
+          <h3>Secondary School Education</h3>
+          <p>Chelammal Vidhyaashram senior secondary school</p>
+          <p>Percentage: 84%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <h3>Let's connect and discuss opportunities or collaborations!</h3>
+    
+    <!-- Contact Form -->
+    <div class="contact-container">
+      <div class="contact-form-section">
+        <h3>Send me a message</h3>
+        <form id="contactForm" class="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="visually-hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <span class="error-message" id="nameError"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <span class="error-message" id="emailError"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            <span class="error-message" id="subjectError"></span>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            <span class="error-message" id="messageError"></span>
+          </div>
+          
+          <button type="submit" class="btn submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+      
+      <!-- Project Request Form -->
+      <div class="project-request-section">
+        <h3>Project Request</h3>
+        <form id="projectForm" class="project-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="project">
+          <input type="hidden" name="form-name" value="project">
+          <p class="visually-hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+          </p>
+          <div class="form-group">
+            <input type="text" id="projectName" name="projectName" placeholder="Project Name" required>
+            <span class="error-message" id="projectNameError"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="projectType" class="visually-hidden">Project Type</label>
+            <select id="projectType" name="projectType" required>
+              <option value="">Select Project Type</option>
+              <option value="web-development">Web Development</option>
+              <option value="ai-ml">AI/ML Project</option>
+              <option value="mobile-app">Mobile App</option>
+              <option value="desktop-app">Desktop Application</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-message" id="projectTypeError"></span>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="projectDescription" name="projectDescription" placeholder="Project Description" rows="4" required></textarea>
+            <span class="error-message" id="projectDescriptionError"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="budget" name="budget" placeholder="Budget Range (Optional)">
+            <span class="error-message" id="budgetError"></span>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" id="timeline" name="timeline" placeholder="Timeline (Optional)">
+            <span class="error-message" id="timelineError"></span>
+          </div>
+          
+          <button type="submit" class="btn submit-btn">
+            <i class="fas fa-rocket"></i> Submit Project Request
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <a href="sathyaseelan K cv.pdf" class="btn action-btn download-cv" download>
+        <i class="fas fa-download"></i> Download CV
+      </a>
+      <a href="mailto:ksathyaseelan34@gmail.com?subject=Hire%20Me%20Request" class="btn action-btn hire-me">
+        <i class="fas fa-briefcase"></i> Hire Me
+      </a>
+    </div>
+    
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <h3>Connect with me</h3>
+      <div class="social-icons">
+        <a href="mailto:ksathyaseelan34@gmail.com" class="social-icon" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sathyaseelan-dev" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/sathyaseelan2006" target="_blank" rel="noopener" class="social-icon" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://instagram.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer>
+    <p>© 2025 Sathyaseelan K. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
