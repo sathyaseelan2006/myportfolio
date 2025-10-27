@@ -406,8 +406,14 @@ async function submitProjectForm(form) {
     
     const formData = new FormData(form);
     
-    // Method 1: Using Netlify Forms
-    if (window.location.hostname.includes('netlify')) {
+    // Method 1: Using EmailJS (Primary method - works everywhere)
+    if (typeof emailjs !== 'undefined') {
+      console.log('Using EmailJS to send project request...');
+      const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
+      console.log('EmailJS Response:', response);
+    }
+    // Method 2: Using Netlify Forms (if hosted on Netlify)
+    else if (window.location.hostname.includes('netlify')) {
       const response = await fetch('/', {
         method: 'POST',
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -416,7 +422,7 @@ async function submitProjectForm(form) {
       
       if (!response.ok) throw new Error('Submission failed');
     } 
-    // Method 2: Using your backend server
+    // Method 3: Using your backend server
     else {
       const data = {
         projectName: formData.get('projectName'),
@@ -441,8 +447,15 @@ async function submitProjectForm(form) {
     clearProjectErrors();
     
   } catch (error) {
-    console.error('Form submission error:', error);
-    showErrorMessage('❌ Oops! Something went wrong. Please try again or email me directly at ksathyaseelan34@gmail.com');
+    console.error('Project form submission error:', error);
+    console.error('Error details:', error.message || error);
+    
+    // Check if EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+      showErrorMessage('❌ Email service not loaded. Please refresh the page and try again.');
+    } else {
+      showErrorMessage('❌ Oops! Something went wrong: ' + (error.text || error.message || 'Please try again or email me directly at ksathyaseelan34@gmail.com'));
+    }
   } finally {
     // Re-enable button
     submitBtn.disabled = false;
