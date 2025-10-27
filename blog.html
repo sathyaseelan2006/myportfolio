@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Sathyaseelan</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Sathyaseelan</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="goals.html">Goals 2025</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>📝 My Blog</h1>
+    <p>Thoughts, tutorials, and insights on technology and development</p>
+  </section>
+
+  <!-- Latest Blog Post Section -->
+  <section id="blog" class="blog-page">
+    <div class="blog-container">
+      <article class="blog-post-card">
+        <div class="blog-image">
+          <img src="https://via.placeholder.com/800x400/3498db/ffffff?text=AI+%26+Computer+Vision" alt="Latest Blog Post" loading="lazy">
+          <span class="blog-badge">New</span>
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date"><i class="fas fa-calendar-alt"></i> October 20, 2025</span>
+            <span class="blog-read-time"><i class="fas fa-clock"></i> 5 min read</span>
+          </div>
+          <h3>Building Real-Time AI Applications with OpenCV and Python</h3>
+          <p>Explore how I integrated computer vision and facial recognition into real-world applications. Learn about the challenges, solutions, and best practices when working with OpenCV, DeepFace, and Flask for production-ready AI systems.</p>
+          <div class="blog-tags">
+            <span class="tag">Python</span>
+            <span class="tag">AI/ML</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Flask</span>
+          </div>
+          <a href="#" class="btn blog-btn">
+            <i class="fas fa-book-open"></i> Read Full Article
+          </a>
+        </div>
+      </article>
+
+      <!-- More Blog Posts (Add more as you write them) -->
+      <article class="blog-post-card">
+        <div class="blog-image">
+          <img src="https://via.placeholder.com/800x400/e74c3c/ffffff?text=Web+Development" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date"><i class="fas fa-calendar-alt"></i> October 15, 2025</span>
+            <span class="blog-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+          </div>
+          <h3>Building a Learning Management System from Scratch</h3>
+          <p>A detailed walkthrough of how I built a comprehensive LMS using PHP, MySQL, and modern web technologies. Learn about the architecture, database design, and key features implementation.</p>
+          <div class="blog-tags">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Web Dev</span>
+          </div>
+          <a href="#" class="btn blog-btn">
+            <i class="fas fa-book-open"></i> Read Full Article
+          </a>
+        </div>
+      </article>
+
+      <article class="blog-post-card">
+        <div class="blog-image">
+          <img src="https://via.placeholder.com/800x400/27ae60/ffffff?text=Machine+Learning" alt="Blog Post" loading="lazy">
+        </div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span class="blog-date"><i class="fas fa-calendar-alt"></i> October 10, 2025</span>
+            <span class="blog-read-time"><i class="fas fa-clock"></i> 6 min read</span>
+          </div>
+          <h3>Getting Started with Machine Learning: A Beginner's Journey</h3>
+          <p>My personal experience learning machine learning from scratch. Tips, resources, and projects that helped me understand ML concepts and build practical applications.</p>
+          <div class="blog-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Python</span>
+            <span class="tag">Tutorial</span>
+          </div>
+          <a href="#" class="btn blog-btn">
+            <i class="fas fa-book-open"></i> Read Full Article
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Blog Categories -->
+    <div class="blog-sidebar">
+      <h3>📚 Categories</h3>
+      <div class="category-list">
+        <a href="#" class="category-item">
+          <i class="fas fa-code"></i> Web Development <span class="count">5</span>
+        </a>
+        <a href="#" class="category-item">
+          <i class="fas fa-brain"></i> AI/ML <span class="count">8</span>
+        </a>
+        <a href="#" class="category-item">
+          <i class="fab fa-python"></i> Python <span class="count">12</span>
+        </a>
+        <a href="#" class="category-item">
+          <i class="fas fa-laptop-code"></i> Tutorials <span class="count">7</span>
+        </a>
+        <a href="#" class="category-item">
+          <i class="fas fa-lightbulb"></i> Tips & Tricks <span class="count">4</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Currently Learning Section -->
+  <section id="learning" class="learning-section">
+    <h2>Currently Learning</h2>
+    <div class="learning-grid">
+      <div class="learning-card">
+        <div class="learning-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>AI/ML</h3>
+        <p>Exploring deep learning architectures, neural networks, and advanced machine learning algorithms for intelligent applications.</p>
+        <div class="learning-progress-container">
+          <div class="learning-progress-bar">
+            <div class="learning-progress-fill" style="width: 50%"></div>
+          </div>
+          <span class="learning-progress-text">50% Complete</span>
+        </div>
+      </div>
+      
+      <div class="learning-card">
+        <div class="learning-icon">
+          <i class="fab fa-java"></i>
+        </div>
+        <h3>Java (Mastering)</h3>
+        <p>Deep diving into Java programming, focusing on advanced concepts, design patterns, and enterprise application development.</p>
+        <div class="learning-progress-container">
+          <div class="learning-progress-bar">
+            <div class="learning-progress-fill" style="width: 60%"></div>
+          </div>
+          <span class="learning-progress-text">60% Complete</span>
+        </div>
+      </div>
+      
+      <div class="learning-card">
+        <div class="learning-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>SQL (In Progress)</h3>
+        <p>Learning advanced database management, query optimization, and working with relational databases for scalable applications.</p>
+        <div class="learning-progress-container">
+          <div class="learning-progress-bar">
+            <div class="learning-progress-fill" style="width: 30%"></div>
+          </div>
+          <span class="learning-progress-text">30% Complete</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sathyaseelan K. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

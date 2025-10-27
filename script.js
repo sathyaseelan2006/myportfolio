@@ -44,21 +44,29 @@ function initContactForms() {
   
   // Contact Form Validation
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
       if (!validateContactForm()) {
-        e.preventDefault();
+        return;
       }
-      // Allow Netlify to handle successful submissions
+      
+      // Submit the form
+      await submitContactForm(this);
     });
   }
   
   // Project Form Validation
   if (projectForm) {
-    projectForm.addEventListener('submit', function(e) {
+    projectForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
       if (!validateProjectForm()) {
-        e.preventDefault();
+        return;
       }
-      // Allow Netlify to handle successful submissions
+      
+      // Submit the form
+      await submitProjectForm(this);
     });
   }
   
@@ -316,13 +324,123 @@ function validateField(field) {
 }
 
 // Submit Contact Form
-function submitContactForm() {}
+async function submitContactForm(form) {
+  const submitBtn = form.querySelector('.submit-btn');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  try {
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    const formData = new FormData(form);
+    
+    // Method 1: Using Netlify Forms (Recommended if hosted on Netlify)
+    if (window.location.hostname.includes('netlify')) {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (!response.ok) throw new Error('Submission failed');
+    } 
+    // Method 2: Using EmailJS (Free email service)
+    else if (typeof emailjs !== 'undefined') {
+      await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form);
+    }
+    // Method 3: Using your backend server
+    else {
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      };
+      
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) throw new Error('Submission failed');
+    }
+    
+    // Success
+    showSuccessMessage('✅ Message sent successfully! I\'ll get back to you soon.');
+    form.reset();
+    clearErrors();
+    
+  } catch (error) {
+    console.error('Form submission error:', error);
+    showErrorMessage('❌ Oops! Something went wrong. Please try again or email me directly at ksathyaseelan34@gmail.com');
+  } finally {
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
+    submitBtn.innerHTML = originalBtnText;
+  }
+}
 
 // Submit Project Form
-function submitProjectForm() {}
-
-// Helper to POST JSON
-function postJSON() {}
+async function submitProjectForm(form) {
+  const submitBtn = form.querySelector('.submit-btn');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  try {
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    
+    const formData = new FormData(form);
+    
+    // Method 1: Using Netlify Forms
+    if (window.location.hostname.includes('netlify')) {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if (!response.ok) throw new Error('Submission failed');
+    } 
+    // Method 2: Using your backend server
+    else {
+      const data = {
+        projectName: formData.get('projectName'),
+        projectType: formData.get('projectType'),
+        projectDescription: formData.get('projectDescription'),
+        budget: formData.get('budget'),
+        timeline: formData.get('timeline')
+      };
+      
+      const response = await fetch('http://localhost:5000/api/project', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) throw new Error('Submission failed');
+    }
+    
+    // Success
+    showSuccessMessage('✅ Project request submitted successfully! I\'ll review it and get back to you soon.');
+    form.reset();
+    clearProjectErrors();
+    
+  } catch (error) {
+    console.error('Form submission error:', error);
+    showErrorMessage('❌ Oops! Something went wrong. Please try again or email me directly at ksathyaseelan34@gmail.com');
+  } finally {
+    // Re-enable button
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
+    submitBtn.innerHTML = originalBtnText;
+  }
+}
 
 // Show Success Message
 function showSuccessMessage(message) {
@@ -349,6 +467,7 @@ function showSuccessMessage(message) {
     z-index: 10000;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    max-width: 400px;
   `;
   
   document.body.appendChild(notification);
@@ -362,9 +481,57 @@ function showSuccessMessage(message) {
   setTimeout(() => {
     notification.style.transform = 'translateX(100%)';
     setTimeout(() => {
-      document.body.removeChild(notification);
+      if (notification.parentNode) {
+        document.body.removeChild(notification);
+      }
     }, 300);
   }, 5000);
+}
+
+// Show Error Message
+function showErrorMessage(message) {
+  // Create error notification
+  const notification = document.createElement('div');
+  notification.className = 'error-notification';
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>${message}</span>
+    </div>
+  `;
+  
+  // Add styles
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animate in
+  setTimeout(() => {
+    notification.style.transform = 'translateX(0)';
+  }, 100);
+  
+  // Remove after 7 seconds (longer for errors)
+  setTimeout(() => {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        document.body.removeChild(notification);
+      }
+    }, 300);
+  }, 7000);
 }
 
 // Download CV Tracking
