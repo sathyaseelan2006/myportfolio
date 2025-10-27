@@ -348,7 +348,7 @@ async function submitContactForm(form) {
     } 
     // Method 2: Using EmailJS (Free email service)
     else if (typeof emailjs !== 'undefined') {
-      await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form);
+      await emailjs.sendForm('service_vkzthlo', 'template_awoksaq', form);
     }
     // Method 3: Using your backend server
     else {
@@ -1056,3 +1056,11 @@ function initSkillsRadarChart() {
   
   observer.observe(body, { attributes: true, attributeFilter: ['class'] });
 }
+
+// Initialize EmailJS with your public key
+(function() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('vsj_MQ6R9MHOxCJGX');
+    console.log('✅ EmailJS initialized successfully');
+  }
+})();
