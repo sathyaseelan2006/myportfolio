@@ -339,7 +339,7 @@ async function submitContactForm(form) {
     // Method 1: Using EmailJS (Primary method - works everywhere)
     if (typeof emailjs !== 'undefined') {
       console.log('Using EmailJS to send form...');
-      const response = await emailjs.sendForm('service_vkzthlo', 'template_awoksaq', form);
+      const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
       console.log('EmailJS Response:', response);
     }
     // Method 2: Using Netlify Forms (if hosted on Netlify)

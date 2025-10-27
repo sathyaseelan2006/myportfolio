@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmailJS Test</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1a252f;
+      color: #fff;
+    }
+    h1 { color: #2980b9; }
+    form { background: #2a3d4f; padding: 30px; border-radius: 10px; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 5px; color: #aaa; }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: #1a252f;
+      border: 1px solid #3a4d5f;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+    }
+    button {
+      background: #2980b9;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    button:hover { background: #3498db; }
+    .message {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      display: none;
+    }
+    .success { background: #27ae60; display: block; }
+    .error { background: #e74c3c; display: block; }
+    .status {
+      background: #2a3d4f;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      border: 1px solid #3a4d5f;
+    }
+    .status-item { margin: 5px 0; }
+    .check { color: #27ae60; }
+    .cross { color: #e74c3c; }
+  </style>
+</head>
+<body>
+  <h1>🧪 EmailJS Test Page</h1>
+  
+  <div class="status">
+    <h3>Status Check:</h3>
+    <div class="status-item" id="emailjsStatus">Checking EmailJS...</div>
+    <div class="status-item" id="initStatus">Checking initialization...</div>
+  </div>
+
+  <form id="testForm">
+    <div class="form-group">
+      <label>Your Name:</label>
+      <input type="text" name="from_name" value="Test User" required>
+    </div>
+
+    <div class="form-group">
+      <label>Your Email:</label>
+      <input type="email" name="from_email" value="test@example.com" required>
+    </div>
+
+    <div class="form-group">
+      <label>Subject:</label>
+      <input type="text" name="subject" value="Test Subject" required>
+    </div>
+
+    <div class="form-group">
+      <label>Message:</label>
+      <textarea name="message" rows="4" required>This is a test message from EmailJS test page.</textarea>
+    </div>
+
+    <button type="submit">📧 Send Test Email</button>
+  </form>
+
+  <div id="result" class="message"></div>
+
+  <script>
+    // Check if EmailJS is loaded
+    if (typeof emailjs !== 'undefined') {
+      document.getElementById('emailjsStatus').innerHTML = '<span class="check">✅</span> EmailJS library loaded';
+      
+      // Initialize EmailJS
+      try {
+        emailjs.init('vsj_MQ6R9MHOxCJGX');
+        document.getElementById('initStatus').innerHTML = '<span class="check">✅</span> EmailJS initialized with public key';
+      } catch (error) {
+        document.getElementById('initStatus').innerHTML = '<span class="cross">❌</span> Initialization failed: ' + error.message;
+      }
+    } else {
+      document.getElementById('emailjsStatus').innerHTML = '<span class="cross">❌</span> EmailJS library NOT loaded';
+      document.getElementById('initStatus').innerHTML = '<span class="cross">❌</span> Cannot initialize';
+    }
+
+    // Form submission
+    document.getElementById('testForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const btn = e.target.querySelector('button');
+      const resultDiv = document.getElementById('result');
+      const originalText = btn.textContent;
+      
+      btn.disabled = true;
+      btn.textContent = '⏳ Sending...';
+      resultDiv.className = 'message';
+      resultDiv.style.display = 'none';
+      
+      try {
+        console.log('Attempting to send email...');
+        console.log('Service ID: service_ecgl309');
+        console.log('Template ID: template_awoksaq');
+        
+        const response = await emailjs.sendForm(
+          'service_ecgl309',
+          'template_awoksaq',
+          this
+        );
+        
+        console.log('Success!', response);
+        resultDiv.className = 'message success';
+        resultDiv.textContent = '✅ SUCCESS! Email sent successfully. Check your inbox at ksathyaseelan34@gmail.com';
+        resultDiv.style.display = 'block';
+        
+      } catch (error) {
+        console.error('Failed to send:', error);
+        resultDiv.className = 'message error';
+        resultDiv.textContent = '❌ ERROR: ' + (error.text || error.message || 'Unknown error');
+        resultDiv.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+  </script>
+</body>
+</html>
