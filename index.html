@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="skills-data.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -17,7 +18,6 @@
       <ul class="nav-links">
         <li><a href="#about">About Me</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="blog.html">Blog</a></li>
         <li><a href="goals.html">Goals 2025</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#timeline">Timeline</a></li>
@@ -32,34 +32,43 @@
     <h2>B.Tech IT Student</h2>
     <p>Passionate developer seeking challenges to showcase my talent in technology & innovation. Specializing in web development and AI applications.</p>
     <div class="hero-buttons">
-      <a href="sathyaseelan-resume.pdf" class="btn">View Resume</a>
-      <a href="sathyaseelan-resume.pdf" class="btn" download>Download Resume</a>
+      <a href="sathya.pdf" class="btn">View Resume</a>
+      <a href="sathya.pdf" class="btn" download>Download Resume</a>
     </div>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and web development.</p>
+    <h2 class="fade-in">About Me</h2>
+    <p class="fade-in">I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and web development.</p>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2>Skills</h2>
+    <h2 class="fade-in">Skills</h2>
+    
+    <!-- Skills Word Cloud -->
+    <div class="skills-word-cloud-section scale-in">
+      <h3>🌟 Interactive Skills Cloud</h3>
+      <p class="cloud-subtitle">Hover over any skill to see what I've built with it</p>
+      <div class="skills-cloud-container">
+        <div id="skillsCloud" class="skills-cloud"></div>
+      </div>
+    </div>
     
     <!-- Skills Radar Chart -->
-    <div class="skills-radar-section">
+    <div class="skills-radar-section scale-in">
       <h3>Skills Overview</h3>
       <div class="radar-container">
-        <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+        <canvas id="skillsRadarChart" width="500" height="500"></canvas>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2 class="fade-in">My Projects</h2>
     
     <!-- Featured Project -->
-    <div class="featured-project">
+    <div class="featured-project fade-in">
       <div class="featured-project-content">
         <div class="featured-project-info">
           <h3>Air Pollution Monitoring System</h3>
@@ -77,16 +86,16 @@
             <span class="tag">Data Analysis</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/air-pollution-monitoring-system" target="_blank" rel="noopener" class="btn project-btn">
+            <a href="https://github.com/sathyaseelan2006/Megam" target="_blank" rel="noopener" class="btn project-btn">
               <i class="fab fa-github"></i> View Code
             </a>
-            <a href="https://air-pollution-demo.vercel.app" target="_blank" rel="noopener" class="btn project-btn demo-btn">
+            <a href="https://megam.vercel.app/" target="_blank" rel="noopener" class="btn project-btn demo-btn">
               <i class="fas fa-external-link-alt"></i> Live Demo
             </a>
           </div>
         </div>
         <div class="featured-project-image">
-          <img src="https://via.placeholder.com/400x300/27ae60/ffffff?text=Air+Pollution+Monitor" alt="Air Pollution Monitoring System" loading="lazy">
+          <img src="image.png" alt="Air Pollution Monitoring System" loading="lazy">
         </div>
       </div>
     </div>
@@ -106,7 +115,7 @@
     
     <!-- Projects Grid -->
     <div class="projects-grid">
-      <div class="project-card" data-category="web php" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
+      <div class="project-card fade-in" data-category="web php" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
         <div class="project-image">
           <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=LMS+System" alt="Learning Management System" loading="lazy">
           <div class="project-overlay">
@@ -135,17 +144,17 @@
             <span class="tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="project-link">
+            <a> href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="project-link">
               <i class="fab fa-github"></i> Code
             </a>
-            <a href="https://lms-demo.vercel.app" target="_blank" class="project-link">
+            <a> href="https://lms-demo.vercel.app" target="_blank" class="project-link">
               <i class="fas fa-external-link-alt"></i> Demo
             </a>
           </div>
         </div>
       </div>
       
-      <div class="project-card" data-category="ai javascript" data-tags="AI,Assistant,JavaScript,Frontend">
+      <div class="project-card fade-in" data-category="ai javascript" data-tags="AI,Assistant,JavaScript,Frontend">
         <div class="project-image">
           <img src="ludo-logo.png" alt="LUDO AI - Personal Assistant" loading="lazy">
           <div class="project-overlay">
@@ -182,7 +191,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="ai python" data-tags="Python,OpenCV,MediaPipe,Computer Vision">
+      <div class="project-card fade-in" data-category="ai python" data-tags="Python,OpenCV,MediaPipe,Computer Vision">
         <div class="project-image">
           <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Hand+Gesture+Calculator" alt="Hand Gesture Calculator" loading="lazy">
           <div class="project-overlay">
@@ -221,7 +230,7 @@
       </div>
       
       
-      <div class="project-card" data-category="ai python" data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
+      <div class="project-card fade-in" data-category="ai python" data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
         <div class="project-image">
           <img src="Screenshot 2025-07-31 210140.png" alt="AI-powered Face Recognition Attendance System" loading="lazy">
           <div class="project-overlay">
@@ -264,8 +273,12 @@
   </section>
 
   <section id="achievements">
-    <h2>Achievements & Certifications</h2>
-    <div class="achievements-grid">
+    <h2 class="fade-in">Achievements & Certifications</h2>
+    <div class="achievements-container fade-in">
+      <button class="achievement-nav-btn prev-btn" aria-label="Previous certificate">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="achievements-grid">
       <div class="achievement-card">
         <div class="achievement-icon">
           <i class="fas fa-certificate"></i>
@@ -275,7 +288,9 @@
         <span class="achievement-date">Sep 4, 2025</span>
         <!-- Optional: replace href with your actual certificate image/pdf path -->
         <div class="achievement-actions">
-          <a href="coursera-certificate.pdf" target="_blank" rel="noopener" class="btn">View Certificate</a>
+          <a href="coursera-certificate.pdf" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-eye"></i> View Certificate
+          </a>
         </div>
       </div>
       <div class="achievement-card">
@@ -284,9 +299,39 @@
         </div>
         <h3>Coursera: Cyber security for everyone</h3>
         <p>University of Maryland</p>
-        <span class="achievement-date">Feb 22,2025</span>
+        <span class="achievement-date">Feb 22, 2025</span>
         <div class="achievement-actions">
-          <a href="Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener" class="btn">View Certificate</a>
+          <a href="Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-eye"></i> View Certificate
+          </a>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Oracle Certified Data Science Professional</h3>
+        <p>Oracle Corporation</p>
+        <span class="achievement-date">October 29, 2025</span>
+        <div class="achievement-actions">
+          <a href="eCertificate (1)-datascience professional_Oracle.pdf" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-eye"></i> View Certificate
+          </a>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <h3>Oracle Cloud Database Services</h3>
+        <p>Oracle Corporation</p>
+        <span class="achievement-date">October 30, 2025</span>
+        <div class="achievement-actions">
+          <a href="eCertificate-clouddatabase_service_oracle.pdf" target="_blank" rel="noopener" class="btn">
+            <i class="fas fa-eye"></i> View Certificate
+          </a>
         </div>
       </div>
       
@@ -298,11 +343,15 @@
         <p>Introduction to Networking</p>
         <span class="achievement-date">2025</span>
       </div>
+      </div>
+      <button class="achievement-nav-btn next-btn" aria-label="Next certificate">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
   <section id="timeline">
-    <h2>Education Timeline</h2>
+    <h2 class="fade-in">Education Timeline</h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-date">2023 - Present</div>
@@ -334,7 +383,7 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2 class="fade-in">Contact Me</h2>
     <h3>Let's connect and discuss opportunities or collaborations!</h3>
     
     <!-- Contact Form -->
@@ -343,9 +392,6 @@
         <h3>Send me a message</h3>
         <form id="contactForm" class="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact">
           <input type="hidden" name="form-name" value="contact">
-          <p class="visually-hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-          </p>
           <div class="form-group">
             <input type="text" id="name" name="from_name" placeholder="Your Name" required>
             <span class="error-message" id="nameError"></span>
@@ -377,9 +423,6 @@
         <h3>Project Request</h3>
         <form id="projectForm" class="project-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="project">
           <input type="hidden" name="form-name" value="project">
-          <p class="visually-hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-          </p>
           <div class="form-group">
             <input type="text" id="projectName" name="projectName" placeholder="Project Name" required>
             <span class="error-message" id="projectNameError"></span>

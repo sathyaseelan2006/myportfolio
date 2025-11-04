@@ -2,7 +2,7 @@
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["Sathyaseelan","Developer", "Programmer", "Tech Enthusiast", "Problem Solver"];
+const textArray = ["Sathyaseelan", "Lifelong Learner", "Data Scientist", "Problem Solver"];
 const typingDelay = 200;
 const erasingDelay = 100;
 const newTextDelay = 2000;
@@ -1015,17 +1015,19 @@ function initSkillsRadarChart() {
   const radarChart = new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: ['Python', 'OpenCV', 'HTML/CSS', 'JavaScript', 'PHP', 'MySQL', 'AI/ML', 'Problem Solving'],
+      labels: ['Java', 'Python', 'HTML/CSS', 'SQL', 'AI/ML', 'MongoDB', 'Problem Solving'],
       datasets: [{
         label: 'Skill Level',
-        data: [88, 80, 75, 35, 70, 65, 75, 85],
+        data: [75, 70, 60, 80, 50, 60, 75],
         backgroundColor: 'rgba(41, 128, 185, 0.2)',
         borderColor: 'rgba(41, 128, 185, 1)',
-        borderWidth: 2,
+        borderWidth: 3,
         pointBackgroundColor: 'rgba(41, 128, 185, 1)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(41, 128, 185, 1)'
+        pointHoverBorderColor: 'rgba(41, 128, 185, 1)',
+        pointRadius: 5,
+        pointHoverRadius: 7
       }]
     },
     options: {
@@ -1037,7 +1039,10 @@ function initSkillsRadarChart() {
           max: 100,
           ticks: {
             stepSize: 20,
-            color: 'rgba(255, 255, 255, 0.7)'
+            color: 'rgba(255, 255, 255, 0.7)',
+            font: {
+              size: 13
+            }
           },
           grid: {
             color: 'rgba(255, 255, 255, 0.1)'
@@ -1048,7 +1053,7 @@ function initSkillsRadarChart() {
           pointLabels: {
             color: 'rgba(255, 255, 255, 0.8)',
             font: {
-              size: 12,
+              size: 14,
               weight: 'bold'
             }
           }
@@ -1057,6 +1062,24 @@ function initSkillsRadarChart() {
       plugins: {
         legend: {
           display: false
+        },
+        tooltip: {
+          enabled: true,
+          backgroundColor: 'rgba(30, 30, 30, 0.9)',
+          titleFont: {
+            size: 14,
+            weight: 'bold'
+          },
+          bodyFont: {
+            size: 13
+          },
+          padding: 12,
+          displayColors: false,
+          callbacks: {
+            label: function(context) {
+              return context.parsed.r + '%';
+            }
+          }
         }
       }
     }
@@ -1086,3 +1109,271 @@ function initSkillsRadarChart() {
     console.log('✅ EmailJS initialized successfully');
   }
 })();
+
+// Achievements Carousel Navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const achievementsGrid = document.querySelector('.achievements-grid');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  
+  if (achievementsGrid && prevBtn && nextBtn) {
+    const scrollAmount = 320; // Card width + gap
+    
+    prevBtn.addEventListener('click', () => {
+      achievementsGrid.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      achievementsGrid.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Optional: Hide buttons at scroll boundaries
+    function updateButtonVisibility() {
+      const maxScroll = achievementsGrid.scrollWidth - achievementsGrid.clientWidth;
+      prevBtn.style.opacity = achievementsGrid.scrollLeft <= 0 ? '0.3' : '1';
+      nextBtn.style.opacity = achievementsGrid.scrollLeft >= maxScroll ? '0.3' : '1';
+      prevBtn.style.pointerEvents = achievementsGrid.scrollLeft <= 0 ? 'none' : 'auto';
+      nextBtn.style.pointerEvents = achievementsGrid.scrollLeft >= maxScroll ? 'none' : 'auto';
+    }
+    
+    achievementsGrid.addEventListener('scroll', updateButtonVisibility);
+    updateButtonVisibility(); // Initial check
+  }
+  
+  // Scroll Animations
+  initScrollAnimations();
+});
+
+// Scroll Animation Observer
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .timeline-item');
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add stagger effect for timeline items
+        if (entry.target.classList.contains('timeline-item')) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        } else {
+          entry.target.classList.add('visible');
+        }
+        
+        // Trigger counting animation for stats
+        if (entry.target.classList.contains('skill-gamification')) {
+          animateStats();
+        }
+        
+        // Unobserve after animation
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  animatedElements.forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Initialize Skills Word Cloud
+  initSkillsCloud();
+}
+
+// Animate Stats Counter
+function animateStats() {
+  const statValues = document.querySelectorAll('.stat-value');
+  
+  statValues.forEach(stat => {
+    const target = parseInt(stat.dataset.target);
+    const duration = 2000;
+    const increment = target / (duration / 16);
+    let current = 0;
+    
+    const counter = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        stat.textContent = target;
+        clearInterval(counter);
+      } else {
+        stat.textContent = Math.floor(current);
+      }
+    }, 16);
+  });
+}
+
+// Skills Word Cloud with 3D Effect
+function initSkillsCloud() {
+  // Use external SKILLS array if available (loaded via skills-data.js), otherwise fallback
+  const skills = (window.SKILLS && Array.isArray(window.SKILLS) && window.SKILLS.length) ? window.SKILLS : [
+    { name: 'JavaScript', level: 85, info: 'Built interactive UIs, front-end logic and small Node tools.' },
+    { name: 'Python', level: 90, info: 'Implemented AI/ML projects using OpenCV, TensorFlow and scikit-learn.' },
+    { name: 'HTML/CSS', level: 95, info: 'Responsive layouts, semantic markup and accessibility.' },
+    { name: 'CSS', level: 80, info: 'Custom animations, responsive design and CSS architecture.' },
+    { name: 'React', level: 80, info: 'Component-driven front-ends and SPA development.' },
+    { name: 'Node.js', level: 75, info: 'Built REST APIs and small backends.' },
+    { name: 'SQL', level: 70, info: 'Database design and complex queries for analytics.' },
+    { name: 'Docker', level: 65, info: 'Containerized applications for reproducible environments.' },
+    { name: 'OpenCV', level: 78, info: 'Computer vision pipelines, face detection, and tracking.' },
+    { name: 'Machine Learning', level: 82, info: 'Built models for regression and classification problems.' },
+    { name: 'Flask', level: 72, info: 'Microservices and small API endpoints.' },
+    { name: 'Git', level: 90, info: 'Version control, branching strategies and CI workflows.' }
+  ];
+
+  const cloudContainer = document.getElementById('skillsCloud');
+  if (!cloudContainer) return;
+
+  const radius = Math.min(220, Math.floor(Math.min(cloudContainer.clientWidth, cloudContainer.clientHeight) / 2));
+
+  // Create skill tags and add accessible handlers
+  skills.forEach((skill, index) => {
+    const tag = document.createElement('div');
+    tag.className = 'skill-tag';
+    tag.textContent = skill.name;
+    tag.setAttribute('role', 'button');
+    tag.setAttribute('aria-label', `${skill.name} — ${skill.info || 'Skill detail'}`);
+    tag.tabIndex = 0;
+
+    // Spherical distribution for layout
+    const phi = Math.acos(-1 + (2 * index) / skills.length);
+    const theta = Math.sqrt(skills.length * Math.PI) * phi;
+
+    const x = Math.round(radius * Math.cos(theta) * Math.sin(phi));
+    const y = Math.round(radius * Math.sin(theta) * Math.sin(phi));
+    const z = Math.round(radius * Math.cos(phi));
+
+    const size = 0.85 + ((skill.level || 60) / 100) * 0.9;
+
+    // Store the base transform for each tag
+    const baseTransform = `translate3d(${x}px, ${y}px, ${z}px) scale(${size})`;
+    tag.style.left = '50%';
+    tag.style.top = '50%';
+    tag.style.transform = baseTransform;
+    tag.dataset.baseTransform = baseTransform;
+
+    const openHandler = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+      }
+      
+      // Pause the cloud rotation while modal is open
+      cloudContainer.classList.add('paused');
+      
+      showSkillModal(skill);
+      tag.classList.add('clicked');
+      setTimeout(() => tag.classList.remove('clicked'), 300);
+    };
+
+    // Mouse click - primary interaction method
+    tag.addEventListener('click', openHandler, { capture: true });
+    
+    // Touch handling for mobile - prevent default to stop scroll
+    tag.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openHandler(e);
+    }, { passive: false, capture: true });
+    
+    // Keyboard accessibility
+    tag.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openHandler(e);
+      }
+    });
+
+    // Ensure visibility and clickability
+    tag.style.pointerEvents = 'auto';
+    tag.style.cursor = 'pointer';
+
+    cloudContainer.appendChild(tag);
+  });
+
+  // Pause rotation on hover/touch
+  cloudContainer.addEventListener('mouseenter', () => cloudContainer.classList.add('paused'));
+  cloudContainer.addEventListener('mouseleave', () => cloudContainer.classList.remove('paused'));
+}
+
+// Show Skill Modal
+function showSkillModal(skill) {
+  // Remove existing modal
+  const existingModal = document.querySelector('.skill-modal');
+  const existingOverlay = document.querySelector('.modal-overlay');
+  if (existingModal) existingModal.remove();
+  if (existingOverlay) existingOverlay.remove();
+  
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'skill-modal';
+  modal.innerHTML = `
+    <button class="close-modal" aria-label="Close">&times;</button>
+    <h3>${skill.name}</h3>
+    <p class="skill-description">${skill.info || 'No details provided.'}</p>
+    <p style="margin-top:0.6rem;font-weight:600;color:var(--primary-color);">Proficiency</p>
+    <div class="skill-level-bar">
+      <div class="skill-level-fill" style="width: 0%"></div>
+    </div>
+    <p style="opacity:0.85;margin-top:0.6rem;">Level: ${skill.level || 'N/A'}</p>
+  `;
+  
+  document.body.appendChild(overlay);
+  document.body.appendChild(modal);
+  
+  // Animate
+  setTimeout(() => {
+    overlay.classList.add('active');
+    modal.classList.add('active');
+    
+    // Animate progress bar
+    setTimeout(() => {
+      const fill = modal.querySelector('.skill-level-fill');
+      fill.style.width = (skill.level || 60) + '%';
+    }, 300);
+  }, 10);
+  
+  // Close handlers
+  const closeModal = () => {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    
+    // Resume cloud rotation when modal closes
+    const cloudContainer = document.getElementById('skillsCloud');
+    if (cloudContainer) {
+      cloudContainer.classList.remove('paused');
+    }
+    
+    setTimeout(() => {
+      modal.remove();
+      overlay.remove();
+    }, 300);
+  };
+  
+  modal.querySelector('.close-modal').addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  
+  // Close on Escape key
+  const escHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+      document.removeEventListener('keydown', escHandler);
+    }
+  };
+  document.addEventListener('keydown', escHandler);
+}
+
