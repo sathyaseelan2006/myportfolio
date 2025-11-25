@@ -1019,15 +1019,15 @@ function initSkillsRadarChart() {
       datasets: [{
         label: 'Skill Level',
         data: [75, 70, 60, 80, 50, 60, 75],
-        backgroundColor: 'rgba(41, 128, 185, 0.2)',
-        borderColor: 'rgba(41, 128, 185, 1)',
-        borderWidth: 3,
-        pointBackgroundColor: 'rgba(41, 128, 185, 1)',
+        backgroundColor: 'rgba(41, 128, 185, 0.1)',
+        borderColor: 'rgba(41, 128, 185, 0.6)',
+        borderWidth: 2,
+        pointBackgroundColor: 'rgba(41, 128, 185, 0.8)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(41, 128, 185, 1)',
-        pointRadius: 5,
-        pointHoverRadius: 7
+        pointRadius: 4,
+        pointHoverRadius: 6
       }]
     },
     options: {
@@ -1039,22 +1039,22 @@ function initSkillsRadarChart() {
           max: 100,
           ticks: {
             stepSize: 20,
-            color: 'rgba(255, 255, 255, 0.7)',
+            color: 'rgba(255, 255, 255, 0.5)',
             font: {
-              size: 13
+              size: 12
             }
           },
           grid: {
-            color: 'rgba(255, 255, 255, 0.1)'
+            color: 'rgba(255, 255, 255, 0.05)'
           },
           angleLines: {
-            color: 'rgba(255, 255, 255, 0.1)'
+            color: 'rgba(255, 255, 255, 0.05)'
           },
           pointLabels: {
-            color: 'rgba(255, 255, 255, 0.8)',
+            color: 'rgba(255, 255, 255, 0.7)',
             font: {
-              size: 14,
-              weight: 'bold'
+              size: 13,
+              weight: '500'
             }
           }
         }
@@ -1112,6 +1112,34 @@ function initSkillsRadarChart() {
 
 // Achievements Carousel Navigation
 document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (mobileMenuToggle && navLinks) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    const navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+  }
+  
   const achievementsGrid = document.querySelector('.achievements-grid');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');

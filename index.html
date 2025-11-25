@@ -15,7 +15,12 @@
   <header>
     <nav class="navbar">
       <div class="logo">Sathyaseelan</div>
-      <ul class="nav-links">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About Me</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="goals.html">Goals 2025</a></li>
@@ -30,7 +35,7 @@
   <section class="hero">
     <h1>Hi, I'm <span class="typed-text"></span><span class="cursor">|</span></h1>
     <h2>B.Tech IT Student</h2>
-    <p>Passionate developer seeking challenges to showcase my talent in technology & innovation. Specializing in web development and AI applications.</p>
+    <p>Passionate developer seeking challenges to showcase my talent in technology & innovation. Specializing in Machine Learning and AI applications.</p>
     <div class="hero-buttons">
       <a href="sathya.pdf" class="btn">View Resume</a>
       <a href="sathya.pdf" class="btn" download>Download Resume</a>
@@ -39,7 +44,7 @@
 
   <section id="about">
     <h2 class="fade-in">About Me</h2>
-    <p class="fade-in">I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and web development.</p>
+    <p class="fade-in">I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and Machine Learning.</p>
   </section>
 
   <!-- Skills Section -->
@@ -48,8 +53,8 @@
     
     <!-- Skills Word Cloud -->
     <div class="skills-word-cloud-section scale-in">
-      <h3>🌟 Interactive Skills Cloud</h3>
-      <p class="cloud-subtitle">Hover over any skill to see what I've built with it</p>
+      <h3>Skills Overview</h3>
+      <p class="cloud-subtitle">Interactive visualization of my technical expertise</p>
       <div class="skills-cloud-container">
         <div id="skillsCloud" class="skills-cloud"></div>
       </div>
@@ -57,7 +62,7 @@
     
     <!-- Skills Radar Chart -->
     <div class="skills-radar-section scale-in">
-      <h3>Skills Overview</h3>
+      <h3>Proficiency Levels</h3>
       <div class="radar-container">
         <canvas id="skillsRadarChart" width="500" height="500"></canvas>
       </div>
@@ -78,9 +83,11 @@
             <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
           </div>
           <div class="project-tags">
-            <span class="tag">IoT</span>
-            <span class="tag">Arduino</span>
+            <span class="tag">API</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
             <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
             <span class="tag">Flask</span>
             <span class="tag">MySQL</span>
             <span class="tag">Data Analysis</span>
@@ -116,19 +123,6 @@
     <!-- Projects Grid -->
     <div class="projects-grid">
       <div class="project-card fade-in" data-category="web php" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
-        <div class="project-image">
-          <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=LMS+System" alt="Learning Management System" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-overlay-content">
-              <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="overlay-btn">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://lms-demo.vercel.app" target="_blank" class="overlay-btn">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="project-content">
           <h3>Learning Management System</h3>
           <p>A comprehensive platform for online education with course management, student tracking, and role-based dashboards.</p>
@@ -144,10 +138,10 @@
             <span class="tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a> href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="project-link">
+            <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
             </a>
-            <a> href="https://lms-demo.vercel.app" target="_blank" class="project-link">
+            <a href="https://lms-demo.vercel.app" target="_blank" class="btn project-link-btn">
               <i class="fas fa-external-link-alt"></i> Demo
             </a>
           </div>
@@ -155,19 +149,6 @@
       </div>
       
       <div class="project-card fade-in" data-category="ai javascript" data-tags="AI,Assistant,JavaScript,Frontend">
-        <div class="project-image">
-          <img src="ludo-logo.png" alt="LUDO AI - Personal Assistant" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-overlay-content">
-              <a href="https://github.com/sathyaseelan2006/fts" target="_blank" class="overlay-btn" title="GitHub (add real link)">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" target="_blank" class="overlay-btn" title="Demo (placeholder)">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="project-content">
           <h3>LUDO AI - Personal Assistant</h3>
           <p>A lightweight, portfolio-integrated personal assistant for answering queries about projects, skills, and contact info. Built with vanilla JS and a pluggable backend.</p>
@@ -181,30 +162,14 @@
             <span class="tag">UX</span>
           </div>
           <div class="project-links">
-            <a href="#" target="_blank" class="project-link" title="GitHub (add real link)">
+            <a href="https://github.com/sathyaseelan2006/fts" target="_blank" class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" target="_blank" class="project-link" title="Demo (placeholder)">
-              <i class="fas fa-external-link-alt"></i> Demo
             </a>
           </div>
         </div>
       </div>
 
       <div class="project-card fade-in" data-category="ai python" data-tags="Python,OpenCV,MediaPipe,Computer Vision">
-        <div class="project-image">
-          <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Hand+Gesture+Calculator" alt="Hand Gesture Calculator" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-overlay-content">
-              <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="overlay-btn">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="overlay-btn">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="project-content">
           <h3>Hand Gesture Calculator</h3>
           <p>A real-time calculator that responds to hand gestures using computer vision and Python. Performs mathematical operations through gesture recognition.</p>
@@ -219,10 +184,10 @@
             <span class="tag">Computer Vision</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="project-link">
+            <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
             </a>
-            <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="project-link">
+            <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="btn project-link-btn">
               <i class="fas fa-external-link-alt"></i> Demo
             </a>
           </div>
@@ -231,45 +196,31 @@
       
       
       <div class="project-card fade-in" data-category="ai python" data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
-        <div class="project-image">
-          <img src="Screenshot 2025-07-31 210140.png" alt="AI-powered Face Recognition Attendance System" loading="lazy">
-          <div class="project-overlay">
-            <div class="project-overlay-content">
-              <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" class="overlay-btn">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" class="overlay-btn">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
+        <div class="project-content">
+          <h3>AI-powered Face Recognition Attendance System</h3>
+          <p>An advanced automated attendance system using facial recognition technology with OpenCV and Python. Features real-time face detection, database integration, and comprehensive reporting.</p>
+          <div class="project-meta">
+            <span class="completion-date"><i class="fas fa-calendar"></i> May 2025</span>
+            <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">DeepFace</span>
+            <span class="tag">Flask</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">AI/ML</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" rel="noopener" class="btn project-link-btn">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" rel="noopener" class="btn project-link-btn">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
           </div>
         </div>
-        <div class="project-content">
-              <div class="featured-project-info">
-                <h3>AI-powered Face Recognition Attendance System</h3>
-                <p class="project-description">An advanced automated attendance system using facial recognition technology with OpenCV and Python. Features real-time face detection, database integration, and comprehensive reporting.</p>
-                <div class="project-meta">
-                  <span class="completion-date"><i class="fas fa-calendar"></i> Completed: May 2025</span>
-                  <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
-                </div>
-                <div class="project-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">OpenCV</span>
-                  <span class="tag">DeepFace</span>
-                  <span class="tag">Flask</span>
-                  <span class="tag">MySQL</span>
-                  <span class="tag">AI/ML</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i> Code
-                  </a>
-                  <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> Demo
-                  </a>
-                </div>
-              </div>
-            </div>
+      </div>
   </section>
 
   <section id="achievements">
@@ -414,50 +365,6 @@
           
           <button type="submit" class="btn submit-btn">
             <i class="fas fa-paper-plane"></i> Send Message
-          </button>
-        </form>
-      </div>
-      
-      <!-- Project Request Form -->
-      <div class="project-request-section">
-        <h3>Project Request</h3>
-        <form id="projectForm" class="project-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="project">
-          <input type="hidden" name="form-name" value="project">
-          <div class="form-group">
-            <input type="text" id="projectName" name="projectName" placeholder="Project Name" required>
-            <span class="error-message" id="projectNameError"></span>
-          </div>
-          
-          <div class="form-group">
-            <label for="projectType" class="visually-hidden">Project Type</label>
-            <select id="projectType" name="projectType" required>
-              <option value="">Select Project Type</option>
-              <option value="web-development">Web Development</option>
-              <option value="ai-ml">AI/ML Project</option>
-              <option value="mobile-app">Mobile App</option>
-              <option value="desktop-app">Desktop Application</option>
-              <option value="other">Other</option>
-            </select>
-            <span class="error-message" id="projectTypeError"></span>
-          </div>
-          
-          <div class="form-group">
-            <textarea id="projectDescription" name="projectDescription" placeholder="Project Description" rows="4" required></textarea>
-            <span class="error-message" id="projectDescriptionError"></span>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" id="budget" name="budget" placeholder="Budget Range (Optional)">
-            <span class="error-message" id="budgetError"></span>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" id="timeline" name="timeline" placeholder="Timeline (Optional)">
-            <span class="error-message" id="timelineError"></span>
-          </div>
-          
-          <button type="submit" class="btn submit-btn">
-            <i class="fas fa-rocket"></i> Submit Project Request
           </button>
         </form>
       </div>
