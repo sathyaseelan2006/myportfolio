@@ -527,9 +527,9 @@ header {
         animation: none !important;
     }
 
-    /* EXCEPTION: Keep skills cloud rotation - it's already optimized */
+    /* EXCEPTION: Keep skills cloud rotation - optimized for mobile */
     .skills-cloud {
-        animation: rotate3d 400s linear infinite !important;
+        animation: rotate3d 250s linear infinite !important;
     }
 }
 
