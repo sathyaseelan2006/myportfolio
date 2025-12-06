@@ -3163,9 +3163,9 @@ section h2::after {
     height: 300px;
   }
 
-  /* Slow down the cloud rotation on mobile */
+  /* Slow down the cloud rotation on mobile - very slow for comfort */
   .skills-cloud {
-    animation: rotate3d 200s linear infinite;
+    animation: rotate3d 400s linear infinite;
   }
 
   .skill-tag {
