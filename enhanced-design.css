@@ -526,6 +526,11 @@ header {
     .achievement-icon {
         animation: none !important;
     }
+
+    /* EXCEPTION: Keep skills cloud rotation - it's already optimized */
+    .skills-cloud {
+        animation: rotate3d 400s linear infinite !important;
+    }
 }
 
 /* Reduce motion for users who prefer it */
