@@ -3113,15 +3113,20 @@ section h2::after {
     min-width: 80px;
   }
 
+
   .radar-container {
     max-width: 100%;
-    height: 350px;
+    height: 280px;
+    padding: 1rem 0.5rem;
   }
 
   .radar-container canvas {
-    max-width: 100%;
+    max-width: 100% !important;
+    max-height: 250px !important;
     height: auto !important;
+    width: auto !important;
   }
+
 
   .featured-project-info h3 {
     font-size: 1.3rem;
@@ -3158,6 +3163,11 @@ section h2::after {
     height: 300px;
   }
 
+  /* Slow down the cloud rotation on mobile */
+  .skills-cloud {
+    animation: rotate3d 200s linear infinite;
+  }
+
   .skill-tag {
     font-size: 0.7rem;
     padding: 0.4rem 0.8rem;
@@ -3166,6 +3176,20 @@ section h2::after {
 
   .achievement-card {
     min-width: 250px;
+  }
+
+  /* Radar chart for very small screens */
+  .radar-container {
+    height: 250px;
+    padding: 0.5rem;
+  }
+
+  .radar-container canvas {
+    max-height: 220px !important;
+  }
+
+  .skills-radar-section h3 {
+    font-size: 1.2rem;
   }
 
   .achievement-card h3 {
