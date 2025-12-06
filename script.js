@@ -10,12 +10,14 @@ let textArrayIndex = 0;
 let charIndex = 0;
 
 function type() {
+  if (!typedTextSpan || !cursorSpan) return; // Safety check
+
   if (charIndex < textArray[textArrayIndex].length) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
     typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
     charIndex++;
     setTimeout(type, typingDelay);
-  } 
+  }
   else {
     cursorSpan.classList.remove("typing");
     setTimeout(erase, newTextDelay);
@@ -24,15 +26,15 @@ function type() {
 
 function erase() {
   if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
     charIndex--;
     setTimeout(erase, erasingDelay);
-  } 
+  }
   else {
     cursorSpan.classList.remove("typing");
     textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
     setTimeout(type, typingDelay + 1100);
   }
 }
@@ -41,35 +43,35 @@ function erase() {
 function initContactForms() {
   const contactForm = document.getElementById('contactForm');
   const projectForm = document.getElementById('projectForm');
-  
+
   // Contact Form Validation
   if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      
+
       if (!validateContactForm()) {
         return;
       }
-      
+
       // Submit the form
       await submitContactForm(this);
     });
   }
-  
+
   // Project Form Validation
   if (projectForm) {
-    projectForm.addEventListener('submit', async function(e) {
+    projectForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      
+
       if (!validateProjectForm()) {
         return;
       }
-      
+
       // Submit the form
       await submitProjectForm(this);
     });
   }
-  
+
   // Real-time validation
   setupFormValidation();
 }
@@ -80,12 +82,12 @@ function validateContactForm() {
   const email = document.getElementById('email');
   const subject = document.getElementById('subject');
   const message = document.getElementById('message');
-  
+
   let isValid = true;
-  
+
   // Reset previous errors
   clearErrors();
-  
+
   // Name validation
   if (!name.value.trim()) {
     showError('nameError', 'Name is required');
@@ -96,7 +98,7 @@ function validateContactForm() {
     markFieldError(name);
     isValid = false;
   }
-  
+
   // Email validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email.value.trim()) {
@@ -108,14 +110,14 @@ function validateContactForm() {
     markFieldError(email);
     isValid = false;
   }
-  
+
   // Subject validation
   if (!subject.value.trim()) {
     showError('subjectError', 'Subject is required');
     markFieldError(subject);
     isValid = false;
   }
-  
+
   // Message validation
   if (!message.value.trim()) {
     showError('messageError', 'Message is required');
@@ -126,7 +128,7 @@ function validateContactForm() {
     markFieldError(message);
     isValid = false;
   }
-  
+
   return isValid;
 }
 
@@ -135,26 +137,26 @@ function validateProjectForm() {
   const projectName = document.getElementById('projectName');
   const projectType = document.getElementById('projectType');
   const projectDescription = document.getElementById('projectDescription');
-  
+
   let isValid = true;
-  
+
   // Reset previous errors
   clearProjectErrors();
-  
+
   // Project Name validation
   if (!projectName.value.trim()) {
     showError('projectNameError', 'Project name is required');
     markFieldError(projectName);
     isValid = false;
   }
-  
+
   // Project Type validation
   if (!projectType.value) {
     showError('projectTypeError', 'Please select a project type');
     markFieldError(projectType);
     isValid = false;
   }
-  
+
   // Project Description validation
   if (!projectDescription.value.trim()) {
     showError('projectDescriptionError', 'Project description is required');
@@ -165,7 +167,7 @@ function validateProjectForm() {
     markFieldError(projectDescription);
     isValid = false;
   }
-  
+
   return isValid;
 }
 
@@ -197,7 +199,7 @@ function clearErrors() {
     element.classList.remove('show');
     element.textContent = '';
   });
-  
+
   const formGroups = document.querySelectorAll('.form-group');
   formGroups.forEach(group => {
     group.classList.remove('error', 'success');
@@ -211,7 +213,7 @@ function clearProjectErrors() {
     element.classList.remove('show');
     element.textContent = '';
   });
-  
+
   const projectFormGroups = document.querySelectorAll('#projectForm .form-group');
   projectFormGroups.forEach(group => {
     group.classList.remove('error', 'success');
@@ -221,13 +223,13 @@ function clearProjectErrors() {
 // Setup Real-time Validation
 function setupFormValidation() {
   const inputs = document.querySelectorAll('input, textarea, select');
-  
+
   inputs.forEach(input => {
-    input.addEventListener('blur', function() {
+    input.addEventListener('blur', function () {
       validateField(this);
     });
-    
-    input.addEventListener('input', function() {
+
+    input.addEventListener('input', function () {
       if (this.parentElement.classList.contains('error')) {
         validateField(this);
       }
@@ -239,10 +241,10 @@ function setupFormValidation() {
 function validateField(field) {
   const fieldName = field.name;
   const value = field.value.trim();
-  
+
   // Remove previous error/success states
   field.parentElement.classList.remove('error', 'success');
-  
+
   // Validate based on field type
   switch (fieldName) {
     case 'name':
@@ -256,7 +258,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'email':
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!value) {
@@ -269,7 +271,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'subject':
       if (!value) {
         showError('subjectError', 'Subject is required');
@@ -278,7 +280,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'message':
       if (!value) {
         showError('messageError', 'Message is required');
@@ -290,7 +292,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'projectName':
       if (!value) {
         showError('projectNameError', 'Project name is required');
@@ -299,7 +301,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'projectType':
       if (!value) {
         showError('projectTypeError', 'Please select a project type');
@@ -308,7 +310,7 @@ function validateField(field) {
         markFieldSuccess(field);
       }
       break;
-      
+
     case 'projectDescription':
       if (!value) {
         showError('projectDescriptionError', 'Project description is required');
@@ -327,15 +329,15 @@ function validateField(field) {
 async function submitContactForm(form) {
   const submitBtn = form.querySelector('.submit-btn');
   const originalBtnText = submitBtn.innerHTML;
-  
+
   try {
     // Disable button and show loading
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
+
     const formData = new FormData(form);
-    
+
     // Method 1: Using EmailJS (Primary method - works everywhere)
     if (typeof emailjs !== 'undefined') {
       console.log('Using EmailJS to send form...');
@@ -349,7 +351,7 @@ async function submitContactForm(form) {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString()
       });
-      
+
       if (!response.ok) throw new Error('Submission failed');
     }
     // Method 3: Using your backend server
@@ -360,25 +362,25 @@ async function submitContactForm(form) {
         subject: formData.get('subject'),
         message: formData.get('message')
       };
-      
+
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      
+
       if (!response.ok) throw new Error('Submission failed');
     }
-    
+
     // Success
     showSuccessMessage('✅ Message sent successfully! I\'ll get back to you soon.');
     form.reset();
     clearErrors();
-    
+
   } catch (error) {
     console.error('Form submission error:', error);
     console.error('Error details:', error.message || error);
-    
+
     // Check if EmailJS is loaded
     if (typeof emailjs === 'undefined') {
       showErrorMessage('❌ Email service not loaded. Please refresh the page and try again.');
@@ -397,15 +399,15 @@ async function submitContactForm(form) {
 async function submitProjectForm(form) {
   const submitBtn = form.querySelector('.submit-btn');
   const originalBtnText = submitBtn.innerHTML;
-  
+
   try {
     // Disable button and show loading
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    
+
     const formData = new FormData(form);
-    
+
     // Method 1: Using EmailJS (Primary method - works everywhere)
     if (typeof emailjs !== 'undefined') {
       console.log('Using EmailJS to send project request...');
@@ -419,9 +421,9 @@ async function submitProjectForm(form) {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString()
       });
-      
+
       if (!response.ok) throw new Error('Submission failed');
-    } 
+    }
     // Method 3: Using your backend server
     else {
       const data = {
@@ -431,25 +433,25 @@ async function submitProjectForm(form) {
         budget: formData.get('budget'),
         timeline: formData.get('timeline')
       };
-      
+
       const response = await fetch('http://localhost:5000/api/project', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
-      
+
       if (!response.ok) throw new Error('Submission failed');
     }
-    
+
     // Success
     showSuccessMessage('✅ Project request submitted successfully! I\'ll review it and get back to you soon.');
     form.reset();
     clearProjectErrors();
-    
+
   } catch (error) {
     console.error('Project form submission error:', error);
     console.error('Error details:', error.message || error);
-    
+
     // Check if EmailJS is loaded
     if (typeof emailjs === 'undefined') {
       showErrorMessage('❌ Email service not loaded. Please refresh the page and try again.');
@@ -475,7 +477,7 @@ function showSuccessMessage(message) {
       <span>${message}</span>
     </div>
   `;
-  
+
   // Add styles
   notification.style.cssText = `
     position: fixed;
@@ -491,14 +493,14 @@ function showSuccessMessage(message) {
     transition: transform 0.3s ease;
     max-width: 400px;
   `;
-  
+
   document.body.appendChild(notification);
-  
+
   // Animate in
   setTimeout(() => {
     notification.style.transform = 'translateX(0)';
   }, 100);
-  
+
   // Remove after 5 seconds
   setTimeout(() => {
     notification.style.transform = 'translateX(100%)';
@@ -521,7 +523,7 @@ function showErrorMessage(message) {
       <span>${message}</span>
     </div>
   `;
-  
+
   // Add styles
   notification.style.cssText = `
     position: fixed;
@@ -537,14 +539,14 @@ function showErrorMessage(message) {
     transition: transform 0.3s ease;
     max-width: 400px;
   `;
-  
+
   document.body.appendChild(notification);
-  
+
   // Animate in
   setTimeout(() => {
     notification.style.transform = 'translateX(0)';
   }, 100);
-  
+
   // Remove after 7 seconds (longer for errors)
   setTimeout(() => {
     notification.style.transform = 'translateX(100%)';
@@ -560,10 +562,10 @@ function showErrorMessage(message) {
 function initDownloadTracking() {
   const downloadBtn = document.querySelector('.download-cv');
   if (downloadBtn) {
-    downloadBtn.addEventListener('click', function() {
+    downloadBtn.addEventListener('click', function () {
       // Track download (you can integrate with Google Analytics or other tracking)
       console.log('CV downloaded at:', new Date().toISOString());
-      
+
       // Optional: Show download confirmation
       setTimeout(() => {
         showSuccessMessage('CV downloaded successfully!');
@@ -576,10 +578,10 @@ function initDownloadTracking() {
 function initSocialTracking() {
   const socialLinks = document.querySelectorAll('.social-icon');
   socialLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       const platform = this.getAttribute('title');
       console.log(`Clicked on ${platform} at:`, new Date().toISOString());
-      
+
       // Optional: Add tracking parameters to URLs
       if (this.href.includes('linkedin.com')) {
         this.href += '?utm_source=portfolio&utm_medium=social&utm_campaign=contact';
@@ -592,23 +594,23 @@ function initSocialTracking() {
 function initProjectFilter() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
-  
+
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       const filter = this.getAttribute('data-filter');
-      
+
       // Update active button
       filterButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
-      
+
       // Filter projects
       projectCards.forEach(card => {
         const categories = card.getAttribute('data-category');
         const tags = card.getAttribute('data-tags');
-        
-        if (filter === 'all' || 
-            categories.includes(filter) || 
-            tags.toLowerCase().includes(filter.toLowerCase())) {
+
+        if (filter === 'all' ||
+          categories.includes(filter) ||
+          tags.toLowerCase().includes(filter.toLowerCase())) {
           card.style.display = 'block';
           card.style.animation = 'fadeInUp 0.6s ease forwards';
         } else {
@@ -622,7 +624,7 @@ function initProjectFilter() {
 // Project Card Animations
 function initProjectAnimations() {
   const projectCards = document.querySelectorAll('.project-card');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -631,7 +633,7 @@ function initProjectAnimations() {
       }
     });
   }, { threshold: 0.1 });
-  
+
   projectCards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
@@ -652,7 +654,7 @@ function initFeaturedProject() {
         }
       });
     }, { threshold: 0.1 });
-    
+
     featuredProject.style.opacity = '0';
     featuredProject.style.transform = 'translateY(30px)';
     featuredProject.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -663,14 +665,14 @@ function initFeaturedProject() {
 // Project Link Tracking
 function initProjectTracking() {
   const projectLinks = document.querySelectorAll('.project-link, .overlay-btn');
-  
+
   projectLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       const projectName = this.closest('.project-card')?.querySelector('h3')?.textContent || 'Unknown Project';
       const linkType = this.querySelector('.fab.fa-github') ? 'GitHub' : 'Demo';
-      
+
       console.log(`${linkType} link clicked for project: ${projectName} at ${new Date().toISOString()}`);
-      
+
       // Optional: Add tracking parameters
       if (this.href.includes('github.com')) {
         this.href += '?utm_source=portfolio&utm_medium=project&utm_campaign=github';
@@ -684,19 +686,19 @@ function initProjectTracking() {
 // Enhanced Project Interactions
 function initProjectInteractions() {
   const projectCards = document.querySelectorAll('.project-card');
-  
+
   projectCards.forEach(card => {
     // Add hover sound effect (optional)
-    card.addEventListener('mouseenter', function() {
+    card.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-8px) scale(1.02)';
     });
-    
-    card.addEventListener('mouseleave', function() {
+
+    card.addEventListener('mouseleave', function () {
       this.style.transform = 'translateY(0) scale(1)';
     });
-    
+
     // Add click effect
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function (e) {
       if (!e.target.closest('a')) {
         // If not clicking a link, add a subtle click effect
         this.style.transform = 'translateY(-4px) scale(0.98)';
@@ -713,7 +715,7 @@ function initSkillBars() {
   const skillItems = document.querySelectorAll('.skill-item');
   const skillProgresses = document.querySelectorAll('.skill-progress');
   const skillPercentages = document.querySelectorAll('.skill-percentage');
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -721,25 +723,25 @@ function initSkillBars() {
         const progressBar = skillItem.querySelector('.skill-progress');
         const percentageElement = skillItem.querySelector('.skill-percentage');
         const targetPercentage = progressBar.getAttribute('data-percentage');
-        
+
         // Add animation class
         skillItem.classList.add('animate');
-        
+
         // Animate progress bar
         setTimeout(() => {
           progressBar.style.width = targetPercentage + '%';
           progressBar.classList.add('animate');
-          
+
           // Animate percentage counter
           animatePercentage(percentageElement, 0, parseInt(targetPercentage), 2000);
         }, 300);
-        
+
         // Stop observing after animation
         observer.unobserve(skillItem);
       }
     });
   }, { threshold: 0.3 });
-  
+
   // Observe all skill items
   skillItems.forEach(item => {
     observer.observe(item);
@@ -749,40 +751,40 @@ function initSkillBars() {
 // Animate percentage counter
 function animatePercentage(element, start, end, duration) {
   const startTime = performance.now();
-  
+
   function updateCounter(currentTime) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    
+
     // Easing function for smooth animation
     const easeOutQuart = 1 - Math.pow(1 - progress, 4);
     const currentValue = Math.floor(start + (end - start) * easeOutQuart);
-    
+
     element.textContent = currentValue + '%';
-    
+
     if (progress < 1) {
       requestAnimationFrame(updateCounter);
     }
   }
-  
+
   requestAnimationFrame(updateCounter);
 }
 
 // Skill bar hover effects
 function initSkillBarInteractions() {
   const skillItems = document.querySelectorAll('.skill-item');
-  
+
   skillItems.forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
       this.style.transform = 'translateY(-4px) scale(1.02)';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
       this.style.transform = 'translateY(0) scale(1)';
     });
-    
+
     // Add click effect
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       this.style.transform = 'translateY(-2px) scale(0.98)';
       setTimeout(() => {
         this.style.transform = 'translateY(-4px) scale(1.02)';
@@ -794,14 +796,14 @@ function initSkillBarInteractions() {
 // Skill icon animations
 function initSkillIconAnimations() {
   const skillIcons = document.querySelectorAll('.skill-icon');
-  
+
   skillIcons.forEach(icon => {
-    icon.addEventListener('mouseenter', function() {
+    icon.addEventListener('mouseenter', function () {
       this.style.transform = 'scale(1.2) rotate(5deg)';
       this.style.boxShadow = '0 8px 25px rgba(41, 128, 185, 0.5)';
     });
-    
-    icon.addEventListener('mouseleave', function() {
+
+    icon.addEventListener('mouseleave', function () {
       this.style.transform = 'scale(1) rotate(0deg)';
       this.style.boxShadow = '0 4px 15px rgba(41, 128, 185, 0.3)';
     });
@@ -809,10 +811,32 @@ function initSkillIconAnimations() {
 }
 
 // Initialize all project features
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   setTimeout(type, newTextDelay + 250);
-  
+
+  // Premium Hero Typing Effect
+  function initHeroTyping() {
+    const heroText = document.getElementById('heroTypedText');
+    if (!heroText) return;
+
+    const textToType = 'Sathyaseelan';
+    let charIndex = 0;
+    const typingSpeed = 150; // Slower, more premium feel (150ms per character)
+
+    function typeChar() {
+      if (charIndex < textToType.length) {
+        heroText.textContent += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeChar, typingSpeed);
+      }
+    }
+
+    // Start typing after a short delay
+    setTimeout(typeChar, 500);
+  }
+
   // Initialize animations when page loads
+  initHeroTyping();
   startCounters();
   initParticles();
   initThemeToggle();
@@ -834,19 +858,51 @@ document.addEventListener("DOMContentLoaded", function() {
 function initThemeToggle() {
   const themeToggle = document.getElementById('themeToggle');
   const body = document.body;
-  
+
+  // Remove preload class after page loads to enable transitions
+  window.addEventListener('load', () => {
+    body.classList.remove('preload');
+  });
+
+  // Add preload class initially to prevent transition on page load
+  body.classList.add('preload');
+
   // Check for saved theme preference
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') {
     body.classList.add('light-theme');
     themeToggle.textContent = '☀️';
   }
-  
+
+  // Create blur overlay element
+  const overlay = document.createElement('div');
+  overlay.className = 'theme-transition-overlay';
+  document.body.appendChild(overlay);
+
   themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-theme');
-    const isLightTheme = body.classList.contains('light-theme');
-    themeToggle.textContent = isLightTheme ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    // Add spinning animation to icon
+    themeToggle.classList.add('spinning');
+
+    // Show blur overlay
+    overlay.classList.add('active');
+
+    // Add theme-changing class for fade animation
+    body.classList.add('theme-changing');
+
+    // Wait for animation to start, then toggle theme
+    setTimeout(() => {
+      body.classList.toggle('light-theme');
+      const isLightTheme = body.classList.contains('light-theme');
+      themeToggle.textContent = isLightTheme ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+    }, 150);
+
+    // Remove animations after transition completes
+    setTimeout(() => {
+      themeToggle.classList.remove('spinning');
+      overlay.classList.remove('active');
+      body.classList.remove('theme-changing');
+    }, 300);
   });
 }
 
@@ -854,13 +910,13 @@ function initThemeToggle() {
 function startCounters() {
   const counters = document.querySelectorAll('.counter');
   const speed = 200;
-  
+
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
     const count = +counter.innerText;
     const increment = target / speed;
-    
-    if(count < target) {
+
+    if (count < target) {
       counter.innerText = Math.ceil(count + increment);
       setTimeout(startCounters, 1);
     } else {
@@ -871,6 +927,12 @@ function startCounters() {
 
 // Initialize Particles.js
 function initParticles() {
+  // Check if particlesJS library is loaded
+  if (typeof particlesJS === 'undefined') {
+    console.log('Particles.js library not loaded, skipping particle effects');
+    return;
+  }
+
   particlesJS('particles-js', {
     "particles": {
       "number": {
@@ -1011,23 +1073,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function initSkillsRadarChart() {
   const ctx = document.getElementById('skillsRadarChart');
   if (!ctx) return;
-  
+
+  // Destroy existing chart if it exists
+  const existingChart = Chart.getChart(ctx);
+  if (existingChart) {
+    existingChart.destroy();
+  }
+
   const radarChart = new Chart(ctx, {
     type: 'radar',
     data: {
       labels: ['Java', 'Python', 'HTML/CSS', 'SQL', 'AI/ML', 'MongoDB', 'Problem Solving'],
       datasets: [{
         label: 'Skill Level',
-        data: [75, 70, 60, 80, 50, 60, 75],
-        backgroundColor: 'rgba(41, 128, 185, 0.1)',
-        borderColor: 'rgba(41, 128, 185, 0.6)',
+        data: [75, 10, 60, 80, 70, 70, 85],
+        backgroundColor: 'rgba(220, 20, 60, 0.2)',
+        borderColor: '#DC143C',
         borderWidth: 2,
-        pointBackgroundColor: 'rgba(41, 128, 185, 0.8)',
+        pointBackgroundColor: '#DC143C',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(41, 128, 185, 1)',
-        pointRadius: 4,
-        pointHoverRadius: 6
+        pointHoverBorderColor: '#DC143C',
+        pointRadius: 5,
+        pointHoverRadius: 7
       }]
     },
     options: {
@@ -1076,7 +1144,7 @@ function initSkillsRadarChart() {
           padding: 12,
           displayColors: false,
           callbacks: {
-            label: function(context) {
+            label: function (context) {
               return context.parsed.r + '%';
             }
           }
@@ -1084,44 +1152,115 @@ function initSkillsRadarChart() {
       }
     }
   });
-  
+
   // Update chart colors for light theme
   const body = document.body;
   const observer = new MutationObserver(() => {
     const isLightTheme = body.classList.contains('light-theme');
     const textColor = isLightTheme ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)';
     const gridColor = isLightTheme ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)';
-    
+
     radarChart.options.scales.r.ticks.color = textColor;
     radarChart.options.scales.r.grid.color = gridColor;
     radarChart.options.scales.r.angleLines.color = gridColor;
     radarChart.options.scales.r.pointLabels.color = textColor;
     radarChart.update();
   });
-  
+
   observer.observe(body, { attributes: true, attributeFilter: ['class'] });
 }
 
 // Initialize EmailJS with your public key
-(function() {
+(function () {
   if (typeof emailjs !== 'undefined') {
     emailjs.init('vsj_MQ6R9MHOxCJGX');
     console.log('✅ EmailJS initialized successfully');
   }
 })();
 
+// Contact Form Handler
+function initContactForm() {
+  const contactForm = document.getElementById('contactForm');
+
+  if (!contactForm) {
+    console.log('Contact form not found');
+    return;
+  }
+
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    // Get form data
+    const formData = {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value
+    };
+
+    // Send email using EmailJS
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS credentials
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+      .then(function (response) {
+        console.log('✅ Email sent successfully!', response.status, response.text);
+
+        // Show success message
+        submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+
+        // Reset form
+        contactForm.reset();
+
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.style.background = '';
+        }, 3000);
+
+      }, function (error) {
+        console.error('❌ Email send failed:', error);
+
+        // Show error message
+        submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to Send';
+        submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.style.background = '';
+        }, 3000);
+
+        alert('Oops! Something went wrong. Please try again or email me directly at ksathyaseelan34@gmail.com');
+      });
+  });
+
+  console.log('✅ Contact form handler initialized');
+}
+
+// Initialize contact form when DOM is ready
+document.addEventListener('DOMContentLoaded', initContactForm);
+
 // Achievements Carousel Navigation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Mobile Menu Toggle
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const navLinks = document.getElementById('navLinks');
-  
+
   if (mobileMenuToggle && navLinks) {
     mobileMenuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       mobileMenuToggle.classList.toggle('active');
     });
-    
+
     // Close menu when clicking on a link
     const navLinkItems = navLinks.querySelectorAll('a');
     navLinkItems.forEach(link => {
@@ -1130,7 +1269,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuToggle.classList.remove('active');
       });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
@@ -1139,28 +1278,28 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
+
   const achievementsGrid = document.querySelector('.achievements-grid');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
-  
+
   if (achievementsGrid && prevBtn && nextBtn) {
     const scrollAmount = 320; // Card width + gap
-    
+
     prevBtn.addEventListener('click', () => {
       achievementsGrid.scrollBy({
         left: -scrollAmount,
         behavior: 'smooth'
       });
     });
-    
+
     nextBtn.addEventListener('click', () => {
       achievementsGrid.scrollBy({
         left: scrollAmount,
         behavior: 'smooth'
       });
     });
-    
+
     // Optional: Hide buttons at scroll boundaries
     function updateButtonVisibility() {
       const maxScroll = achievementsGrid.scrollWidth - achievementsGrid.clientWidth;
@@ -1169,11 +1308,11 @@ document.addEventListener('DOMContentLoaded', function() {
       prevBtn.style.pointerEvents = achievementsGrid.scrollLeft <= 0 ? 'none' : 'auto';
       nextBtn.style.pointerEvents = achievementsGrid.scrollLeft >= maxScroll ? 'none' : 'auto';
     }
-    
+
     achievementsGrid.addEventListener('scroll', updateButtonVisibility);
     updateButtonVisibility(); // Initial check
   }
-  
+
   // Scroll Animations
   initScrollAnimations();
 });
@@ -1181,12 +1320,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Scroll Animation Observer
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .timeline-item');
-  
+
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-  
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
@@ -1198,22 +1337,22 @@ function initScrollAnimations() {
         } else {
           entry.target.classList.add('visible');
         }
-        
+
         // Trigger counting animation for stats
         if (entry.target.classList.contains('skill-gamification')) {
           animateStats();
         }
-        
+
         // Unobserve after animation
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-  
+
   animatedElements.forEach(el => {
     observer.observe(el);
   });
-  
+
   // Initialize Skills Word Cloud
   initSkillsCloud();
 }
@@ -1221,13 +1360,13 @@ function initScrollAnimations() {
 // Animate Stats Counter
 function animateStats() {
   const statValues = document.querySelectorAll('.stat-value');
-  
+
   statValues.forEach(stat => {
     const target = parseInt(stat.dataset.target);
     const duration = 2000;
     const increment = target / (duration / 16);
     let current = 0;
-    
+
     const counter = setInterval(() => {
       current += increment;
       if (current >= target) {
@@ -1295,10 +1434,10 @@ function initSkillsCloud() {
         e.stopPropagation();
         e.stopImmediatePropagation();
       }
-      
+
       // Pause the cloud rotation while modal is open
       cloudContainer.classList.add('paused');
-      
+
       showSkillModal(skill);
       tag.classList.add('clicked');
       setTimeout(() => tag.classList.remove('clicked'), 300);
@@ -1306,14 +1445,14 @@ function initSkillsCloud() {
 
     // Mouse click - primary interaction method
     tag.addEventListener('click', openHandler, { capture: true });
-    
+
     // Touch handling for mobile - prevent default to stop scroll
     tag.addEventListener('touchend', (e) => {
       e.preventDefault();
       e.stopPropagation();
       openHandler(e);
     }, { passive: false, capture: true });
-    
+
     // Keyboard accessibility
     tag.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -1334,6 +1473,7 @@ function initSkillsCloud() {
   cloudContainer.addEventListener('mouseleave', () => cloudContainer.classList.remove('paused'));
 }
 
+
 // Show Skill Modal
 function showSkillModal(skill) {
   // Remove existing modal
@@ -1341,11 +1481,11 @@ function showSkillModal(skill) {
   const existingOverlay = document.querySelector('.modal-overlay');
   if (existingModal) existingModal.remove();
   if (existingOverlay) existingOverlay.remove();
-  
+
   // Create overlay
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
-  
+
   // Create modal
   const modal = document.createElement('div');
   modal.className = 'skill-modal';
@@ -1359,42 +1499,42 @@ function showSkillModal(skill) {
     </div>
     <p style="opacity:0.85;margin-top:0.6rem;">Level: ${skill.level || 'N/A'}</p>
   `;
-  
+
   document.body.appendChild(overlay);
   document.body.appendChild(modal);
-  
+
   // Animate
   setTimeout(() => {
     overlay.classList.add('active');
     modal.classList.add('active');
-    
+
     // Animate progress bar
     setTimeout(() => {
       const fill = modal.querySelector('.skill-level-fill');
       fill.style.width = (skill.level || 60) + '%';
     }, 300);
   }, 10);
-  
+
   // Close handlers
   const closeModal = () => {
     modal.classList.remove('active');
     overlay.classList.remove('active');
-    
+
     // Resume cloud rotation when modal closes
     const cloudContainer = document.getElementById('skillsCloud');
     if (cloudContainer) {
       cloudContainer.classList.remove('paused');
     }
-    
+
     setTimeout(() => {
       modal.remove();
       overlay.remove();
     }, 300);
   };
-  
+
   modal.querySelector('.close-modal').addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
-  
+
   // Close on Escape key
   const escHandler = (e) => {
     if (e.key === 'Escape') {
@@ -1405,3 +1545,110 @@ function showSkillModal(skill) {
   document.addEventListener('keydown', escHandler);
 }
 
+
+// ========================================
+// SKILLS RADAR CHART INITIALIZATION
+// ========================================
+
+function initSkillsRadarChart() {
+  const canvas = document.getElementById('skillsRadarChart');
+  if (!canvas) {
+    console.warn('Skills Radar Chart canvas not found');
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+
+  // Detect if light theme is active
+  const isLightTheme = document.body.classList.contains('light-theme');
+  const labelColor = isLightTheme ? '#0f172a' : 'rgba(255, 255, 255, 0.8)';
+  const gridColor = isLightTheme ? 'rgba(100, 116, 139, 0.3)' : 'rgba(220, 20, 60, 0.2)';
+  const tickColor = isLightTheme ? '#334155' : 'rgba(255, 255, 255, 0.5)';
+
+  // Skills data for radar chart
+  const skillsData = {
+    labels: ['Java', 'Python', 'HTML/CSS', 'SQL', 'AI/ML', 'MongoDB', 'Problem Solving'],
+    datasets: [{
+      label: 'Proficiency Level',
+      data: [75, 90, 95, 80, 78, 70, 85],
+      backgroundColor: 'rgba(220, 20, 60, 0.2)',
+      borderColor: '#DC143C',
+      borderWidth: 2,
+      pointBackgroundColor: '#DC143C',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: '#DC143C',
+      pointRadius: 5,
+      pointHoverRadius: 7
+    }]
+  };
+
+  // Chart configuration
+  const config = {
+    type: 'radar',
+    data: skillsData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            stepSize: 20,
+            color: tickColor,
+            backdropColor: 'transparent'
+          },
+          grid: {
+            color: gridColor
+          },
+          angleLines: {
+            color: 'rgba(220, 20, 60, 0.2)'
+          },
+          pointLabels: {
+            color: labelColor,
+            font: {
+              size: 14,
+              weight: '600'
+            }
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            color: labelColor,
+            font: {
+              size: 12
+            },
+            padding: 20
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(10, 10, 10, 0.9)',
+          titleColor: '#DC143C',
+          bodyColor: '#fff',
+          borderColor: '#DC143C',
+          borderWidth: 1,
+          padding: 12,
+          displayColors: true,
+          callbacks: {
+            label: function (context) {
+              return context.dataset.label + ': ' + context.parsed.r + '%';
+            }
+          }
+        }
+      },
+      animation: {
+        duration: 1500,
+        easing: 'easeInOutQuart'
+      }
+    }
+  };
+
+  // Create the chart
+  new Chart(ctx, config);
+  console.log('Skills Radar Chart initialized successfully');
+}

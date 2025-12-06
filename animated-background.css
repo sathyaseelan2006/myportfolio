@@ -1,0 +1,367 @@
+/* ========================================
+   ANIMATED BLACK-RED BACKGROUND
+   Smooth Waving Gradient Animation
+   ======================================== */
+
+/* CRITICAL: Prevent horizontal overflow */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Override base background colors - DARK THEME ONLY */
+:root:not(.light-theme) {
+    --bg-color: #0a0a0a;
+    --bg-secondary: #1a0a0a;
+}
+
+body:not(.light-theme) {
+    background: #0a0a0a;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Light Theme - Purple Gradient */
+body.light-theme {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+}
+
+/* Animated Gradient Background - DARK THEME ONLY */
+body:not(.light-theme)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(135deg,
+            #000000 0%,
+            #1a0000 25%,
+            #330000 50%,
+            #1a0000 75%,
+            #000000 100%);
+    background-size: 400% 400%;
+    animation: gradientWave 15s ease infinite;
+}
+
+/* Smooth Waving Animation */
+@keyframes gradientWave {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Additional Animated Wave Layer - DARK THEME ONLY */
+body:not(.light-theme)::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(220, 20, 60, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(178, 34, 34, 0.1) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: waveMovement 20s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+@keyframes waveMovement {
+
+    0%,
+    100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+
+    33% {
+        background-position: 100% 50%, 0% 50%, 25% 75%;
+    }
+
+    66% {
+        background-position: 50% 100%, 50% 0%, 75% 25%;
+    }
+}
+
+/* Floating Particles Effect */
+.background-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(220, 20, 60, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.particle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 70%;
+    animation-delay: 3s;
+    animation-duration: 22s;
+}
+
+.particle:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    top: 80%;
+    left: 30%;
+    animation-delay: 6s;
+    animation-duration: 20s;
+}
+
+.particle:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    top: 30%;
+    left: 80%;
+    animation-delay: 9s;
+    animation-duration: 25s;
+}
+
+.particle:nth-child(5) {
+    width: 90px;
+    height: 90px;
+    top: 50%;
+    left: 10%;
+    animation-delay: 12s;
+    animation-duration: 19s;
+}
+
+@keyframes floatParticle {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(50px, -50px) scale(1.1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-30px, 30px) scale(0.9);
+        opacity: 0.4;
+    }
+
+    75% {
+        transform: translate(40px, 60px) scale(1.05);
+        opacity: 0.6;
+    }
+}
+
+/* Update card backgrounds to match theme */
+.glass-card {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.glass-card:hover {
+    background: rgba(30, 0, 0, 0.6) !important;
+    border-color: rgba(220, 20, 60, 0.4) !important;
+    box-shadow: 0 12px 40px rgba(220, 20, 60, 0.25) !important;
+}
+
+/* Update project cards */
+.project-card {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.project-card:hover {
+    border-color: rgba(220, 20, 60, 0.5) !important;
+    box-shadow: 0 20px 60px rgba(220, 20, 60, 0.3) !important;
+}
+
+.project-card::before {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.1), rgba(139, 0, 0, 0.1)) !important;
+}
+
+/* Update featured project */
+.featured-project {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(139, 0, 0, 0.2)) !important;
+    border: 1px solid rgba(220, 20, 60, 0.3) !important;
+}
+
+.featured-project:hover {
+    box-shadow: 0 25px 70px rgba(220, 20, 60, 0.4) !important;
+}
+
+/* Update timeline items */
+.timeline-item {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.timeline-item::before {
+    background: #DC143C !important;
+    box-shadow: 0 0 20px #DC143C !important;
+}
+
+.timeline-item:hover {
+    border-color: rgba(220, 20, 60, 0.5) !important;
+    box-shadow: 0 10px 40px rgba(220, 20, 60, 0.2) !important;
+}
+
+/* Update achievement cards */
+.achievement-card {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.achievement-card:hover {
+    border-color: rgba(220, 20, 60, 0.5) !important;
+    box-shadow: 0 15px 50px rgba(220, 20, 60, 0.3) !important;
+}
+
+.achievement-icon {
+    background: linear-gradient(135deg, #DC143C, #8B0000) !important;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3) !important;
+}
+
+/* Update skills sections */
+.skills-word-cloud-section,
+.skills-radar-section {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.skills-word-cloud-section:hover,
+.skills-radar-section:hover {
+    border-color: rgba(220, 20, 60, 0.3) !important;
+    box-shadow: 0 15px 50px rgba(220, 20, 60, 0.2) !important;
+}
+
+/* Update contact form */
+.contact-form-section {
+    background: rgba(20, 0, 0, 0.4) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(30, 0, 0, 0.5) !important;
+    border: 1px solid rgba(220, 20, 60, 0.2) !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(40, 0, 0, 0.6) !important;
+    border-color: #DC143C !important;
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.3) !important;
+}
+
+/* Update primary color theme */
+:root {
+    --primary-color: #DC143C;
+    --secondary-color: #FF6B6B;
+    --accent-color: #C41E3A;
+}
+
+/* Update gradient text */
+.gradient-text {
+    background: linear-gradient(135deg, #DC143C 0%, #FF6B6B 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Update buttons */
+.btn-primary-gradient {
+    background: linear-gradient(135deg, #DC143C, #8B0000) !important;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3) !important;
+}
+
+.btn-primary-gradient:hover {
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.5) !important;
+}
+
+/* Update social icons */
+.social-icon:hover {
+    background: linear-gradient(135deg, #DC143C, #8B0000) !important;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4) !important;
+}
+
+/* Update filter buttons */
+.filter-btn.active {
+    background: linear-gradient(135deg, #DC143C, #8B0000) !important;
+    box-shadow: 0 5px 20px rgba(220, 20, 60, 0.4) !important;
+}
+
+/* Update tags */
+.tag {
+    background: rgba(220, 20, 60, 0.2) !important;
+    border: 1px solid rgba(220, 20, 60, 0.3) !important;
+    color: #FF6B6B !important;
+}
+
+.tag:hover {
+    background: #DC143C !important;
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4) !important;
+}
+
+/* Update section headings underline */
+section h2::after {
+    background-color: #DC143C !important;
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.5) !important;
+}
+
+/* Update about section */
+#about {
+    background-color: rgba(20, 0, 0, 0.3) !important;
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+
+    body::before,
+    body::after,
+    .particle {
+        animation: none;
+    }
+}

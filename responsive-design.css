@@ -1,0 +1,779 @@
+/* ========================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+   Device-Compatible Padding & Layout
+   ======================================== */
+
+/* ========================================
+   1. BASE RESPONSIVE CONTAINER SYSTEM
+   ======================================== */
+
+/* Ensure all containers have proper padding */
+.container,
+.container-fluid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100% !important;
+}
+
+/* Section padding adjustments */
+section {
+    padding: 4rem 1.5rem !important;
+}
+
+/* ========================================
+   2. NAVIGATION RESPONSIVE DESIGN
+   ======================================== */
+
+/* Desktop Navigation */
+@media (min-width: 769px) {
+    .navbar {
+        padding: 1rem 2rem !important;
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 77, 109, 0.1);
+    }
+
+    .theme-toggle {
+        margin-top: 1rem;
+    }
+}
+
+/* ========================================
+   3. HERO SECTION RESPONSIVE
+   ======================================== */
+
+/* Desktop Hero */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 6rem 3rem !important;
+    }
+
+    .hero h1 {
+        font-size: 4rem !important;
+    }
+
+    .hero h2 {
+        font-size: 2rem !important;
+    }
+}
+
+/* Tablet Hero */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .hero {
+        padding: 4rem 2rem !important;
+    }
+
+    .hero h1 {
+        font-size: 3rem !important;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-buttons {
+        flex-direction: row !important;
+        justify-content: center !important;
+    }
+}
+
+/* Mobile Hero */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1.5rem !important;
+        min-height: auto !important;
+        padding-top: 100px !important;
+    }
+
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem !important;
+    }
+
+    .hero p {
+        font-size: 0.95rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .hero-buttons {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 1rem !important;
+    }
+
+    .hero-buttons .btn {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+        padding: 0.875rem 1.5rem !important;
+    }
+
+    .hero-image-wrapper {
+        margin-top: 2rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .profile-image-container {
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.75rem !important;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem !important;
+    }
+
+    .profile-image-container {
+        max-width: 240px !important;
+    }
+}
+
+/* ========================================
+   4. ABOUT SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 991px) {
+    #about .row {
+        gap: 2rem !important;
+    }
+
+    #about .glass-card {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 3rem 1rem !important;
+    }
+
+    #about .glass-card {
+        padding: 1.5rem !important;
+    }
+
+    #about h3 {
+        font-size: 1.25rem !important;
+    }
+
+    #about .row.g-3 {
+        gap: 1rem !important;
+    }
+
+    #about .badge {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+}
+
+/* ========================================
+   5. SKILLS SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    #skills {
+        padding: 3rem 1rem !important;
+    }
+
+    .skills-word-cloud-section,
+    .skills-radar-section {
+        padding: 2rem 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .skills-word-cloud-section h3,
+    .skills-radar-section h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .cloud-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .radar-container {
+        padding: 1rem 0.5rem !important;
+    }
+
+    #skillsRadarChart {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .skills-word-cloud-section,
+    .skills-radar-section {
+        padding: 1.5rem 0.75rem !important;
+    }
+}
+
+/* ========================================
+   6. PROJECTS SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    #projects {
+        padding: 3rem 1rem !important;
+    }
+
+    .featured-project {
+        padding: 2rem 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .featured-project-content {
+        flex-direction: column !important;
+    }
+
+    .featured-project h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .project-description {
+        font-size: 0.95rem !important;
+    }
+
+    .project-filter {
+        padding: 0 1rem !important;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap !important;
+        gap: 0.75rem !important;
+        justify-content: center !important;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .project-card {
+        padding: 1.5rem !important;
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .project-tags {
+        gap: 0.5rem !important;
+    }
+
+    .tag {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-project {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .project-card {
+        padding: 1.25rem !important;
+    }
+
+    .project-links {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .project-links .btn {
+        width: 100% !important;
+    }
+}
+
+/* ========================================
+   7. ACHIEVEMENTS SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    #achievements {
+        padding: 3rem 1rem !important;
+    }
+
+    .achievements-container {
+        padding: 0 1rem !important;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .achievement-card {
+        padding: 1.5rem !important;
+    }
+
+    .achievement-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .achievement-card p {
+        font-size: 0.9rem !important;
+    }
+
+    .achievement-nav-btn {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-card {
+        padding: 1.25rem !important;
+    }
+
+    .achievement-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.25rem !important;
+    }
+}
+
+/* ========================================
+   8. TIMELINE SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    #timeline {
+        padding: 3rem 1rem !important;
+    }
+
+    .timeline {
+        padding-left: 1.5rem !important;
+    }
+
+    .timeline-item {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .timeline-item::before {
+        left: -25px !important;
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .timeline-date {
+        font-size: 0.85rem !important;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ========================================
+   9. CONTACT SECTION RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 3rem 1rem !important;
+    }
+
+    #contact h2 {
+        font-size: 2rem !important;
+    }
+
+    #contact h3 {
+        font-size: 1.1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .contact-container {
+        padding: 0 1rem !important;
+    }
+
+    .contact-form-section {
+        padding: 2rem 1.5rem !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.875rem 1.25rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .submit-btn {
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+
+    .action-buttons {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .action-btn {
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+
+    .social-links {
+        padding: 0 1rem !important;
+    }
+
+    .social-icons {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+    }
+
+    .social-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-section {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.75rem 1rem !important;
+    }
+}
+
+/* ========================================
+   10. FOOTER RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ========================================
+   11. GRID & LAYOUT RESPONSIVE
+   ======================================== */
+
+/* Bootstrap Grid Adjustments */
+@media (max-width: 991px) {
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .row>* {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .row>* {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .g-4,
+    .g-5 {
+        gap: 1.5rem !important;
+    }
+}
+
+/* ========================================
+   12. TYPOGRAPHY RESPONSIVE SCALING
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    h1,
+    .h1 {
+        font-size: 2rem !important;
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.75rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: 1.5rem !important;
+    }
+
+    h4,
+    .h4 {
+        font-size: 1.25rem !important;
+    }
+
+    h5,
+    .h5 {
+        font-size: 1.1rem !important;
+    }
+
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    .lead {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    .h1 {
+        font-size: 1.75rem !important;
+    }
+
+    h2,
+    .h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .display-1 {
+        font-size: 2rem !important;
+    }
+
+    .display-4 {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* ========================================
+   13. SPACING UTILITIES RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .mb-3 {
+        margin-bottom: 1rem !important;
+    }
+
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    .p-5 {
+        padding: 2rem !important;
+    }
+
+    .p-4 {
+        padding: 1.5rem !important;
+    }
+}
+
+/* ========================================
+   14. TOUCH-FRIENDLY INTERACTIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Larger touch targets */
+    .btn,
+    button,
+    a {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+
+    /* Reduce hover effects on mobile */
+    .project-card:hover,
+    .achievement-card:hover,
+    .timeline-item:hover,
+    .glass-card:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    /* Disable complex animations on mobile */
+    * {
+        animation-duration: 0.3s !important;
+    }
+}
+
+/* ========================================
+   15. LANDSCAPE ORIENTATION
+   ======================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+
+    section {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+/* ========================================
+   16. VERY LARGE SCREENS
+   ======================================== */
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px !important;
+    }
+
+    section {
+        padding: 6rem 3rem !important;
+    }
+}
+
+/* ========================================
+   17. PRINT STYLES
+   ======================================== */
+
+@media print {
+
+    header,
+    footer,
+    .mobile-menu-toggle,
+    .theme-toggle,
+    .social-icons {
+        display: none !important;
+    }
+
+    section {
+        page-break-inside: avoid !important;
+    }
+}
+
+/* ========================================
+   18. ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========================================
+   19. IMAGE RESPONSIVE HANDLING
+   ======================================== */
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+.profile-image img,
+.featured-project-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+}
+
+/* ========================================
+   20. OVERFLOW PREVENTION
+   ======================================== */
+
+html,
+body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+/* Prevent horizontal scroll from animations */
+.container,
+.row,
+section,
+div {
+    max-width: 100% !important;
+}

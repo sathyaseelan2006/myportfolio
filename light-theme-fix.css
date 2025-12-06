@@ -1,0 +1,408 @@
+/* ========================================
+   LIGHT THEME - PURPLE LAVENDER GRADIENT
+   Beautiful purple-pink color scheme
+   ======================================== */
+
+body.light-theme {
+    --bg-color: #e0e7ff;
+    --bg-secondary: #fce7f3;
+    --text-color: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --primary-color: #c41e3a;
+    --secondary-color: #8b0000;
+    --accent-color: #dc143c;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(255, 8, 68, 0.25);
+    /* Beautiful purple-lavender gradient background */
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+    color: #1a1a1a;
+}
+
+/* All Sections - Purple Lavender Gradient - FORCE IT! */
+body.light-theme section {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+    color: #1a1a1a !important;
+}
+
+body.light-theme #about,
+body.light-theme #skills,
+body.light-theme #projects,
+body.light-theme #achievements,
+body.light-theme #timeline,
+body.light-theme #contact {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+}
+
+body.light-theme .hero {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+}
+
+/* Override ANY section background */
+body.light-theme section#about,
+body.light-theme section#skills,
+body.light-theme section#projects,
+body.light-theme section#achievements,
+body.light-theme section#timeline,
+body.light-theme section#contact,
+body.light-theme .hero-section,
+body.light-theme main,
+body.light-theme .container {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+}
+
+/* Header and Navigation */
+body.light-theme header {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 8, 68, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .logo {
+    color: #FF0844 !important;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 8, 68, 0.3);
+}
+
+body.light-theme .nav-links a {
+    color: #1e293b !important;
+    font-weight: 500;
+}
+
+body.light-theme .nav-links a:hover,
+body.light-theme .nav-links a.active {
+    color: #FF0844 !important;
+    background: rgba(255, 8, 68, 0.1);
+}
+
+/* Cards and Containers - White with Pink Borders */
+body.light-theme .glass-card,
+body.light-theme .project-card,
+body.light-theme .achievement-card,
+body.light-theme .timeline-item,
+body.light-theme .skill-category-card,
+body.light-theme .core-skills-section,
+body.light-theme .skills-word-cloud-section,
+body.light-theme .skills-radar-section,
+body.light-theme .contact-form-section {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 8, 68, 0.25) !important;
+    color: #1a1a1a;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .glass-card:hover,
+body.light-theme .project-card:hover,
+body.light-theme .achievement-card:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    border-color: rgba(255, 8, 68, 0.4) !important;
+    box-shadow: 0 12px 40px rgba(255, 8, 68, 0.2) !important;
+}
+
+/* Text Colors - Dark on Light Purple Background */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6 {
+    color: #1e293b !important;
+}
+
+body.light-theme p,
+body.light-theme span,
+body.light-theme div,
+body.light-theme li {
+    color: #334155 !important;
+}
+
+body.light-theme .text-white {
+    color: #1e293b !important;
+}
+
+body.light-theme .text-white-50 {
+    color: #475569 !important;
+}
+
+body.light-theme .lead,
+body.light-theme .cloud-subtitle {
+    color: #475569 !important;
+}
+
+/* Card Text - Dark Slate */
+body.light-theme .project-card h3,
+body.light-theme .achievement-card h3,
+body.light-theme .timeline-content h3,
+body.light-theme .skill-category-card h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme .project-card p,
+body.light-theme .achievement-card p,
+body.light-theme .timeline-content p,
+body.light-theme .project-card .project-meta,
+body.light-theme .achievement-card .achievement-date {
+    color: #334155 !important;
+}
+
+/* Navigation Links */
+body.light-theme .nav-links a {
+    color: #1e293b !important;
+    font-weight: 500;
+}
+
+/* All Text Elements */
+body.light-theme * {
+    color: inherit;
+}
+
+/* Ensure Dark Text on Cards */
+body.light-theme .glass-card *,
+body.light-theme .project-card *,
+body.light-theme .achievement-card *,
+body.light-theme .timeline-item * {
+    color: #334155;
+}
+
+body.light-theme .glass-card h1,
+body.light-theme .glass-card h2,
+body.light-theme .glass-card h3,
+body.light-theme .glass-card h4,
+body.light-theme .project-card h3,
+body.light-theme .achievement-card h3,
+body.light-theme .timeline-item h3 {
+    color: #1e293b !important;
+}
+
+/* Gradient Text - Pink Gradient */
+body.light-theme .gradient-text {
+    background: linear-gradient(135deg, #FF0844 0%, #FF6B9D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text;
+}
+
+/* Buttons - Red/Pink Theme */
+body.light-theme .btn-primary-gradient,
+body.light-theme .submit-btn,
+body.light-theme .action-btn {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+    border: none;
+}
+
+body.light-theme .btn-primary-gradient:hover,
+body.light-theme .submit-btn:hover,
+body.light-theme .action-btn:hover {
+    background: linear-gradient(135deg, #FF0844, #c41e3a);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 8, 68, 0.3);
+}
+
+/* Filter Buttons */
+body.light-theme .filter-btn,
+body.light-theme .skill-filter-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1a1a1a;
+}
+
+body.light-theme .filter-btn:hover,
+body.light-theme .skill-filter-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 8, 68, 0.4);
+    color: #1a1a1a;
+}
+
+body.light-theme .filter-btn.active,
+body.light-theme .skill-filter-btn.active {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+    border-color: #c41e3a;
+}
+
+/* Skills Tags */
+body.light-theme .skill-tag,
+body.light-theme .tag {
+    background: rgba(255, 8, 68, 0.1);
+    border: 1px solid rgba(255, 8, 68, 0.3);
+    color: #8b0000;
+    font-weight: 500;
+}
+
+body.light-theme .skill-tag:hover,
+body.light-theme .tag:hover {
+    background: #c41e3a;
+    color: white;
+}
+
+/* Form Elements */
+body.light-theme .form-group input,
+body.light-theme .form-group textarea,
+body.light-theme .form-group select {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1e293b !important;
+}
+
+body.light-theme .form-group input::placeholder,
+body.light-theme .form-group textarea::placeholder {
+    color: #64748b !important;
+}
+
+body.light-theme .form-group input:focus,
+body.light-theme .form-group textarea:focus {
+    background: white;
+    border-color: #FF0844;
+    color: #1e293b !important;
+    box-shadow: 0 0 0 3px rgba(255, 8, 68, 0.1);
+}
+
+/* Badges */
+body.light-theme .badge {
+    background: rgba(255, 8, 68, 0.15);
+    color: #8b0000;
+    border: 1px solid rgba(255, 8, 68, 0.3);
+}
+
+/* Social Icons */
+body.light-theme .social-icon {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #c41e3a;
+}
+
+body.light-theme .social-icon:hover {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+    border-color: #c41e3a;
+    box-shadow: 0 5px 15px rgba(255, 8, 68, 0.3);
+}
+
+/* Achievement Icons */
+body.light-theme .achievement-icon {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+}
+
+/* Timeline */
+body.light-theme .timeline-item::before {
+    background: #c41e3a;
+    box-shadow: 0 0 0 4px rgba(255, 8, 68, 0.2);
+}
+
+/* Proficiency Bars - Keep original colors for visibility */
+body.light-theme .skill-proficiency-bar.advanced {
+    background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+body.light-theme .skill-proficiency-bar.intermediate {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+body.light-theme .skill-proficiency-bar.beginner {
+    background: linear-gradient(90deg, #f97316, #fb923c);
+}
+
+/* Proficiency Labels */
+body.light-theme .skill-proficiency-level.advanced {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+body.light-theme .skill-proficiency-level.intermediate {
+    background: rgba(59, 130, 246, 0.15);
+    color: #1e40af;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+body.light-theme .skill-proficiency-level.beginner {
+    background: rgba(249, 115, 22, 0.15);
+    color: #c2410c;
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+body.light-theme .skill-proficiency-name,
+body.light-theme .skill-proficiency-percentage {
+    color: #1e293b !important;
+}
+
+/* Section Headings - Dark Slate */
+body.light-theme section h2 {
+    color: #1e293b !important;
+}
+
+body.light-theme section h2::after {
+    background-color: #c41e3a;
+}
+
+/* Project/Achievement Meta Info */
+body.light-theme .project-status,
+body.light-theme .completion-date,
+body.light-theme .project-meta span,
+body.light-theme .achievement-date {
+    color: #4a4a4a;
+}
+
+/* Footer */
+body.light-theme footer {
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1a1a1a;
+}
+
+/* Links */
+body.light-theme a {
+    color: #c41e3a;
+}
+
+body.light-theme a:hover {
+    color: #FF0844;
+}
+
+/* Skill Cloud Items */
+body.light-theme .skill-item,
+body.light-theme #skillsCloud .skill-tag {
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+}
+
+body.light-theme .skill-item:hover,
+body.light-theme #skillsCloud .skill-tag:hover {
+    background: #c41e3a;
+    color: white;
+}
+
+/* Project Links */
+body.light-theme .project-link-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1a1a1a;
+}
+
+body.light-theme .project-link-btn:hover {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white;
+    border-color: #c41e3a;
+}
+
+/* Ensure consistent text across all elements */
+body.light-theme .project-card h3,
+body.light-theme .achievement-card h3,
+body.light-theme .timeline-content h3,
+body.light-theme .skill-category-card h3 {
+    color: #1a1a1a;
+}
+
+body.light-theme .project-card p,
+body.light-theme .achievement-card p,
+body.light-theme .timeline-content p {
+    color: #1a1a1a;
+}
+
+/* Profile Image Glow */
+body.light-theme .profile-image {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2),
+        0 0 60px rgba(255, 8, 68, 0.3) !important;
+}

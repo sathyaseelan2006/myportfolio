@@ -1,0 +1,108 @@
+/* ========================================
+   ACHIEVEMENT CARDS UNIFORM SIZE FIX
+   Makes all cards the same height
+   ======================================== */
+
+/* Remove scrollbar and use grid layout */
+.achievements-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 2rem !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    padding: 1rem 0 !important;
+}
+
+/* Hide navigation buttons since we don't need scrolling */
+.achievement-nav-btn {
+    display: none !important;
+}
+
+/* Hide scrollbar */
+.achievements-grid::-webkit-scrollbar {
+    display: none !important;
+}
+
+.achievements-container {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.achievement-card {
+    min-height: 340px !important;
+    max-height: 340px !important;
+    height: 340px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 2rem 1.5rem !important;
+}
+
+.achievement-icon {
+    flex-shrink: 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+.achievement-card h3 {
+    flex-shrink: 0 !important;
+    min-height: 2.5em !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.achievement-card p {
+    flex-grow: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.achievement-date {
+    flex-shrink: 0 !important;
+    margin-top: auto !important;
+}
+
+.achievement-actions {
+    flex-shrink: 0 !important;
+    margin-top: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    }
+
+    .achievement-card {
+        min-height: 320px !important;
+        max-height: 320px !important;
+        height: 320px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .achievement-card {
+        min-height: 300px !important;
+        max-height: 300px !important;
+        height: 300px !important;
+    }
+
+    .achievement-card h3 {
+        font-size: 1.05rem !important;
+        min-height: 2.4em !important;
+    }
+
+    .achievement-card p {
+        font-size: 0.9rem !important;
+    }
+}

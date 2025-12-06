@@ -1,0 +1,541 @@
+/* ========================================
+   VIBRANT RED & BLACK THEME - MODERN & BOLD
+   Premium Design with Device-Friendly Animations
+   ======================================== */
+
+/* ========================================
+   1. HIDE PARTICLE BACKGROUND
+   ======================================== */
+#particles-js {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* ========================================
+   2. VIBRANT RED & BLACK COLOR THEME
+   ======================================== */
+:root {
+    /* Vibrant Red Theme - Bold & Modern */
+    --primary-color: #FF0844 !important;
+    --secondary-color: #FF4D6D !important;
+    --accent-color: #FF6B9D !important;
+    --accent-light: #FF8FB3 !important;
+
+    /* Deep Black Backgrounds - Premium */
+    --bg-color: #000000 !important;
+    --bg-secondary: #0A0A0A !important;
+    --bg-tertiary: #121212 !important;
+    --card-bg: rgba(10, 10, 10, 0.6) !important;
+
+    /* Red Glow Shadows - Vibrant */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.7) !important;
+    --shadow-lg: 0 8px 32px rgba(255, 8, 68, 0.3) !important;
+    --shadow-glow: 0 0 40px rgba(255, 8, 68, 0.4) !important;
+}
+
+/* ========================================
+   3. DYNAMIC BACKGROUND WITH SUBTLE ANIMATION
+   ======================================== */
+body {
+    background: linear-gradient(180deg, #000000 0%, #0A0A0A 50%, #121212 100%) !important;
+    background-size: 100% 200% !important;
+    animation: backgroundPulse 10s ease-in-out infinite !important;
+}
+
+@keyframes backgroundPulse {
+
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Remove Grid Pattern */
+body::before {
+    display: none !important;
+}
+
+/* ========================================
+   4. PREMIUM GLASSMORPHISM WITH RED ACCENTS
+   ======================================== */
+.glass-card {
+    background: rgba(10, 10, 10, 0.5) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+.glass-card::before {
+    display: none !important;
+}
+
+.glass-card:hover {
+    background: rgba(10, 10, 10, 0.8) !important;
+    border-color: rgba(255, 8, 68, 0.4) !important;
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 12px 40px rgba(255, 8, 68, 0.35) !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   5. VIBRANT RED GRADIENT TEXT
+   ======================================== */
+.gradient-text {
+    background: linear-gradient(135deg, #FF0844 0%, #FF6B9D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: gradientShift 3s ease-in-out infinite !important;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(10deg);
+    }
+}
+
+/* ========================================
+   6. VIBRANT RED BUTTONS WITH GLOW
+   ======================================== */
+.btn-primary-gradient {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    box-shadow: 0 4px 20px rgba(255, 8, 68, 0.4) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-primary-gradient::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.5s !important;
+    display: block !important;
+}
+
+.btn-primary-gradient:hover::before {
+    left: 100% !important;
+}
+
+.btn-primary-gradient:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 0 8px 30px rgba(255, 8, 68, 0.6) !important;
+}
+
+/* ========================================
+   7. PROJECT CARDS WITH RED GLOW
+   ======================================== */
+.project-card {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 24px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: fadeInScale 0.6s ease-out !important;
+}
+
+.project-card::before {
+    display: none !important;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(255, 8, 68, 0.5) !important;
+    box-shadow: 0 16px 50px rgba(255, 8, 68, 0.4) !important;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   8. FEATURED PROJECT WITH RED HIGHLIGHT
+   ======================================== */
+.featured-project {
+    background: rgba(255, 8, 68, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 2px solid rgba(255, 8, 68, 0.3) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 10px 40px rgba(255, 8, 68, 0.25) !important;
+    animation: pulseGlow 3s ease-in-out infinite !important;
+}
+
+.featured-project:hover {
+    transform: translateY(-6px) scale(1.01) !important;
+    box-shadow: 0 16px 50px rgba(255, 8, 68, 0.4) !important;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 40px rgba(255, 8, 68, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgba(255, 8, 68, 0.4);
+    }
+}
+
+/* ========================================
+   9. ACHIEVEMENT CARDS WITH RED ACCENTS
+   ======================================== */
+.achievement-card {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 20px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px) rotate(1deg) !important;
+    border-color: rgba(255, 8, 68, 0.5) !important;
+    box-shadow: 0 16px 50px rgba(255, 8, 68, 0.4) !important;
+}
+
+.achievement-icon {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    box-shadow: 0 4px 20px rgba(255, 8, 68, 0.5) !important;
+    animation: iconFloat 3s ease-in-out infinite !important;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========================================
+   10. TIMELINE WITH RED ACCENTS
+   ======================================== */
+.timeline-item {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 20px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.timeline-item::before {
+    background: #FF0844 !important;
+    box-shadow: 0 0 20px rgba(255, 8, 68, 0.6) !important;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px) !important;
+    border-color: rgba(255, 8, 68, 0.5) !important;
+    box-shadow: 0 10px 40px rgba(255, 8, 68, 0.3) !important;
+}
+
+/* ========================================
+   11. SKILLS SECTION WITH RED THEME
+   ======================================== */
+.skills-word-cloud-section,
+.skills-radar-section {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 24px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.skills-word-cloud-section:hover,
+.skills-radar-section:hover {
+    border-color: rgba(255, 8, 68, 0.3) !important;
+    box-shadow: 0 10px 40px rgba(255, 8, 68, 0.25) !important;
+}
+
+/* ========================================
+   12. CONTACT FORM WITH RED ACCENTS
+   ======================================== */
+.contact-form-section {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 24px !important;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: #FF0844 !important;
+    box-shadow: 0 0 20px rgba(255, 8, 68, 0.3) !important;
+}
+
+/* ========================================
+   13. TAGS WITH RED THEME
+   ======================================== */
+.tag {
+    background: rgba(255, 8, 68, 0.12) !important;
+    border: 1px solid rgba(255, 8, 68, 0.3) !important;
+    color: #FF8FB3 !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    color: white !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 4px 16px rgba(255, 8, 68, 0.5) !important;
+    border-color: transparent !important;
+}
+
+/* ========================================
+   14. FILTER BUTTONS WITH RED ACCENTS
+   ======================================== */
+.filter-btn {
+    background: rgba(10, 10, 10, 0.6) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 8, 68, 0.15) !important;
+    border-color: #FF0844 !important;
+    transform: translateY(-2px) !important;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 20px rgba(255, 8, 68, 0.5) !important;
+}
+
+/* ========================================
+   15. SOCIAL ICONS WITH RED GLOW
+   ======================================== */
+.social-icon {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    border-color: transparent !important;
+    transform: translateY(-6px) scale(1.15) !important;
+    box-shadow: 0 10px 30px rgba(255, 8, 68, 0.5) !important;
+}
+
+/* ========================================
+   16. SECTION CARDS WITH RED BORDERS
+   ======================================== */
+#about,
+#skills,
+#projects,
+#achievements,
+#timeline,
+#contact {
+    background: rgba(10, 10, 10, 0.5) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.1) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ========================================
+   17. HEADER WITH RED ACCENT
+   ======================================== */
+header {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 77, 109, 0.1) !important;
+}
+
+/* ========================================
+   18. STAT BOXES WITH RED GLOW
+   ======================================== */
+.stat-box {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px) scale(1.05) !important;
+    border-color: rgba(255, 8, 68, 0.4) !important;
+    box-shadow: 0 10px 40px rgba(255, 8, 68, 0.35) !important;
+}
+
+/* ========================================
+   19. GOAL CARDS WITH RED THEME
+   ======================================== */
+.goal-card {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 24px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.goal-card::before {
+    display: none !important;
+}
+
+.goal-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(255, 8, 68, 0.5) !important;
+    box-shadow: 0 16px 50px rgba(255, 8, 68, 0.4) !important;
+}
+
+/* ========================================
+   20. BLOG CARDS WITH RED ACCENTS
+   ======================================== */
+.blog-post-card {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 24px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(255, 8, 68, 0.5) !important;
+    box-shadow: 0 16px 50px rgba(255, 8, 68, 0.4) !important;
+}
+
+/* ========================================
+   21. LEARNING CARDS WITH RED GLOW
+   ======================================== */
+.learning-card {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 77, 109, 0.15) !important;
+    border-radius: 20px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.learning-card:hover {
+    animation: fadeIn 0.8s ease-out !important;
+    opacity: 1 !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   24. RESPONSIVE & MOBILE OPTIMIZATIONS
+   ======================================== */
+@media (max-width: 768px) {
+
+    /* Reduce animation intensity on mobile */
+    .project-card:hover,
+    .achievement-card:hover,
+    .timeline-item:hover,
+    .goal-card:hover,
+    .glass-card:hover {
+        transform: translateY(-4px) !important;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-4px) scale(1.1) !important;
+    }
+
+    .btn-primary-gradient:hover {
+        transform: translateY(-2px) scale(1.02) !important;
+    }
+
+    /* Disable complex animations on mobile for performance */
+    .profile-image-container {
+        animation: none !important;
+    }
+
+    body {
+        animation: none !important;
+    }
+
+    .achievement-icon {
+        animation: none !important;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

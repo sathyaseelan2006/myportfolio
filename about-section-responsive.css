@@ -1,0 +1,217 @@
+/* ========================================
+   ABOUT SECTION RESPONSIVE ENHANCEMENTS
+   Device-Compatible & Well-Aligned
+   ======================================== */
+
+/* About Section Base Styling */
+#about {
+    padding: 5rem 1.5rem !important;
+}
+
+#about .container {
+    max-width: 1200px !important;
+}
+
+/* Bio Text Styling */
+#about p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8 !important;
+}
+
+/* Gradient Text in About Section */
+#about .gradient-text {
+    background: linear-gradient(135deg, #FF0844 0%, #FF6B9D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 600 !important;
+}
+
+/* Glass Card Enhancements */
+#about .glass-card {
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    transition: all 0.3s ease !important;
+}
+
+#about .glass-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 40px rgba(255, 8, 68, 0.25) !important;
+}
+
+/* Responsive Typography */
+@media (min-width: 1200px) {
+    #about p {
+        font-size: 1.05rem !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #about p {
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #about {
+        padding: 4rem 1.5rem !important;
+    }
+
+    #about p {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+    }
+
+    #about .glass-card {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #about {
+        padding: 3rem 1rem !important;
+    }
+
+    #about p {
+        font-size: 0.95rem !important;
+        text-align: left !important;
+        line-height: 1.7 !important;
+    }
+
+    #about .glass-card {
+        padding: 1.5rem !important;
+    }
+
+    #about h3 {
+        font-size: 1.25rem !important;
+    }
+
+    #about .display-4 {
+        font-size: 2rem !important;
+    }
+
+    /* Stack columns on mobile */
+    #about .row.g-4 {
+        gap: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding: 2.5rem 0.75rem !important;
+    }
+
+    #about p {
+        font-size: 0.9rem !important;
+        line-height: 1.65 !important;
+    }
+
+    #about .glass-card {
+        padding: 1.25rem !important;
+    }
+
+    #about .badge {
+        font-size: 0.75rem !important;
+        padding: 0.35rem 0.75rem !important;
+    }
+}
+
+/* Key Highlights Responsive */
+@media (max-width: 767px) {
+    #about .row.g-3 {
+        gap: 1rem !important;
+    }
+
+    #about .row.g-3 .col-md-6 {
+        width: 100% !important;
+    }
+}
+
+/* Divider Responsive */
+@media (max-width: 480px) {
+    #about .my-4 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    #about .fas.fa-code {
+        font-size: 1rem !important;
+    }
+}
+
+/* Education & Interest Cards */
+@media (max-width: 767px) {
+    #about .glass-card.mb-4 {
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Badge Wrapping */
+#about .d-flex.flex-wrap {
+    gap: 0.5rem !important;
+}
+
+@media (max-width: 480px) {
+    #about .d-flex.flex-wrap {
+        gap: 0.4rem !important;
+    }
+}
+
+/* Smooth Scroll Padding */
+#about {
+    scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+    #about {
+        scroll-margin-top: 70px;
+    }
+}
+
+/* Text Selection Styling */
+#about ::selection {
+    background: rgba(255, 8, 68, 0.3);
+    color: white;
+}
+
+#about ::-moz-selection {
+    background: rgba(255, 8, 68, 0.3);
+    color: white;
+}
+
+/* Icon Animations */
+#about .fas.fa-check-circle {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Accessibility - Focus States */
+#about a:focus,
+#about button:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* Print Styles */
+@media print {
+    #about {
+        page-break-inside: avoid;
+    }
+
+    #about .glass-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+}

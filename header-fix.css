@@ -1,0 +1,327 @@
+/* ========================================
+   IMPROVED HEADER NAVIGATION STYLING
+   Professional, Fixed, and Well-Placed
+   ======================================== */
+
+/* Header - Fixed at Top */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid rgba(255, 77, 109, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem !important;
+    height: 70px;
+}
+
+/* Logo Styling - Premium Neon Glow Hover Effect */
+.logo {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #FF0844 !important;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 0.5px;
+    transition: all 150ms cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-shadow:
+        0 0 10px rgba(255, 8, 68, 0.3),
+        0 0 20px rgba(255, 8, 68, 0.2);
+}
+
+.logo:hover {
+    color: #FF4D6D !important;
+    transform: scale(1.02);
+    letter-spacing: 1px;
+    text-shadow:
+        0 0 20px rgba(255, 8, 68, 0.8),
+        0 0 40px rgba(255, 8, 68, 0.6),
+        0 0 60px rgba(255, 8, 68, 0.4),
+        0 0 80px rgba(255, 8, 68, 0.3),
+        0 0 100px rgba(255, 8, 68, 0.2);
+}
+
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF0844, #FF4D6D);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF0844 !important;
+    background: rgba(255, 8, 68, 0.1);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.nav-links a.active {
+    color: #FF0844 !important;
+    background: rgba(255, 8, 68, 0.15);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: rgba(255, 8, 68, 0.1) !important;
+    border: 1px solid rgba(255, 8, 68, 0.3) !important;
+    color: white !important;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;
+    border-color: transparent !important;
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10000;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: #FF0844;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================================
+   RESPONSIVE HEADER DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 1rem 1.5rem !important;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem !important;
+        height: 60px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2rem 1.5rem;
+        gap: 0;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 9998;
+        overflow-y: auto;
+        border-top: 1px solid rgba(255, 77, 109, 0.2);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .theme-toggle {
+        margin-top: 1rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem 1rem !important;
+    }
+
+    .logo {
+        font-size: 1.25rem !important;
+    }
+
+    .nav-links {
+        top: 55px;
+        height: calc(100vh - 55px);
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ========================================
+   BODY PADDING FOR FIXED HEADER
+   ======================================== */
+
+/* Add padding to body to account for fixed header */
+body {
+    padding-top: 70px !important;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 55px !important;
+    }
+}
+
+/* ========================================
+   SMOOTH SCROLL OFFSET FOR ANCHOR LINKS
+   ======================================== */
+
+/* Offset for anchor links to account for fixed header */
+section {
+    scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 70px;
+    }
+}
+
+/* ========================================
+   HEADER SCROLL EFFECT (OPTIONAL)
+   ======================================== */
+
+/* Slightly smaller header on scroll */
+header.scrolled {
+    padding: 0 !important;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+header.scrolled .navbar {
+    height: 60px;
+    padding: 0.75rem 2rem !important;
+}
+
+header.scrolled .logo {
+    font-size: 1.35rem !important;
+}
+
+@media (max-width: 768px) {
+    header.scrolled .navbar {
+        height: 55px;
+        padding: 0.75rem 1.5rem !important;
+    }
+}

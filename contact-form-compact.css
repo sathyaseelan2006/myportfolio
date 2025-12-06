@@ -1,0 +1,149 @@
+/* ========================================
+   COMPACT CONTACT FORM STYLING
+   Smaller, More Elegant Size
+   ======================================== */
+
+/* Contact Section */
+#contact {
+    padding: 3.5rem 1.5rem !important;
+}
+
+/* Contact Form Container */
+#contact .contact-form-section {
+    max-width: 550px !important;
+    margin: 0 auto !important;
+    padding: 1.75rem !important;
+}
+
+/* Form Heading */
+#contact h2 {
+    font-size: 1.85rem !important;
+    margin-bottom: 0.85rem !important;
+}
+
+#contact h3 {
+    font-size: 1.15rem !important;
+    margin-bottom: 1.1rem !important;
+}
+
+#contact .lead {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.35rem !important;
+}
+
+/* Form Inputs */
+#contact .form-group {
+    margin-bottom: 1rem !important;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.9rem !important;
+    border-radius: 7px !important;
+}
+
+#contact textarea {
+    min-height: 110px !important;
+    max-height: 170px !important;
+    resize: vertical !important;
+}
+
+/* Submit Button */
+#contact .submit-btn {
+    padding: 0.7rem 1.85rem !important;
+    font-size: 0.95rem !important;
+    margin-top: 0.6rem !important;
+}
+
+/* Action Buttons */
+#contact .action-buttons {
+    margin-top: 2.25rem !important;
+    gap: 0.85rem !important;
+}
+
+#contact .action-btn {
+    padding: 0.75rem 1.65rem !important;
+    font-size: 0.95rem !important;
+}
+
+/* Social Links */
+#contact .social-links {
+    margin-top: 2.25rem !important;
+}
+
+#contact .social-links h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.95rem !important;
+}
+
+#contact .social-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.2rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #contact {
+        padding: 2.5rem 1rem !important;
+    }
+
+    #contact .contact-form-section {
+        padding: 1.25rem !important;
+    }
+
+    #contact h2 {
+        font-size: 1.5rem !important;
+    }
+
+    #contact h3 {
+        font-size: 1rem !important;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact textarea {
+        padding: 0.55rem 0.75rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    #contact textarea {
+        min-height: 90px !important;
+    }
+
+    #contact .submit-btn {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    #contact .action-btn {
+        padding: 0.65rem 1.25rem !important;
+        font-size: 0.875rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact .contact-form-section {
+        padding: 1rem !important;
+    }
+
+    #contact h2 {
+        font-size: 1.35rem !important;
+    }
+
+    #contact h3 {
+        font-size: 0.95rem !important;
+    }
+
+    #contact .lead {
+        font-size: 0.85rem !important;
+    }
+
+    #contact .social-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+    }
+}

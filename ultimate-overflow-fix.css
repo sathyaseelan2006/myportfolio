@@ -1,0 +1,139 @@
+/* ========================================
+   ULTIMATE OVERFLOW FIX
+   Eliminates ALL horizontal scrolling
+   ======================================== */
+
+/* Force everything to stay within viewport */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* Keep vertical scrollbar to prevent shift */
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    /* Allow vertical scrolling */
+    position: relative;
+    margin: 0 auto;
+    /* Center the body */
+    padding: 0;
+}
+
+/* Ensure box-sizing for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box !important;
+}
+
+/* Prevent any element from causing overflow */
+* {
+    max-width: 100%;
+}
+
+/* Fix all containers */
+.container,
+.container-fluid,
+section,
+div,
+main,
+article,
+aside,
+header,
+footer,
+nav {
+    max-width: 100% !important;
+}
+
+/* Remove negative margins that can cause overflow */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Ensure sections don't overflow */
+section {
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix hero section specifically */
+.hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix any full-width elements */
+.w-100,
+.vw-100 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Prevent images from overflowing */
+img,
+video,
+iframe,
+canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Fix background particles */
+.background-particles {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Ensure pseudo-elements don't overflow */
+body::before,
+body::after {
+    max-width: 100% !important;
+}
+
+/* Fix any transforms that might cause overflow */
+.profile-image-container,
+.hero-image-wrapper,
+.project-card,
+.achievement-card,
+.glass-card {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Prevent text from causing overflow */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Fix Bootstrap grid system */
+.col,
+[class*="col-"] {
+    max-width: 100% !important;
+}
+
+/* Ensure no element extends beyond viewport */
+@media (max-width: 768px) {
+    * {
+        max-width: 100% !important;
+    }
+
+    body {
+        overflow-x: hidden !important;
+    }
+}

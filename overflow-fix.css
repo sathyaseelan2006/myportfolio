@@ -1,0 +1,149 @@
+/* ========================================
+   CRITICAL FIX: PREVENT HORIZONTAL OVERFLOW
+   ======================================== */
+
+* {
+    box-sizing: border-box !important;
+}
+
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    padding-top: 70px !important;
+}
+
+.container,
+.row,
+section,
+div {
+    max-width: 100% !important;
+}
+
+/* Ensure Bootstrap containers don't overflow */
+.container-fluid,
+.container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix any elements that might cause overflow */
+img,
+video,
+iframe {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Ensure sections don't overflow */
+section {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+}
+
+/* Fix profile image container */
+.profile-image-container,
+.hero-image-wrapper {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Ensure cards don't overflow on mobile */
+.glass-card,
+.project-card,
+.achievement-card {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+}
+
+/* Fix Skills Radar Chart Container */
+.skills-radar-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.radar-container {
+    width: 100% !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    padding: 2rem 1rem !important;
+}
+
+#skillsRadarChart {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive canvas sizing */
+canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Hero section fix */
+.hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Fix row gutters */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Fix decorative elements that might overflow */
+.hero-image-wrapper::before,
+.hero-image-wrapper::after {
+    display: none !important;
+}
+
+/* Ensure all text containers don't overflow */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span {
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .radar-container {
+        padding: 1rem 0.5rem !important;
+    }
+
+    #skillsRadarChart {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body {
+        padding-top: 60px !important;
+    }
+}

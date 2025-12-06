@@ -1,20 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sathyaseelan | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6C5CE7',
+            secondary: '#A29BFE',
+            accent: '#0984E3',
+            dark: '#0F0F1E',
+            'dark-light': '#1A1A2E',
+          },
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modern-styles.css">
+  <link rel="stylesheet" href="enhanced-design.css">
+  <link rel="stylesheet" href="overflow-fix.css">
+  <link rel="stylesheet" href="responsive-design.css">
+  <link rel="stylesheet" href="profile-image-styles.css">
+  <link rel="stylesheet" href="header-fix.css">
+  <link rel="stylesheet" href="about-section-responsive.css">
+  <link rel="stylesheet" href="theme-transitions.css">
+  <link rel="stylesheet" href="typing-effect.css">
+  <link rel="stylesheet" href="contact-form-compact.css">
+  <link rel="stylesheet" href="animated-background.css">
+  <link rel="stylesheet" href="achievement-cards-fix.css">
+  <link rel="stylesheet" href="skills-filter.css">
+  <link rel="stylesheet" href="light-theme-fix.css">
+  <link rel="stylesheet" href="section-light-theme-fix.css">
+  <!-- MUST BE LAST - Ultimate overflow fix -->
+  <link rel="stylesheet" href="ultimate-overflow-fix.css">
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Skills Data -->
   <script src="skills-data.js"></script>
 </head>
-<body>
-  <div id="particles-js"></div>
+
+<body class="preload">
+  <!-- Floating Particles Background -->
+  <div class="background-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <header>
     <nav class="navbar">
-      <div class="logo">Sathyaseelan</div>
+      <div class="logo">Sathyaseelan K</div>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
         <span></span>
         <span></span>
@@ -32,25 +101,273 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Hi, I'm <span class="typed-text"></span><span class="cursor">|</span></h1>
-    <h2>B.Tech IT Student</h2>
-    <p>Passionate developer seeking challenges to showcase my talent in technology & innovation. Specializing in Machine Learning and AI applications.</p>
-    <div class="hero-buttons">
-      <a href="sathya.pdf" class="btn">View Resume</a>
-      <a href="sathya.pdf" class="btn" download>Download Resume</a>
+  <section class="hero min-vh-100 d-flex align-items-center position-relative overflow-hidden">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Left Content -->
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="hero-content">
+            <p class="text-uppercase mb-3 font-poppins fw-semibold"
+              style="color: var(--primary-color); letter-spacing: 3px; font-size: 0.9rem;">
+              <i class="fas fa-circle" style="font-size: 8px; margin-right: 8px;"></i>WELCOME TO MY PORTFOLIO
+            </p>
+
+            <h1 class="display-1 fw-bold mb-3 font-poppins" style="line-height: 1.1;">
+              I am <span class="gradient-text"><span id="heroTypedText"></span><span
+                  class="typing-cursor">|</span></span>
+            </h1>
+
+            <!-- Professional Tagline -->
+            <p class="mb-4 font-inter fw-medium"
+              style="font-size: 1.15rem; color: var(--primary-color); letter-spacing: 0.5px;">
+              Aspiring Data Scientist | Machine Learning Enthusiast
+            </p>
+
+            <h2 class="h3 mb-4 font-inter fw-semibold" style="color: var(--secondary-color);">
+              B.Tech IT Student
+            </h2>
+
+            <p class="lead mb-5 font-inter" style="max-width: 600px; line-height: 1.8; opacity: 0.9;">
+              A curious ML enthusiast and aspiring engineer focused on building real-world applications using optimal
+              machine learning algorithms.
+            </p>
+
+
+
+            <!-- CTA Buttons -->
+            <div class="hero-buttons d-flex flex-wrap gap-3">
+              <a href="sathya.pdf" class="btn btn-primary-gradient px-5 py-3 rounded-pill fw-semibold font-inter">
+                <i class="fas fa-eye me-2"></i>View Resume
+              </a>
+              <a href="sathya.pdf" download class="btn btn-outline-light px-5 py-3 rounded-pill fw-semibold font-inter">
+                <i class="fas fa-download me-2"></i>Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content - Profile Image -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="hero-image-wrapper position-relative">
+            <div class="profile-image-container">
+              <!-- Professional Profile Photo Frame -->
+              <div class="profile-image overflow-hidden position-relative">
+                <img src="THEmajesticME.png" alt="Sathyaseelan K - Profile Photo" class="w-100 h-100"
+                  style="object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="fade-in">About Me</h2>
-    <p class="fade-in">I'm Sathyaseelan K, currently pursuing my B.Tech in Information Technology at M. Kumarasamy College of Engineering. With a strong passion for problem-solving and innovation, I specialize in building real-world applications that leverage cutting-edge technologies like AI and Machine Learning.</p>
+  <!-- About Section - Unique Design -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="display-4 fw-bold mb-3 gradient-text">About Me</h2>
+        <p class="lead text-white-50 mx-auto" style="max-width: 800px;">
+          Driven by curiosity, creativity, and a strong ambition to build meaningful technology
+        </p>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="row g-4">
+        <!-- Left Column - Bio Card -->
+        <div class="col-lg-8" data-aos="fade-right">
+          <div class="glass-card p-5 rounded-4 h-100 position-relative overflow-hidden">
+            <!-- Decorative corner accent -->
+            <div class="position-absolute top-0 end-0 p-3">
+              <i class="fas fa-quote-right" style="font-size: 4rem; opacity: 0.1; color: var(--primary-color);"></i>
+            </div>
+
+            <!-- Bio Content -->
+            <div class="position-relative">
+              <div class="d-flex align-items-center mb-4">
+                <div class="bg-gradient p-3 rounded-3 me-3"
+                  style="background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;">
+                  <i class="fas fa-user-graduate text-white fs-4"></i>
+                </div>
+                <div>
+                  <h3 class="mb-1 fw-bold text-white">Sathyaseelan K</h3>
+                  <p class="mb-0 text-white-50">B.Tech IT Student & Tech Enthusiast</p>
+                </div>
+              </div>
+
+              <p class="text-white-50 mb-4 lh-lg" style="font-size: 1.05rem;">
+                I'm <span class="text-white fw-semibold">Sathyaseelan K</span>, a B.Tech IT student at
+                <span class="text-white fw-semibold">M. Kumarasamy College of Engineering</span>, driven by
+                <span class="gradient-text fw-semibold">curiosity, creativity</span>, and a strong ambition to build
+                meaningful technology. I specialize in <span class="gradient-text fw-semibold">Machine Learning,
+                  AI-driven applications</span>, and modern full-stack development, with a growing focus on solving
+                real-world problems through innovation.
+              </p>
+
+              <p class="text-white-50 mb-4 lh-lg" style="font-size: 1.05rem;">
+                I love taking on projects that <span class="text-white fw-semibold">push my limits</span> and help me
+                evolve as a developer. I believe in <span class="gradient-text fw-semibold">learning continuously,
+                  improving every day</span>, and building solutions that create real impact. Outside of development,
+                I stay inspired by science, innovation, and the creative process — always driven by big goals and a
+                desire to bring ambitious ideas to life, <span class="gradient-text fw-semibold">one project at a
+                  time</span>.
+              </p>
+
+              <!-- Divider with Icon -->
+              <div class="d-flex align-items-center my-4">
+                <div class="flex-grow-1"
+                  style="height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 8, 68, 0.3), transparent);">
+                </div>
+                <i class="fas fa-code mx-3" style="color: var(--primary-color); font-size: 1.2rem;"></i>
+                <div class="flex-grow-1"
+                  style="height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 8, 68, 0.3), transparent);">
+                </div>
+              </div>
+
+              <!-- Key Highlights -->
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-brain me-2 mt-1" style="color: var(--primary-color);"></i>
+                    <div>
+                      <p class="mb-0 text-white fw-semibold">Machine Learning</p>
+                      <p class="mb-0 small text-white-50">ML Algorithms & AI</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-robot me-2 mt-1" style="color: var(--primary-color);"></i>
+                    <div>
+                      <p class="mb-0 text-white fw-semibold">AI/ML Enthusiast</p>
+                      <p class="mb-0 small text-white-50">Computer Vision & Data Science</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle me-2 mt-1" style="color: var(--primary-color);"></i>
+                    <div>
+                      <p class="mb-0 text-white fw-semibold">Problem Solver</p>
+                      <p class="mb-0 small text-white-50">Algorithms & Data Structures</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle me-2 mt-1" style="color: var(--primary-color);"></i>
+                    <div>
+                      <p class="mb-0 text-white fw-semibold">Innovation Driven</p>
+                      <p class="mb-0 small text-white-50">Building Impactful Solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="border-top pt-4" style="border-color: rgba(255, 77, 109, 0.2) !important;">
+                <p class="text-white-50 small mb-3 text-uppercase fw-semibold" style="letter-spacing: 1px;">
+                  <i class="fas fa-code me-2"></i>Primary Tech Stack
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge px-3 py-2 rounded-pill"
+                    style="background: rgba(255, 8, 68, 0.15); border: 1px solid rgba(255, 8, 68, 0.3); color: #FF8FB3;">
+                    <i class="fab fa-python me-1"></i>Python
+                  </span>
+                  <span class="badge px-3 py-2 rounded-pill"
+                    style="background: rgba(255, 8, 68, 0.15); border: 1px solid rgba(255, 8, 68, 0.3); color: #FF8FB3;">
+                    <i class="fab fa-java me-1"></i>Java
+                  </span>
+
+                  <span class="badge px-3 py-2 rounded-pill"
+                    style="background: rgba(255, 8, 68, 0.15); border: 1px solid rgba(255, 8, 68, 0.3); color: #FF8FB3;">
+                    <i class="fas fa-database me-1"></i>MySQL
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Quick Stats & Education -->
+        <div class="col-lg-4" data-aos="fade-left">
+          <!-- Education Card -->
+          <div class="glass-card p-4 rounded-4 mb-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-gradient p-2 rounded-3 me-3"
+                style="background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;">
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <h5 class="mb-0 text-white fw-bold">Education</h5>
+            </div>
+            <div class="border-start ps-3"
+              style="border-color: var(--primary-color) !important; border-width: 2px !important;">
+              <p class="mb-1 text-white fw-semibold">B.Tech in IT</p>
+              <p class="mb-1 small text-white-50">M. Kumarasamy College</p>
+              <p class="mb-0 small" style="color: var(--secondary-color);">
+                <i class="fas fa-calendar-alt me-1"></i>2023 - Present
+              </p>
+              <p class="mb-0 small mt-2" style="color: var(--accent-color);">
+                <i class="fas fa-chart-line me-1"></i>CGPA: 7.9
+              </p>
+            </div>
+          </div>
+
+          <!-- Interests Card -->
+          <div class="glass-card p-4 rounded-4 mb-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-gradient p-2 rounded-3 me-3"
+                style="background: linear-gradient(135deg, #FF0844, #FF4D6D) !important;">
+                <i class="fas fa-heart text-white"></i>
+              </div>
+              <h5 class="mb-0 text-white fw-bold">Interests</h5>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-robot me-1"></i>AI/ML
+              </span>
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-code me-1"></i>Coding
+              </span>
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-laptop-code me-1"></i>Data Analysis
+              </span>
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-eye me-1"></i>Computer Vision
+              </span>
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-chart-bar me-1"></i>Data Science
+              </span>
+              <span class="badge px-3 py-2" style="background: rgba(255, 8, 68, 0.2); color: white;">
+                <i class="fas fa-lightbulb me-1"></i>Machine Learning
+              </span>
+            </div>
+          </div>
+
+          <!-- Contact Quick Card -->
+          <div class="glass-card p-4 rounded-4"
+            style="background: rgba(255, 8, 68, 0.05) !important; border: 1px solid rgba(255, 8, 68, 0.3) !important;">
+            <div class="text-center">
+              <i class="fas fa-envelope-open-text mb-3" style="font-size: 2rem; color: var(--primary-color);"></i>
+              <h6 class="text-white mb-2">Open to Opportunities</h6>
+              <p class="small text-white-50 mb-3">Let's collaborate on exciting projects!</p>
+              <a href="#contact" class="btn btn-sm btn-primary-gradient px-4 py-2 rounded-pill">
+                <i class="fas fa-paper-plane me-2"></i>Get in Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
     <h2 class="fade-in">Skills</h2>
-    
+
+
     <!-- Skills Word Cloud -->
     <div class="skills-word-cloud-section scale-in">
       <h3>Skills Overview</h3>
@@ -59,7 +376,7 @@
         <div id="skillsCloud" class="skills-cloud"></div>
       </div>
     </div>
-    
+
     <!-- Skills Radar Chart -->
     <div class="skills-radar-section scale-in">
       <h3>Proficiency Levels</h3>
@@ -71,15 +388,17 @@
 
   <section id="projects">
     <h2 class="fade-in">My Projects</h2>
-    
+
     <!-- Featured Project -->
     <div class="featured-project fade-in">
       <div class="featured-project-content">
         <div class="featured-project-info">
           <h3>Air Pollution Monitoring System</h3>
-          <p class="project-description">A comprehensive IoT-based air quality monitoring system that tracks multiple pollutants in real-time. Features sensor integration, data visualization, alert systems, and environmental impact analysis.</p>
+          <p class="project-description">Megam is dedicated to making air quality information accessible to everyone,
+            everywhere. We believe that clean air is a fundamental right, and access to accurate, real-time air quality
+            data empowers individuals and communities to make informed decisions about their health and environment.</p>
           <div class="project-meta">
-            <span class="completion-date"><i class="fas fa-calendar"></i> Completed: January 2025</span>
+            <span class="completion-date"><i class="fas fa-calendar"></i> Completed: November 2025</span>
             <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
           </div>
           <div class="project-tags">
@@ -106,26 +425,25 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Project Filter -->
     <div class="project-filter">
       <h3>Filter Projects</h3>
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="web">Web Development</button>
         <button class="filter-btn" data-filter="ai">AI/ML</button>
         <button class="filter-btn" data-filter="python">Python</button>
-        <button class="filter-btn" data-filter="javascript">JavaScript</button>
-        <button class="filter-btn" data-filter="php">PHP</button>
+        <button class="filter-btn" data-filter="dbms">DBMS</button>
       </div>
     </div>
-    
+
     <!-- Projects Grid -->
     <div class="projects-grid">
-      <div class="project-card fade-in" data-category="web php" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
+      <div class="project-card fade-in" data-category="dbms python" data-tags="PHP,MySQL,HTML,CSS,JavaScript">
         <div class="project-content">
           <h3>Learning Management System</h3>
-          <p>A comprehensive platform for online education with course management, student tracking, and role-based dashboards.</p>
+          <p>A comprehensive platform for online education with course management, student tracking, and role-based
+            dashboards.</p>
           <div class="project-meta">
             <span class="completion-date"><i class="fas fa-calendar"></i> November 2024</span>
             <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
@@ -138,7 +456,8 @@
             <span class="tag">JavaScript</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank" class="btn project-link-btn">
+            <a href="https://github.com/sathyaseelan2006/Leaning-Management-System.git" target="_blank"
+              class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
             </a>
             <a href="https://lms-demo.vercel.app" target="_blank" class="btn project-link-btn">
@@ -147,13 +466,14 @@
           </div>
         </div>
       </div>
-      
+
       <div class="project-card fade-in" data-category="ai javascript" data-tags="AI,Assistant,JavaScript,Frontend">
         <div class="project-content">
           <h3>LUDO AI - Personal Assistant</h3>
-          <p>A lightweight, portfolio-integrated personal assistant for answering queries about projects, skills, and contact info. Built with vanilla JS and a pluggable backend.</p>
+          <p>A lightweight, portfolio-integrated personal assistant for answering queries about projects, skills, and
+            contact info. Built with vanilla JS and a pluggable backend.</p>
           <div class="project-meta">
-            <span class="completion-date"><i class="fas fa-calendar"></i> February 2025</span>
+            <span class="completion-date"><i class="fas fa-calendar"></i> September 2025</span>
             <span class="project-status"><i class="fas fa-check-circle"></i> Completed</span>
           </div>
           <div class="project-tags">
@@ -172,7 +492,8 @@
       <div class="project-card fade-in" data-category="ai python" data-tags="Python,OpenCV,MediaPipe,Computer Vision">
         <div class="project-content">
           <h3>Hand Gesture Calculator</h3>
-          <p>A real-time calculator that responds to hand gestures using computer vision and Python. Performs mathematical operations through gesture recognition.</p>
+          <p>A real-time calculator that responds to hand gestures using computer vision and Python. Performs
+            mathematical operations through gesture recognition.</p>
           <div class="project-meta">
             <span class="completion-date"><i class="fas fa-calendar"></i> October 2024</span>
             <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
@@ -184,7 +505,8 @@
             <span class="tag">Computer Vision</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank" class="btn project-link-btn">
+            <a href="https://github.com/sathyaseelan2006/handgesture_calculator" target="_blank"
+              class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
             </a>
             <a href="https://hand-gesture-calc.vercel.app" target="_blank" class="btn project-link-btn">
@@ -193,12 +515,14 @@
           </div>
         </div>
       </div>
-      
-      
-      <div class="project-card fade-in" data-category="ai python" data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
+
+
+      <div class="project-card fade-in" data-category="ai python dbms"
+        data-tags="Python,TensorFlow,Scikit-learn,Data Analysis">
         <div class="project-content">
           <h3>AI-powered Face Recognition Attendance System</h3>
-          <p>An advanced automated attendance system using facial recognition technology with OpenCV and Python. Features real-time face detection, database integration, and comprehensive reporting.</p>
+          <p>An advanced automated attendance system using facial recognition technology with OpenCV and Python.
+            Features real-time face detection, database integration, and comprehensive reporting.</p>
           <div class="project-meta">
             <span class="completion-date"><i class="fas fa-calendar"></i> May 2025</span>
             <span class="project-status"><i class="fas fa-check-circle"></i> Live</span>
@@ -212,10 +536,12 @@
             <span class="tag">AI/ML</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank" rel="noopener" class="btn project-link-btn">
+            <a href="https://github.com/sathyaseelan2006/AI-powered-face-tracking-attendance-system" target="_blank"
+              rel="noopener" class="btn project-link-btn">
               <i class="fab fa-github"></i> Code
             </a>
-            <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv" target="_blank" rel="noopener" class="btn project-link-btn">
+            <a href="https://ai-powered-face-tracking-git-f03d76-sathyaseelan2006s-projects.vercel.app?_vercel_share=KrUW0wAyw4kBJGcIRFOHheixvxqr1wZv"
+              target="_blank" rel="noopener" class="btn project-link-btn">
               <i class="fas fa-external-link-alt"></i> Demo
             </a>
           </div>
@@ -230,70 +556,70 @@
         <i class="fas fa-chevron-left"></i>
       </button>
       <div class="achievements-grid">
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <i class="fas fa-certificate"></i>
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Coursera: Supervised Machine Learning</h3>
+          <p>Regression and Classification — DeepLearning.AI & Stanford Online</p>
+          <span class="achievement-date">Sep 4, 2025</span>
+          <!-- Optional: replace href with your actual certificate image/pdf path -->
+          <div class="achievement-actions">
+            <a href="coursera-certificate.pdf" target="_blank" rel="noopener" class="btn">
+              <i class="fas fa-eye"></i> View Certificate
+            </a>
+          </div>
         </div>
-        <h3>Coursera: Supervised Machine Learning</h3>
-        <p>Regression and Classification — DeepLearning.AI & Stanford Online</p>
-        <span class="achievement-date">Sep 4, 2025</span>
-        <!-- Optional: replace href with your actual certificate image/pdf path -->
-        <div class="achievement-actions">
-          <a href="coursera-certificate.pdf" target="_blank" rel="noopener" class="btn">
-            <i class="fas fa-eye"></i> View Certificate
-          </a>
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Coursera: Cyber security for everyone</h3>
+          <p>University of Maryland</p>
+          <span class="achievement-date">Feb 22, 2025</span>
+          <div class="achievement-actions">
+            <a href="Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener" class="btn">
+              <i class="fas fa-eye"></i> View Certificate
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <i class="fas fa-award"></i>
+
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Oracle Certified Data Science Professional</h3>
+          <p>Oracle Corporation</p>
+          <span class="achievement-date">October 29, 2025</span>
+          <div class="achievement-actions">
+            <a href="eCertificate (1)-datascience professional_Oracle.pdf" target="_blank" rel="noopener" class="btn">
+              <i class="fas fa-eye"></i> View Certificate
+            </a>
+          </div>
         </div>
-        <h3>Coursera: Cyber security for everyone</h3>
-        <p>University of Maryland</p>
-        <span class="achievement-date">Feb 22, 2025</span>
-        <div class="achievement-actions">
-          <a href="Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener" class="btn">
-            <i class="fas fa-eye"></i> View Certificate
-          </a>
+
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3>Oracle Cloud Database Services</h3>
+          <p>Oracle Corporation</p>
+          <span class="achievement-date">October 30, 2025</span>
+          <div class="achievement-actions">
+            <a href="eCertificate-clouddatabase_service_oracle.pdf" target="_blank" rel="noopener" class="btn">
+              <i class="fas fa-eye"></i> View Certificate
+            </a>
+          </div>
         </div>
-      </div>
-      
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <i class="fas fa-certificate"></i>
+
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Course completed</h3>
+          <p>Introduction to Networking</p>
+          <span class="achievement-date">2025</span>
         </div>
-        <h3>Oracle Certified Data Science Professional</h3>
-        <p>Oracle Corporation</p>
-        <span class="achievement-date">October 29, 2025</span>
-        <div class="achievement-actions">
-          <a href="eCertificate (1)-datascience professional_Oracle.pdf" target="_blank" rel="noopener" class="btn">
-            <i class="fas fa-eye"></i> View Certificate
-          </a>
-        </div>
-      </div>
-      
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <i class="fas fa-certificate"></i>
-        </div>
-        <h3>Oracle Cloud Database Services</h3>
-        <p>Oracle Corporation</p>
-        <span class="achievement-date">October 30, 2025</span>
-        <div class="achievement-actions">
-          <a href="eCertificate-clouddatabase_service_oracle.pdf" target="_blank" rel="noopener" class="btn">
-            <i class="fas fa-eye"></i> View Certificate
-          </a>
-        </div>
-      </div>
-      
-      <div class="achievement-card">
-        <div class="achievement-icon">
-          <i class="fas fa-award"></i>
-        </div>
-        <h3>Course completed</h3>
-        <p>Introduction to Networking</p>
-        <span class="achievement-date">2025</span>
-      </div>
       </div>
       <button class="achievement-nav-btn next-btn" aria-label="Next certificate">
         <i class="fas fa-chevron-right"></i>
@@ -312,7 +638,7 @@
           <p>CGPA: 7.8 (Current)</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-date">2022 - 2023</div>
         <div class="timeline-content">
@@ -321,7 +647,7 @@
           <p>Percentage: 86%</p>
         </div>
       </div>
-      
+
       <div class="timeline-item">
         <div class="timeline-date">2020 - 2021</div>
         <div class="timeline-content">
@@ -336,50 +662,48 @@
   <section id="contact">
     <h2 class="fade-in">Contact Me</h2>
     <h3>Let's connect and discuss opportunities or collaborations!</h3>
-    
+
     <!-- Contact Form -->
     <div class="contact-container">
       <div class="contact-form-section">
         <h3>Send me a message</h3>
-        <form id="contactForm" class="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" name="contact">
+        <form id="contactForm" class="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+          name="contact">
           <input type="hidden" name="form-name" value="contact">
           <div class="form-group">
             <input type="text" id="name" name="from_name" placeholder="Your Name" required>
             <span class="error-message" id="nameError"></span>
           </div>
-          
+
           <div class="form-group">
             <input type="email" id="email" name="from_email" placeholder="Your Email" required>
             <span class="error-message" id="emailError"></span>
           </div>
-          
+
           <div class="form-group">
             <input type="text" id="subject" name="subject" placeholder="Subject" required>
             <span class="error-message" id="subjectError"></span>
           </div>
-          
+
           <div class="form-group">
             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
             <span class="error-message" id="messageError"></span>
           </div>
-          
+
           <button type="submit" class="btn submit-btn">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
       </div>
     </div>
-    
+
     <!-- Action Buttons -->
     <div class="action-buttons">
       <a href="sathyaseelan K cv.pdf" class="btn action-btn download-cv" download>
         <i class="fas fa-download"></i> Download CV
       </a>
-      <a href="mailto:ksathyaseelan34@gmail.com?subject=Hire%20Me%20Request" class="btn action-btn hire-me">
-        <i class="fas fa-briefcase"></i> Hire Me
-      </a>
     </div>
-    
+
     <!-- Social Media Links -->
     <div class="social-links">
       <h3>Connect with me</h3>
@@ -387,29 +711,37 @@
         <a href="mailto:ksathyaseelan34@gmail.com" class="social-icon" title="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sathyaseelan-dev" target="_blank" rel="noopener" class="social-icon" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/sathyaseelan-dev" target="_blank" rel="noopener" class="social-icon"
+          title="LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
         <a href="https://github.com/sathyaseelan2006" target="_blank" rel="noopener" class="social-icon" title="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://twitter.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon" title="Twitter">
+        <a href="https://twitter.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon"
+          title="Twitter">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="https://instagram.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+        <a href="https://instagram.com/sathyaseelan_dev" target="_blank" rel="noopener" class="social-icon"
+          title="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
     </div>
   </section>
 
-  
+
 
   <footer>
     <p>© 2025 Sathyaseelan K. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Scripts -->
   <script src="script.js"></script>
+  <script src="modern-script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,282 @@
+/* ========================================
+   SMOOTH LIGHT/DARK MODE TRANSITIONS
+   Premium Animated Theme Toggle
+   ======================================== */
+
+/* Global Transition for Theme Change */
+body,
+body * {
+    transition: background-color 300ms ease,
+        color 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease !important;
+}
+
+/* Prevent transition on page load */
+body.preload * {
+    transition: none !important;
+}
+
+/* Theme Toggle Icon Spin Animation */
+.theme-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 8, 68, 0.3), transparent);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 300ms ease;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.theme-toggle:active::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Icon Spin on Click */
+@keyframes iconSpin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.theme-toggle.spinning {
+    animation: iconSpin 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Background Blur Overlay During Transition */
+.theme-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: opacity 150ms ease;
+}
+
+.theme-transition-overlay.active {
+    opacity: 1;
+}
+
+/* Light Theme Styles - Enhanced for Visibility */
+body.light-theme {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 100%) !important;
+    color: #1e293b !important;
+}
+
+body.light-theme header {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 1px solid rgba(255, 8, 68, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-theme .logo {
+    color: #FF0844 !important;
+    text-shadow:
+        0 0 10px rgba(255, 8, 68, 0.3),
+        0 0 20px rgba(255, 8, 68, 0.2);
+}
+
+body.light-theme .nav-links a {
+    color: rgba(30, 41, 59, 0.9) !important;
+}
+
+body.light-theme .nav-links a:hover {
+    color: #FF0844 !important;
+    background: rgba(255, 8, 68, 0.15);
+}
+
+body.light-theme .glass-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 8, 68, 0.25) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+body.light-theme .text-white {
+    color: #1e293b !important;
+}
+
+body.light-theme .text-white-50 {
+    color: #475569 !important;
+}
+
+body.light-theme .hero {
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 50%, #e0e7ff 100%) !important;
+}
+
+body.light-theme .gradient-text {
+    background: linear-gradient(135deg, #FF0844 0%, #FF6B9D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body.light-theme .profile-image {
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        0 0 60px rgba(255, 8, 68, 0.3) !important;
+}
+
+/* Fade Animation for Content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.theme-changing section {
+    animation: fadeIn 300ms ease forwards;
+}
+
+/* Smooth Color Transitions for Specific Elements */
+.gradient-text,
+.btn-primary-gradient,
+.badge,
+.achievement-card,
+.project-card,
+.timeline-item {
+    transition: all 300ms ease !important;
+}
+
+/* Icon Glow Effect */
+.theme-toggle:hover {
+    box-shadow:
+        0 4px 15px rgba(255, 8, 68, 0.4),
+        0 0 30px rgba(255, 8, 68, 0.3) !important;
+}
+
+/* Ripple Effect on Click */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 8, 68, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme-toggle:active::after {
+    animation: ripple 600ms ease-out;
+}
+
+/* Prevent Flash of Unstyled Content */
+html {
+    background: #0a0a0a;
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Transitions for Cards */
+.glass-card,
+.project-card,
+.achievement-card,
+.timeline-item,
+.goal-card {
+    transition:
+        background-color 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease,
+        transform 200ms ease !important;
+}
+
+/* Text Shadow Transitions */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    transition:
+        color 300ms ease,
+        text-shadow 300ms ease !important;
+}
+
+/* Button Transitions */
+.btn,
+button,
+a.btn {
+    transition:
+        background 300ms ease,
+        color 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease,
+        transform 200ms ease !important;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+
+    /* Faster transitions on mobile for better performance */
+    body,
+    body * {
+        transition-duration: 200ms !important;
+    }
+
+    .theme-transition-overlay {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    body,
+    body *,
+    .theme-toggle,
+    .theme-transition-overlay {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Performance Optimization */
+.theme-toggle,
+.theme-transition-overlay {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}

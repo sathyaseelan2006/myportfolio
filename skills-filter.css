@@ -1,0 +1,84 @@
+/* ========================================
+   SKILLS CATEGORY FILTER BUTTONS
+   ======================================== */
+
+.skills-filter-section {
+    margin-bottom: 2rem;
+}
+
+.skills-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-filter-btn {
+    background: rgba(20, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-filter-btn:hover {
+    background: rgba(30, 0, 0, 0.6);
+    border-color: rgba(220, 20, 60, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(220, 20, 60, 0.3);
+}
+
+.skill-filter-btn.active {
+    background: linear-gradient(135deg, #DC143C, #8B0000);
+    border-color: #DC143C;
+    color: white;
+    box-shadow: 0 5px 20px rgba(220, 20, 60, 0.4);
+}
+
+.skill-filter-btn i {
+    font-size: 1rem;
+}
+
+/* Smooth fade animation for skills */
+.skill-item {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skill-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-filter-buttons {
+        gap: 0.75rem;
+    }
+
+    .skill-filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .skill-filter-btn i {
+        font-size: 0.9rem;
+    }
+}

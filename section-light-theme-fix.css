@@ -1,0 +1,285 @@
+/* ========================================
+   SECTION-BY-SECTION LIGHT THEME FIX
+   Comprehensive color fixes for all sections
+   ======================================== */
+
+/* ========== HERO SECTION ========== */
+body.light-theme .hero * {
+    color: inherit;
+}
+
+body.light-theme .hero h1,
+body.light-theme .hero .display-1 {
+    color: #1e293b !important;
+}
+
+body.light-theme .hero h2,
+body.light-theme .hero .h3 {
+    color: #334155 !important;
+}
+
+body.light-theme .hero p,
+body.light-theme .hero .lead {
+    color: #475569 !important;
+}
+
+body.light-theme .hero .gradient-text {
+    background: linear-gradient(135deg, #FF0844 0%, #FF6B9D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* ========== ABOUT SECTION ========== */
+body.light-theme #about h2 {
+    color: #1e293b !important;
+}
+
+body.light-theme #about p,
+body.light-theme #about .lead {
+    color: #334155 !important;
+}
+
+body.light-theme #about .badge {
+    background: rgba(255, 8, 68, 0.15);
+    color: #8b0000 !important;
+    border: 1px solid rgba(255, 8, 68, 0.3);
+}
+
+body.light-theme #about .glass-card h3,
+body.light-theme #about .glass-card h4 {
+    color: #1e293b !important;
+}
+
+body.light-theme #about .glass-card p {
+    color: #334155 !important;
+}
+
+/* ========== SKILLS SECTION ========== */
+body.light-theme #skills h2,
+body.light-theme #skills h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme #skills p,
+body.light-theme #skills .cloud-subtitle {
+    color: #475569 !important;
+}
+
+/* Skills Word Cloud */
+body.light-theme #skillsCloud .skill-tag {
+    color: #1e293b !important;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+}
+
+body.light-theme #skillsCloud .skill-tag:hover {
+    background: #c41e3a;
+    color: white !important;
+}
+
+/* Skills Category Cards */
+body.light-theme .skill-category-card h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme .skill-tag {
+    background: rgba(255, 8, 68, 0.1);
+    border: 1px solid rgba(255, 8, 68, 0.3);
+    color: #8b0000 !important;
+}
+
+/* Skills Proficiency */
+body.light-theme .skill-proficiency-name {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+body.light-theme .skill-proficiency-percentage {
+    color: #334155 !important;
+    font-weight: 500;
+}
+
+body.light-theme .core-skills-section h3 {
+    color: #0f172a !important;
+}
+
+/* ========== PROJECTS SECTION ========== */
+body.light-theme #projects h2 {
+    color: #1e293b !important;
+}
+
+body.light-theme .project-card h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme .project-card p {
+    color: #334155 !important;
+}
+
+body.light-theme .project-meta span,
+body.light-theme .completion-date,
+body.light-theme .project-status {
+    color: #475569 !important;
+}
+
+body.light-theme .project-tags .tag {
+    background: rgba(255, 8, 68, 0.1);
+    border: 1px solid rgba(255, 8, 68, 0.3);
+    color: #8b0000 !important;
+}
+
+body.light-theme .project-link-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1e293b !important;
+}
+
+/* ========== ACHIEVEMENTS SECTION ========== */
+body.light-theme #achievements h2 {
+    color: #1e293b !important;
+}
+
+body.light-theme .achievement-card h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme .achievement-card p {
+    color: #334155 !important;
+}
+
+body.light-theme .achievement-date {
+    color: #475569 !important;
+}
+
+body.light-theme .achievement-icon {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white !important;
+}
+
+/* ========== TIMELINE SECTION ========== */
+body.light-theme #timeline h2 {
+    color: #1e293b !important;
+}
+
+body.light-theme .timeline-item h3,
+body.light-theme .timeline-content h3 {
+    color: #1e293b !important;
+}
+
+body.light-theme .timeline-item p,
+body.light-theme .timeline-content p {
+    color: #334155 !important;
+}
+
+body.light-theme .timeline-date {
+    color: #475569 !important;
+}
+
+body.light-theme .timeline-item .badge {
+    background: rgba(255, 8, 68, 0.15);
+    color: #8b0000 !important;
+}
+
+/* ========== CONTACT SECTION ========== */
+body.light-theme #contact h2,
+body.light-theme #contact h3 {
+    color: #0f172a !important;
+    font-weight: 700;
+}
+
+body.light-theme #contact p {
+    color: #1e293b !important;
+}
+
+body.light-theme .contact-form-section h3 {
+    color: #0f172a !important;
+    font-weight: 700;
+}
+
+body.light-theme .form-group label {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group textarea {
+    color: #0f172a !important;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    font-weight: 500;
+}
+
+body.light-theme .form-group input::placeholder,
+body.light-theme .form-group textarea::placeholder {
+    color: #475569 !important;
+    font-weight: 400;
+}
+
+body.light-theme .social-icon {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #c41e3a !important;
+}
+
+/* ========== FILTER BUTTONS (ALL SECTIONS) ========== */
+body.light-theme .filter-btn,
+body.light-theme .skill-filter-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 8, 68, 0.25);
+    color: #1e293b !important;
+}
+
+body.light-theme .filter-btn:hover,
+body.light-theme .skill-filter-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 8, 68, 0.4);
+    color: #1e293b !important;
+}
+
+body.light-theme .filter-btn.active,
+body.light-theme .skill-filter-btn.active {
+    background: linear-gradient(135deg, #c41e3a, #8b0000);
+    color: white !important;
+}
+
+/* ========== FOOTER ========== */
+body.light-theme footer {
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(255, 8, 68, 0.25);
+}
+
+body.light-theme footer p,
+body.light-theme footer a {
+    color: #334155 !important;
+}
+
+body.light-theme footer a:hover {
+    color: #FF0844 !important;
+}
+
+/* ========== GLOBAL TEXT FIXES ========== */
+body.light-theme section {
+    color: #334155;
+}
+
+body.light-theme section h1,
+body.light-theme section h2,
+body.light-theme section h3,
+body.light-theme section h4,
+body.light-theme section h5,
+body.light-theme section h6 {
+    color: #1e293b !important;
+}
+
+body.light-theme section p,
+body.light-theme section span:not(.gradient-text),
+body.light-theme section li {
+    color: #334155 !important;
+}
+
+/* Ensure Icons are Visible */
+body.light-theme i,
+body.light-theme .fas,
+body.light-theme .fab {
+    color: inherit;
+}
