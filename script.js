@@ -1743,3 +1743,175 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// ========================================
+// EASTER EGG - RETRO PORTAL
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+  const secretCode = ['r', 'e', 't', 'r', 'o'];
+  let userInput = [];
+  let resetTimeout;
+
+  document.addEventListener('keydown', function(e) {
+    // Add the pressed key to user input
+    userInput.push(e.key.toLowerCase());
+
+    // Keep only the last 5 keys
+    if (userInput.length > secretCode.length) {
+      userInput.shift();
+    }
+
+    // Clear the input after 2 seconds of inactivity
+    clearTimeout(resetTimeout);
+    resetTimeout = setTimeout(() => {
+      userInput = [];
+    }, 2000);
+
+    // Check if the secret code matches
+    if (JSON.stringify(userInput) === JSON.stringify(secretCode)) {
+      openRetroModal();
+      userInput = []; // Reset after opening
+    }
+  });
+
+  function openRetroModal() {
+    const modal = document.getElementById('retroModal');
+    if (modal) {
+      modal.style.display = 'flex';
+      // Add confetti or particle effect
+      createConfetti();
+    }
+  }
+
+  function closeRetroModal() {
+    const modal = document.getElementById('retroModal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  // Close button handler
+  const closeBtn = document.querySelector('.retro-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeRetroModal);
+  }
+
+  // Close on outside click
+  const modal = document.getElementById('retroModal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeRetroModal();
+      }
+    });
+  }
+
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeRetroModal();
+    }
+  });
+
+  // Create confetti effect
+  function createConfetti() {
+    const colors = ['#6C5CE7', '#A29BFE', '#0984E3', '#74B9FF', '#ff006e'];
+    const confettiCount = 50;
+
+    for (let i = 0; i < confettiCount; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-10px';
+        confetti.style.opacity = '1';
+        confetti.style.borderRadius = '50%';
+        confetti.style.pointerEvents = 'none';
+        confetti.style.zIndex = '10001';
+        confetti.style.transition = 'all 3s ease-out';
+        
+        document.body.appendChild(confetti);
+
+        // Animate
+        setTimeout(() => {
+          confetti.style.top = '100vh';
+          confetti.style.opacity = '0';
+          confetti.style.transform = `rotate(${Math.random() * 720}deg) translateX(${Math.random() * 200 - 100}px)`;
+        }, 10);
+
+        // Remove after animation
+        setTimeout(() => {
+          confetti.remove();
+        }, 3000);
+      }, i * 30);
+    }
+  }
+});
+
+// ========================================
+// MOBILE SCROLL ANIMATIONS
+// ========================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Only apply on mobile devices
+  const isMobile = window.innerWidth <= 768;
+  
+  if (!isMobile) return;
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all project cards
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    observer.observe(card);
+  });
+
+  // Observe fade-in elements
+  const fadeElements = document.querySelectorAll('.fade-in');
+  fadeElements.forEach(element => {
+    observer.observe(element);
+  });
+
+  // Smooth scroll for mobile
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Add touch feedback for mobile buttons
+  const buttons = document.querySelectorAll('.btn, .project-btn, .filter-btn, .carousel-nav');
+  buttons.forEach(button => {
+    button.addEventListener('touchstart', function() {
+      this.style.transform = 'scale(0.95)';
+    });
+    
+    button.addEventListener('touchend', function() {
+      this.style.transform = '';
+    });
+  });
+});

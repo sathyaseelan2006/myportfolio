@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Sathyaseelan | Portfolio</title>
 
   <!-- Google Fonts -->
@@ -83,7 +86,8 @@
 
   <header>
     <nav class="navbar">
-      <div class="logo">Sathyaseelan K</div>
+      <a href="https://retrosathya.vercel.app/">
+      <div class="logo">Sathyaseelan K</div></a>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
         <span></span>
         <span></span>
@@ -811,8 +815,31 @@
 
 
   <footer>
-    <p>© 2025 Sathyaseelan K. All rights reserved.</p>
+
+    <p class="easter-egg-hint" style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem; font-weight: 500;">
+      <i class="fas fa-gamepad"></i> Secret Code: Press <span style="color: var(--primary-color); font-weight: 700;">R+E+T+R+O</span> to unlock something special! 🎮
+    </p>
   </footer>
+
+  <!-- Easter Egg Modal -->
+  <div id="retroModal" class="retro-modal" style="display: none;">
+    <div class="retro-modal-content">
+      <span class="retro-close">&times;</span>
+      <div class="retro-modal-body">
+        <h2 class="retro-title">🎮 Easter Egg Found! 🎮</h2>
+        <p class="retro-message">You discovered my secret retro portal!</p>
+        <div class="retro-animation">
+          <div class="pixel-art">█████</div>
+          <div class="pixel-art">█▀█▀█</div>
+          <div class="pixel-art">█████</div>
+        </div>
+        <p class="retro-subtitle">Travel back to the 90s aesthetic...</p>
+        <a href="https://retrosathya.vercel.app/" target="_blank" class="retro-button">
+          <i class="fas fa-desktop"></i> Enter Retro Portal
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
