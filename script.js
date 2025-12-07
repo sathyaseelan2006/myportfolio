@@ -1722,31 +1722,16 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(prev, 'prev');
   }
 
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval);
-  }
-
-  function resetAutoSlide() {
-    stopAutoSlide();
-    startAutoSlide();
-  }
-
   // Event listeners for manual navigation
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       prevSlide();
-      resetAutoSlide();
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       nextSlide();
-      resetAutoSlide();
     });
   }
 
@@ -1755,14 +1740,6 @@ document.addEventListener('DOMContentLoaded', function() {
     indicator.addEventListener('click', () => {
       const direction = index > currentSlide ? 'next' : 'prev';
       showSlide(index, direction);
-      resetAutoSlide();
     });
   });
-
-  // Pause auto-slide on hover
-  carousel.addEventListener('mouseenter', stopAutoSlide);
-  carousel.addEventListener('mouseleave', startAutoSlide);
-
-  // Start auto-slide
-  startAutoSlide();
 });
