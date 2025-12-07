@@ -1652,3 +1652,117 @@ function initSkillsRadarChart() {
   new Chart(ctx, config);
   console.log('Skills Radar Chart initialized successfully');
 }
+
+// Featured Projects Carousel
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('.featured-project-carousel');
+  if (!carousel) return;
+
+  const projects = carousel.querySelectorAll('.featured-project');
+  const indicators = carousel.querySelectorAll('.indicator');
+  const prevBtn = carousel.querySelector('.carousel-nav.prev');
+  const nextBtn = carousel.querySelector('.carousel-nav.next');
+  
+  let currentSlide = 0;
+  let autoSlideInterval;
+  let isAnimating = false;
+  
+  // Detect mobile device
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const autoSlideDelay = isMobile ? 3000 : 5000; // 3 seconds for mobile, 5 for desktop
+
+  function showSlide(index, direction = 'next') {
+    if (isAnimating || index === currentSlide) return;
+    isAnimating = true;
+
+    const currentProject = projects[currentSlide];
+    const nextProject = projects[index];
+    
+    // Add slide-out animation to current project
+    if (direction === 'next') {
+      currentProject.classList.add('slide-out-left');
+    } else {
+      currentProject.classList.add('slide-out-right');
+    }
+    
+    // Remove active class after a brief delay
+    setTimeout(() => {
+      currentProject.classList.remove('active', 'slide-out-left', 'slide-out-right');
+      
+      // Reset transform for next slide
+      if (direction === 'next') {
+        nextProject.style.transform = 'translateX(100%) scale(0.95)';
+      } else {
+        nextProject.style.transform = 'translateX(-100%) scale(0.95)';
+      }
+      
+      // Activate next project
+      nextProject.classList.add('active');
+      indicators[currentSlide].classList.remove('active');
+      indicators[index].classList.add('active');
+      
+      // Reset transform to trigger animation
+      setTimeout(() => {
+        nextProject.style.transform = '';
+        currentSlide = index;
+        isAnimating = false;
+      }, 50);
+    }, 500);
+  }
+
+  function nextSlide() {
+    let next = currentSlide + 1;
+    if (next >= projects.length) next = 0;
+    showSlide(next, 'next');
+  }
+
+  function prevSlide() {
+    let prev = currentSlide - 1;
+    if (prev < 0) prev = projects.length - 1;
+    showSlide(prev, 'prev');
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, autoSlideDelay);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  function resetAutoSlide() {
+    stopAutoSlide();
+    startAutoSlide();
+  }
+
+  // Event listeners for manual navigation
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+  }
+
+  // Indicator click events
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      const direction = index > currentSlide ? 'next' : 'prev';
+      showSlide(index, direction);
+      resetAutoSlide();
+    });
+  });
+
+  // Pause auto-slide on hover
+  carousel.addEventListener('mouseenter', stopAutoSlide);
+  carousel.addEventListener('mouseleave', startAutoSlide);
+
+  // Start auto-slide
+  startAutoSlide();
+});
