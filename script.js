@@ -1446,12 +1446,27 @@ function initSkillsCloud() {
     // Mouse click - primary interaction method
     tag.addEventListener('click', openHandler, { capture: true });
 
-    // Touch handling for mobile - prevent default to stop scroll
+    // Track touch movement to differentiate between tap and scroll
+    tag.addEventListener('touchstart', (e) => {
+      tag.dataset.touchMoved = 'false';
+      tag.dataset.startY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    tag.addEventListener('touchmove', (e) => {
+      const moveY = Math.abs(e.touches[0].clientY - parseFloat(tag.dataset.startY));
+      if (moveY > 10) {
+        tag.dataset.touchMoved = 'true';
+      }
+    }, { passive: true });
+
+    // Touch handling for mobile - allow natural scroll
     tag.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openHandler(e);
-    }, { passive: false, capture: true });
+      // Only open modal if the touch was a tap (not a scroll)
+      if (tag.dataset.touchMoved !== 'true') {
+        openHandler(e);
+      }
+      tag.dataset.touchMoved = 'false';
+    }, { passive: true });
 
     // Keyboard accessibility
     tag.addEventListener('keydown', (e) => {

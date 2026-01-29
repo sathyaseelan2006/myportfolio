@@ -7,16 +7,16 @@
 html {
     width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
-    /* Keep vertical scrollbar to prevent shift */
+    overflow-y: auto;
+    /* Allow vertical scrolling naturally */
 }
 
 body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    overflow-y: visible;
-    /* Allow vertical scrolling */
+    overflow-y: auto;
+    /* Allow vertical scrolling naturally */
     position: relative;
     margin: 0 auto;
     /* Center the body */
