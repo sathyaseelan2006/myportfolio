@@ -343,6 +343,11 @@ async function submitContactForm(form) {
       console.log('Using EmailJS to send form...');
       const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
       console.log('EmailJS Response:', response);
+      
+      // Check if EmailJS returned an error status
+      if (response.status !== 200) {
+        throw new Error(response.text || 'Email sending failed');
+      }
     }
     // Method 2: Using Netlify Forms (if hosted on Netlify)
     else if (window.location.hostname.includes('netlify')) {
@@ -413,6 +418,11 @@ async function submitProjectForm(form) {
       console.log('Using EmailJS to send project request...');
       const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
       console.log('EmailJS Response:', response);
+      
+      // Check if EmailJS returned an error status
+      if (response.status !== 200) {
+        throw new Error(response.text || 'Email sending failed');
+      }
     }
     // Method 2: Using Netlify Forms (if hosted on Netlify)
     else if (window.location.hostname.includes('netlify')) {
@@ -1446,12 +1456,27 @@ function initSkillsCloud() {
     // Mouse click - primary interaction method
     tag.addEventListener('click', openHandler, { capture: true });
 
-    // Touch handling for mobile - prevent default to stop scroll
+    // Track touch movement to differentiate between tap and scroll
+    tag.addEventListener('touchstart', (e) => {
+      tag.dataset.touchMoved = 'false';
+      tag.dataset.startY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    tag.addEventListener('touchmove', (e) => {
+      const moveY = Math.abs(e.touches[0].clientY - parseFloat(tag.dataset.startY));
+      if (moveY > 10) {
+        tag.dataset.touchMoved = 'true';
+      }
+    }, { passive: true });
+
+    // Touch handling for mobile - allow natural scroll
     tag.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      openHandler(e);
-    }, { passive: false, capture: true });
+      // Only open modal if the touch was a tap (not a scroll)
+      if (tag.dataset.touchMoved !== 'true') {
+        openHandler(e);
+      }
+      tag.dataset.touchMoved = 'false';
+    }, { passive: true });
 
     // Keyboard accessibility
     tag.addEventListener('keydown', (e) => {

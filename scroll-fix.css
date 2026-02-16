@@ -1,14 +1,18 @@
-/* ========================================
-   CRITICAL SCROLL FIX
-   Enables mouse wheel and keyboard scrolling
-   ======================================== */
+/* ================================================
+   CRITICAL SCROLL FIX - MAXIMUM PRIORITY
+   This MUST be the last CSS file loaded
+   ================================================ */
 
-/* Ensure HTML and BODY allow vertical scrolling */
+* {
+    -webkit-overflow-scrolling: touch !important;
+}
+
 html {
     overflow-x: hidden !important;
-    overflow-y: scroll !important;
-    height: 100% !important;
+    overflow-y: auto !important;
+    min-height: 100% !important;
     scroll-behavior: smooth !important;
+    position: relative !important;
 }
 
 body {
@@ -16,37 +20,43 @@ body {
     overflow-y: auto !important;
     height: auto !important;
     min-height: 100vh !important;
-}
-
-/* Ensure all fixed overlays don't block interaction */
-.theme-transition-overlay,
-.background-particles,
-body::before,
-body::after {
-    pointer-events: none !important;
-}
-
-/* Ensure no element blocks scrolling */
-* {
     -webkit-overflow-scrolling: touch !important;
+    touch-action: auto !important;
+    -ms-touch-action: auto !important;
+    position: relative !important;
 }
 
-/* Enable scroll events */
-html,
-body {
-    touch-action: pan-y !important;
-    overscroll-behavior-y: auto !important;
-}
-
-/* Remove any potential scroll blockers */
-body.preload {
+/* Override ANY blocking overflow styles */
+body[style*="overflow"],
+html[style*="overflow"],
+body.modal-open,
+body.menu-open {
     overflow-y: auto !important;
 }
 
-body.theme-changing {
-    overflow-y: auto !important;
+/* Ensure main containers don't block scroll */
+main, .main-content, #root, #app {
+    overflow: visible !important;
+    height: auto !important;
 }
 
-body.light-theme {
-    overflow-y: auto !important;
+/* Sections must be visible */
+section {
+    overflow: visible !important;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+    html, body {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: auto !important;
+    }
+}
+
+/* Desktop fixes */
+@media (min-width: 769px) {
+    html, body {
+        overflow-y: auto !important;
+    }
 }

@@ -8,7 +8,7 @@ html {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    /* Enable mouse wheel scrolling */
+    /* Allow vertical scrolling naturally */
 }
 
 body {
@@ -16,7 +16,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    /* Enable mouse wheel scrolling */
+    /* Allow vertical scrolling naturally */
     position: relative;
     margin: 0 auto;
     /* Center the body */
