@@ -7,20 +7,21 @@
 html {
     width: 100%;
     overflow-x: hidden;
-    overflow-y: scroll;
-    /* Keep vertical scrollbar to prevent shift */
+    overflow-y: auto;
+    /* Enable mouse wheel scrolling */
 }
 
 body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-    overflow-y: visible;
-    /* Allow vertical scrolling */
+    overflow-y: auto;
+    /* Enable mouse wheel scrolling */
     position: relative;
     margin: 0 auto;
     /* Center the body */
     padding: 0;
+    min-height: 100vh;
 }
 
 /* Ensure box-sizing for all elements */

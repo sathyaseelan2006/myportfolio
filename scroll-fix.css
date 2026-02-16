@@ -1,0 +1,52 @@
+/* ========================================
+   CRITICAL SCROLL FIX
+   Enables mouse wheel and keyboard scrolling
+   ======================================== */
+
+/* Ensure HTML and BODY allow vertical scrolling */
+html {
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    height: 100% !important;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+}
+
+/* Ensure all fixed overlays don't block interaction */
+.theme-transition-overlay,
+.background-particles,
+body::before,
+body::after {
+    pointer-events: none !important;
+}
+
+/* Ensure no element blocks scrolling */
+* {
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Enable scroll events */
+html,
+body {
+    touch-action: pan-y !important;
+    overscroll-behavior-y: auto !important;
+}
+
+/* Remove any potential scroll blockers */
+body.preload {
+    overflow-y: auto !important;
+}
+
+body.theme-changing {
+    overflow-y: auto !important;
+}
+
+body.light-theme {
+    overflow-y: auto !important;
+}
