@@ -343,11 +343,6 @@ async function submitContactForm(form) {
       console.log('Using EmailJS to send form...');
       const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
       console.log('EmailJS Response:', response);
-      
-      // Check if EmailJS returned an error status
-      if (response.status !== 200) {
-        throw new Error(response.text || 'Email sending failed');
-      }
     }
     // Method 2: Using Netlify Forms (if hosted on Netlify)
     else if (window.location.hostname.includes('netlify')) {
@@ -418,11 +413,6 @@ async function submitProjectForm(form) {
       console.log('Using EmailJS to send project request...');
       const response = await emailjs.sendForm('service_ecgl309', 'template_awoksaq', form);
       console.log('EmailJS Response:', response);
-      
-      // Check if EmailJS returned an error status
-      if (response.status !== 200) {
-        throw new Error(response.text || 'Email sending failed');
-      }
     }
     // Method 2: Using Netlify Forms (if hosted on Netlify)
     else if (window.location.hostname.includes('netlify')) {
