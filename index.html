@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sathyaseelan K portfolio - AI, machine learning, data science, and full-stack projects.">
+  <title>Sathyaseelan K - Java Developer & Backend Portfolio</title>
+  <link rel="icon" type="image/png" href="brand.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="site-noise" aria-hidden="true"></div>
+
+  <!-- Global Realistic Background Black Hole -->
+  <div class="global-blackhole" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Sathyaseelan K home">
+        <img src="brand.png" alt="Sathyaseelan K Logo" class="brand-logo-img">
+        <span>
+          <strong>Sathyaseelan K</strong>
+          <small>Backend & Machine Learning</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" data-nav-links>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="assets/Sathyaseelan_K.pdf" target="_blank" rel="noopener">View Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Welcome to my portfolio</p>
+          <h1>Java Developer & Backend / ML Enthusiast.</h1>
+          <p class="hero-lede">
+            I am <strong>Sathyaseelan K</strong>, a final-year B.Tech IT student specializing in Java SDE. I am passionate about building secure backend systems, designing robust database architectures, and engineering intelligent machine learning models.
+          </p>
+
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#projects">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m0 0-5-5m5 5-5 5"/></svg>
+              Explore Work
+            </a>
+            <a class="btn btn-ghost" href="assets/Sathyaseelan_K.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Portfolio highlights">
+            <div>
+              <strong>8</strong>
+              <span>Portfolio projects</span>
+            </div>
+            <div>
+              <strong>22</strong>
+              <span>Technical skills mapped</span>
+            </div>
+            <div>
+              <strong>7.9</strong>
+              <span>Current CGPA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Black hole inspired profile visual">
+          <div class="black-hole" data-black-hole>
+            <div class="lens-flare"></div>
+            <div class="accretion accretion-a"></div>
+            <div class="accretion accretion-b"></div>
+            <div class="singularity">
+              <img src="assets/profile.jpeg" alt="Portrait of Sathyaseelan K" id="heroProfileImg">
+              <canvas id="matrixPortraitCanvas"></canvas>
+            </div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit-dot dot-one"></div>
+            <div class="orbit-dot dot-two"></div>
+          </div>
+
+          <div class="status-console">
+            <div class="console-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p>Currently developing reliable backend architectures, designing database schemas, and training machine learning systems.</p>
+            <div class="console-tags">
+              <span>Java</span>
+              <span>Python</span>
+              <span>SQL</span>
+              <span>Flask</span>
+              <span>MySQL</span>
+              <span>AI/ML</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-band reveal" aria-label="Core capabilities">
+      <div>
+        <span>01</span>
+        <strong>Machine Learning</strong>
+        <p>Applied AI models, similarity-based recommendation systems, and data analysis.</p>
+      </div>
+      <div>
+        <span>02</span>
+        <strong>Backend Engineering</strong>
+        <p>Robust REST APIs, Flask services, database schema design, and secure architectures.</p>
+      </div>
+      <div>
+        <span>03</span>
+        <strong>Java Development</strong>
+        <p>Object-oriented SDE engineering, data structures, algorithms, and clean code.</p>
+      </div>
+    </section>
+
+    <section class="section-pad about" id="about">
+      <div class="about-visit-card reveal">
+        <div class="visit-card-glow" aria-hidden="true"></div>
+
+        <div class="visit-identity">
+          <div>
+            <p class="eyebrow"><span></span> About Me</p>
+            <h2 class="identity-name">
+              <span>Sathyaseelan</span> K
+            </h2>
+            <p class="visit-role">
+              <svg viewBox="0 0 24 24" class="gemini-star-icon" fill="currentColor"><path d="M12 2A10 10 0 0 0 12 22A10 10 0 0 0 12 2zm0-18c0 3.31-2.69 6-6 6c3.31 0 6 2.69 6 6c0-3.31 2.69-6 6-6c-3.31 0-6-2.69-6-6z"/></svg>
+              Google Gemini Student Ambassador
+            </p>
+            <div>
+              <p class="visit-degree-badge">
+                <svg viewBox="0 0 24 24" class="cap-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 2l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                B.Tech Information Technology
+              </p>
+            </div>
+          </div>
+
+          <div class="visit-photo-block">
+            <div class="visit-photo-container">
+              <div class="visit-photo">
+                <img src="assets/profile.jpeg" alt="Sathyaseelan K profile photo">
+              </div>
+              <div class="photo-dot"></div>
+            </div>
+            <a class="visit-resume" href="assets/Sathyaseelan_K.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="resume-btn-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              View / Download Resume
+            </a>
+          </div>
+        </div>
+
+        <div class="visit-grid">
+          <article class="visit-panel about-me-panel">
+            <div class="visit-panel-title">
+              <span class="visit-icon">ID</span>
+              <h3>About Me</h3>
+            </div>
+            <p>
+              Passionate about building robust backend platforms and intelligent systems, bridging reliable software architectures with machine learning models.
+            </p>
+            <div class="visit-contact-list">
+              <span>
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                M. Kumarasamy College of Engineering, Karur
+              </span>
+              <a href="mailto:ksathyaseelan34@gmail.com">
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                ksathyaseelan34@gmail.com
+              </a>
+              <a href="tel:+919790419564">
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +91 97904 19564
+              </a>
+              <a href="https://github.com/sathyaseelan2006" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                github.com/sathyaseelan2006
+              </a>
+              <a href="https://www.linkedin.com/in/sathyaseelan-dev" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                linkedin.com/in/sathyaseelan-dev
+              </a>
+              <a href="https://medium.com/@ksathyaseelan34" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5" cy="12" r="4"></circle>
+                  <ellipse cx="12" cy="12" rx="2" ry="4"></ellipse>
+                  <ellipse cx="18" cy="12" rx="0.8" ry="4"></ellipse>
+                </svg>
+                medium.com/@ksathyaseelan34
+              </a>
+            </div>
+          </article>
+
+          <article class="visit-panel">
+            <div class="visit-panel-title">
+              <span class="visit-icon">DO</span>
+              <h3>What I Can Do</h3>
+            </div>
+            <ul class="visit-list">
+              <li>Backend architecture & REST APIs</li>
+              <li>Java software development (SDE)</li>
+              <li>Machine learning & recommendation models</li>
+              <li>Database design (SQL & NoSQL)</li>
+              <li>Problem solving & Data Structures (DSA)</li>
+              <li>Full-stack product delivery</li>
+            </ul>
+          </article>
+
+          <article class="visit-panel visit-achievements">
+            <div class="visit-panel-title">
+              <span class="visit-icon">OK</span>
+              <h3>What I Have Done</h3>
+            </div>
+            <div class="achievement-mini-grid">
+              <div><strong>IEEE</strong><span>Paper & presentation</span></div>
+              <div><strong>6+</strong><span>Project builds</span></div>
+              <div><strong>5+</strong><span>Certificates</span></div>
+              <div><strong>GSA</strong><span>Gemini Ambassador</span></div>
+            </div>
+          </article>
+
+          <article class="visit-panel visit-stack">
+            <div class="visit-panel-title">
+              <span class="visit-icon">TS</span>
+              <h3>Tech Stack</h3>
+            </div>
+            <div class="visit-stack-grid">
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo"><path d="M11.97 2C10.43 2 9.5 2.33 8.8 3c-.92.88-.9 1.76-.9 2.9v1.36h4.15V7.7H7.7C6.07 7.7 5 8.78 5 10.4c0 1.63 1.07 2.65 2.7 2.65h1.2v-1.6c0-1.5 1.25-2.72 2.76-2.72h4.12V4.9c0-1.14-.02-2-.94-2.9C14.1 2.33 13.5 2 11.97 2zm-2 1.5A.75.75 0 1 1 10 4.25a.75.75 0 0 1-.03-.75zm4.06 8.2v1.36H9.88V13.5H16.3c1.63 0 2.7-1.02 2.7-2.65 0-1.62-1.07-2.7-2.7-2.7h-1.2v1.6c0 1.5-1.25 2.73-2.77 2.73H8.2V19.1c0 1.14.02 2 .94 2.9.72.67 1.65 1 3.19 1 1.54 0 2.47-.33 3.17-1 .92-.88.9-1.76.9-2.9v-1.36h-4.15v-.43zm2 6.75a.75.75 0 1 1 .03-1.5.75.75 0 0 1-.03 1.5z"/></svg>
+                Python
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4zM6 1v3M10 1v3M14 1v3"/></svg>
+                Java
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg>
+                SQL
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.27a2 2 0 0 1-.54 1.38L4.22 15.5A2.67 2.67 0 0 0 6 20h12a2.67 2.67 0 0 0 1.78-4.5l-5.24-5.85a2 2 0 0 1-.54-1.38V3"/></svg>
+                Flask
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v12c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11c0 1.66 4 3 9 3s9-1.34 9-3"/><path d="M12 11v6"/></svg>
+                MySQL
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 6 7 6 12s4.5 10 6 10 6-4.5 6-10-6-10-6-10z"/><path d="M12 2v20"/></svg>
+                MongoDB
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/></svg>
+                OpenCV
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M9 15a3 3 0 0 0 6 0"/></svg>
+                DeepFace
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                Data Analytics
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 15V9a4 4 0 0 0-4-4H9M6 9v6"/></svg>
+                Git
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.47 0-.89.09-1.25.26A7 7 0 1 0 3 13.5A3.5 3.5 0 0 0 6.5 17h11"/></svg>
+                Google Cloud
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                XAMPP
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" class="tech-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6M12 4v16"/></svg>
+                VS Code
+              </span>
+            </div>
+          </article>
+
+          <article class="visit-panel visit-passions">
+            <div class="visit-panel-title">
+              <span class="visit-icon">PS</span>
+              <h3>Passions</h3>
+            </div>
+            <ul class="visit-passion-list">
+              <li>
+                <svg viewBox="0 0 24 24" class="passion-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Reading Books
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="passion-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                Editing
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="passion-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Watching Sports
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="passion-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                Learning new tech's
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" class="passion-icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+                Drawing
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="visit-footer-stats">
+          <div><span>CGPA</span><strong>7.9</strong></div>
+          <div><span>College</span><strong>MKCE</strong></div>
+          <div><span>Branch</span><strong>B.Tech IT</strong></div>
+          <div><span>Year</span><strong>2023 - Present</strong></div>
+          <div><span>Focus</span><strong>Backend / ML</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad projects project-selector-section" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> // REGISTRY</p>
+        <h2>LAUNCHED MISSIONS</h2>
+      </div>
+
+      <div class="project-selector reveal" data-project-selector>
+        <article class="case-study-card" data-case-card aria-live="polite"></article>
+
+        <aside class="selector-panel" aria-label="Project navigation wheel">
+          <div class="selector-copy">
+            <span>// SCROLL_CONTROL</span>
+            <p>Use mouse wheel, touchpad, arrow keys, or select a node. The active project expands into the case study card.</p>
+          </div>
+
+          <div class="project-wheel" data-project-wheel>
+            <div class="wheel-rail" aria-hidden="true"></div>
+            <div class="wheel-core" aria-hidden="true"></div>
+          </div>
+
+          <div class="wheel-controls" aria-label="Project controls">
+            <button type="button" data-project-prev aria-label="Previous project">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <span data-project-count>01 / 08</span>
+            <button type="button" data-project-next aria-label="Next project">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-pad skills" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> Skills</p>
+        <h2>Core Engineering Stack</h2>
+      </div>
+
+      <div id="skills-visualizer-container" class="reveal">
+        <!-- Floating Dynamic Tooltip -->
+        <div id="skills-tooltip" class="skills-tooltip" aria-hidden="true">
+          <div class="tooltip-title">Skill</div>
+          <div class="tooltip-level">Level: --%</div>
+          <div class="tooltip-projects">Used In: ...</div>
+        </div>
+
+        <div class="skills-visualizer-grid">
+          <!-- Left side: SVG Canvas and control header -->
+          <div id="skills-chart-panel" class="visualizer-card">
+            <header class="chart-header">
+              <span class="console-label">// SKILLS_VISUALIZER</span>
+              <div class="chart-controls" role="tablist" aria-label="Skill Graph Views">
+                <button type="button" class="chart-tab active" data-view="bar" role="tab" aria-selected="true" aria-controls="skills-svg-canvas">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  Bar Chart
+                </button>
+                <button type="button" class="chart-tab" data-view="pie" role="tab" aria-selected="false" aria-controls="skills-svg-canvas">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                  Donut Chart
+                </button>
+                <button type="button" class="chart-tab" data-view="spider" role="tab" aria-selected="false" aria-controls="skills-svg-canvas">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 8.5 22 19.5 12 22 2 19.5 2 8.5" />
+                    <line x1="12" y1="2" x2="12" y2="22" />
+                    <line x1="2" y1="8.5" x2="22" y2="19.5" />
+                    <line x1="2" y1="19.5" x2="22" y2="8.5" />
+                  </svg>
+                  Spider Web Chart
+                </button>
+              </div>
+            </header>
+
+            <div class="chart-stage">
+              <svg id="skills-svg-canvas" viewBox="0 0 800 450" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Spider Web Grid -->
+                <g id="spider-web-grid" opacity="0" style="transition: opacity 0.4s ease; pointer-events: none;"></g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right side: Proof Console -->
+          <div id="skills-proof-console" class="visualizer-card proof-console">
+            <div class="console-top">
+              <div class="console-dots">
+                <span class="dot red"></span>
+                <span class="dot amber"></span>
+                <span class="dot pink"></span>
+              </div>
+              <span class="console-title">// TELEMETRY</span>
+              <span class="console-status">SYS_NOMINAL</span>
+            </div>
+            
+            <div id="console-default-state" class="console-state active">
+              <div class="console-pulse-indicator"></div>
+              <p class="console-hint-text">Select a skill node to view telemetry and project proofs.</p>
+            </div>
+
+            <div id="console-active-state" class="console-state">
+              <header class="console-active-header">
+                <h3 id="console-skill-name">Skill Name</h3>
+                <span id="console-skill-level" class="console-level-badge">90%</span>
+              </header>
+              
+              <div class="console-telemetry-item">
+                <span class="label">// DESCRIPTION</span>
+                <p id="console-skill-desc" class="desc-text">Skill usage details and experience summary.</p>
+              </div>
+
+              <div class="console-telemetry-item">
+                <span class="label">// TIMELINE_GROWTH (2023 - 2026)</span>
+                <div class="console-growth-grid">
+                  <div class="growth-node"><span>2023</span><strong id="growth-2023">10%</strong></div>
+                  <div class="growth-node"><span>2024</span><strong id="growth-2024">40%</strong></div>
+                  <div class="growth-node"><span>2025</span><strong id="growth-2025">70%</strong></div>
+                  <div class="growth-node"><span>2026</span><strong id="growth-2026">90%</strong></div>
+                </div>
+              </div>
+
+              <div class="console-telemetry-item">
+                <span class="label">// MAPPED_PROJECTS (PROOF)</span>
+                <div id="console-skill-projects" class="console-project-list">
+                  <!-- Mapped project buttons injected by JS -->
+                </div>
+              </div>
+
+              <div class="console-telemetry-item" id="console-certs-container">
+                <span class="label">// VERIFIED_CREDENTIALS</span>
+                <div id="console-skill-certs" class="console-cert-list">
+                  <!-- Mapped credentials links injected by JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad credentials" id="credentials">
+      <div class="wall-spotlight" aria-hidden="true"></div>
+      
+      <div class="wall-banner reveal">
+        <div class="wall-main-area">
+          <div class="trophy-showcase">
+            <svg viewBox="0 0 503.607 503.607" class="trophy-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+              <g transform="translate(1 1)">
+                <path style="fill:#FFFFFF;" d="M207.997,11.59c0-1.679,0.839-2.518,0.839-4.197h-77.22l52.039,222.426c4.197-2.518,8.393-5.036,12.59-6.715L156.797,11.59H207.997z"/>
+                <path style="fill:#FD9808;" d="M301.164,7.393c0.839,1.679,0.839,2.518,0.839,4.197h41.967l-39.449,211.515c4.197,1.679,8.393,4.197,12.59,6.715L369.99,7.393H301.164z"/>
+                <path style="fill:#FCC309;" d="M250.803,208.836c21.823,0,41.967,7.554,59.593,20.984L351.525,7.393H150.082L191.21,229.82C208.836,217.229,228.98,208.836,250.803,208.836"/>
+                <path style="fill:#FFDD09;" d="M250.803,494.213c-64.63,0-117.508-63.79-117.508-142.689s52.879-142.689,117.508-142.689s117.508,63.79,117.508,142.689S315.433,494.213,250.803,494.213"/>
+                <path style="fill:#FD9808;" d="M250.803,208.836c64.63,0,117.508,63.79,117.508,142.689s-52.879,142.689-117.508,142.689c78.898,0,142.689-63.79,142.689-142.689S329.702,208.836,250.803,208.836"/>
+                <path style="fill:#FFFFFF;" d="M133.295,351.525c0-78.898,52.879-142.689,117.508-142.689c-78.898,0-142.689,64.63-142.689,142.689s63.79,142.689,142.689,142.689C186.174,494.213,133.295,430.423,133.295,351.525"/>
+                <polygon style="fill:#54C9FD;" points="250.803,275.984 267.59,326.344 317.951,326.344 275.984,359.918 292.77,410.279 250.803,385.098 208.836,410.279 225.623,359.918 183.656,326.344 234.016,326.344 	"/>
+                <path style="fill:#FFDD09;" d="M250.803,208.836c15.108,0,29.377,2.518,42.807,6.715L333.898,7.393h-167.03l41.128,208.157C221.426,211.354,235.695,208.836,250.803,208.836"/>
+                <g>
+                  <path style="fill:#110E0E;" d="M250.803,502.607c-83.095,0-151.082-67.148-151.082-151.082s67.987-151.082,151.082-151.082s151.082,67.987,151.082,151.082S333.898,502.607,250.803,502.607z M250.803,217.229c-73.862,0-134.295,60.433-134.295,134.295S176.941,485.82,250.803,485.82s134.295-60.433,134.295-134.295S324.666,217.229,250.803,217.229z"/>
+                  <path style="fill:#110E0E;" d="M269.269,467.354c-4.197,0-7.554-2.518-8.393-6.715s2.518-9.233,6.715-10.072c11.751-1.679,22.662-5.875,32.734-11.751c4.197-2.518,9.233-0.839,11.751,3.357c2.518,4.197,0.839,9.233-3.357,11.751c-11.751,6.715-25.18,11.751-38.61,13.43C270.108,467.354,270.108,467.354,269.269,467.354z M231.498,467.354c-0.839,0-0.839,0-1.679,0c-13.43-2.518-26.02-7.554-38.61-14.269c-4.197-2.518-5.036-7.554-3.357-11.751c2.518-4.197,7.554-5.036,11.751-3.357c10.072,5.875,20.984,10.072,32.734,11.751c4.197,0.839,7.554,5.036,6.715,10.072C239.052,464.836,235.695,467.354,231.498,467.354z M333.898,430.423c-1.679,0-4.197-0.839-5.036-1.679c-3.357-3.357-4.197-8.393-0.839-11.751c7.554-9.233,13.43-19.305,17.626-30.216c1.679-4.197,6.715-6.715,10.911-5.036c4.197,1.679,6.715,6.715,5.036,10.911c-5.036,12.59-11.751,24.341-20.144,35.252C338.934,429.584,336.416,430.423,333.898,430.423z M166.869,430.423c-2.518,0-5.036-0.839-6.715-3.357c-9.233-10.911-15.948-22.662-20.144-35.252c-1.679-4.197,0.839-9.233,5.036-10.911c4.197-1.679,9.233,0.839,10.911,5.036c4.197,10.911,10.072,20.984,17.626,30.216c3.357,3.357,2.518,9.233-0.839,11.751C171.066,429.584,168.548,430.423,166.869,430.423z M359.918,360.757c-5.036,0-8.393-3.357-8.393-8.393l0,0c0-11.751-1.679-23.502-5.875-34.413c-1.679-4.197,0.839-9.233,5.036-10.911c4.197-1.679,9.233,0.839,10.911,5.036c5.036,12.59,6.715,26.02,6.715,40.289C368.311,356.561,364.954,360.757,359.918,360.757z M141.689,359.918L141.689,359.918c-5.036,0-8.393-3.357-8.393-8.393c0-13.43,2.518-27.698,6.715-40.289c1.679-4.197,6.715-6.715,10.911-5.036c4.197,1.679,6.715,6.715,5.036,10.911c-4.197,10.911-5.875,22.662-5.875,34.413C150.082,356.561,146.725,359.918,141.689,359.918z M334.738,290.252c-2.518,0-5.036-0.839-6.715-3.357c-7.554-9.233-16.787-16.787-26.859-22.662c-4.197-2.518-5.036-7.554-3.357-11.751c2.518-4.197,7.554-5.036,11.751-3.357c11.751,6.715,22.662,15.948,31.056,26.02c3.357,3.357,2.518,9.233-0.839,11.751C338.095,289.413,336.416,290.252,334.738,290.252z M167.708,290.252c-1.679,0-4.197-0.839-5.036-1.679c-3.357-3.357-4.197-8.393-0.839-11.751c9.233-10.911,19.305-19.305,31.056-26.02c4.197-2.518,9.233-0.839,11.751,3.357c2.518,4.197,0.839,9.233-3.357,11.751c-10.072,5.875-19.305,13.43-26.859,22.662C171.905,288.574,169.387,290.252,167.708,290.252z M270.108,252.482c-0.839,0-0.839,0-1.679,0c-11.751-1.679-23.502-1.679-35.252,0c-4.197,0.839-9.233-2.518-10.072-6.715s2.518-9.233,6.715-10.072c13.43-2.518,27.698-2.518,41.128,0c4.197,0.839,7.554,5.036,6.715,10.072C277.662,249.964,273.466,252.482,270.108,252.482z"/>
+                  <path style="fill:#110E0E;" d="M292.77,418.672c-1.679,0-3.357,0-4.197-0.839l-37.77-22.662l-37.77,22.662c-3.357,1.679-6.715,1.679-9.233-0.839c-2.518-2.518-4.197-5.875-2.518-9.233l15.108-44.485l-37.77-30.216c-2.518-2.518-4.197-5.875-2.518-9.233c0.839-3.357,4.197-5.875,7.554-5.875h44.485l15.108-44.485c0.839-3.357,4.197-5.875,7.554-5.875s6.715,2.518,7.554,5.875l15.108,44.485h44.485c3.357,0,6.715,2.518,7.554,5.875c0.839,3.357,0,6.715-2.518,9.233l-37.771,30.216l15.108,44.485c0.839,3.357,0,6.715-2.518,9.233C296.128,418.672,294.449,418.672,292.77,418.672z M250.803,376.705c1.679,0,3.357,0,4.197,0.839l22.662,13.43l-9.233-28.538c-0.839-3.357,0-6.715,2.518-9.233l23.502-18.466H267.59c-3.357,0-6.715-2.518-7.554-5.875l-9.233-26.02l-9.233,26.859c-0.839,3.357-4.197,5.036-7.554,5.036h-26.02l23.502,18.466c2.518,2.518,4.197,5.875,2.518,9.233l-9.233,28.538l22.662-13.43C247.446,377.544,249.125,376.705,250.803,376.705z"/>
+                  <path style="fill:#110E0E;" d="M176.941,238.213c-0.839,0-2.518,0-3.357-0.839c-2.518-0.839-4.197-3.357-5.036-5.875l-26.02-112.472c-0.839-4.197,1.679-9.233,5.875-10.072c4.197-0.839,9.233,1.679,10.072,5.875l24.341,102.4c42.807-21.823,94.007-21.823,136.813,0l47.003-201.443h-230.82l7.554,31.895c0.839,4.197-2.518,9.233-6.715,10.072c-4.197,0.839-9.233-1.679-10.072-5.875L116.508,9.911c0-2.518,0-5.036,1.679-7.554C119.866,0.679,122.384-1,124.902-1h251.803c2.518,0,5.036,0.839,6.715,3.357c1.679,2.518,1.679,5.036,1.679,7.554l-52.039,222.426c-0.839,2.518-2.518,5.036-5.036,5.875c-2.518,0.839-5.036,0.839-7.554-0.839c-41.967-26.02-97.364-26.02-139.331,0C179.459,238.213,178.62,238.213,176.941,238.213z"/>
+                  <path style="fill:#110E0E;" d="M150.082,82.934c0-5.036-3.357-8.393-8.393-8.393c-5.036,0-8.393,4.197-8.393,8.393c0,4.197,3.357,8.393,8.393,8.393C146.725,91.328,150.082,87.97,150.082,82.934"/>
+                  <path style="fill:#110E0E;" d="M207.997,223.944c-1.679,0-3.357,0-4.197-0.839c-1.679-0.839-3.357-3.357-4.197-5.875L158.475,9.072c0-2.518,0-5.036,1.679-6.715C161.833,0.679,164.351-1,166.869-1h167.03c2.518,0,5.036,0.839,6.715,3.357c1.679,1.679,2.518,4.197,1.679,6.715l-41.128,208.157c-0.839,2.518-1.679,4.197-4.197,5.875c-1.679,0.839-4.197,1.679-6.715,0.839c-26.02-8.393-54.557-8.393-79.738,0C209.675,223.944,208.836,223.944,207.997,223.944z M176.941,15.787l37.77,188.852c23.502-5.875,48.682-5.875,72.184,0l36.931-188.852H176.941z"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="wall-title-block">
+            <p class="eyebrow"><span></span> Credentials</p>
+            <h2 class="wall-title">WALL OF FAME</h2>
+            <p class="wall-subtitle">GEMS THEY ARE!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wall-gallery reveal">
+        <!-- SVG Definitions for Holographic Gradients -->
+        <svg class="holographic-defs" width="0" height="0" style="position: absolute; pointer-events: none;">
+          <defs>
+            <linearGradient id="neonGlowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff123f" stop-opacity="0.1" />
+              <stop offset="50%" stop-color="#ff516f" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#ff123f" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Frame 1: IEEE Certificate of Presentation -->
+        <div class="gallery-frame stagger-1">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <a class="frame-inner glass-plaque" href="assets/IEEE-certificate.pdf" target="_blank" rel="noopener">
+            <!-- Background SVG Schematic Layer -->
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Corner Brackets -->
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <!-- Scanning Grid -->
+              <pattern id="cardGrid1" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid1)" />
+              
+              <!-- Tech Crosshairs / Sub-lines -->
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <!-- Glowing Trace lines -->
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">2026</span>
+                <span class="plaque-badge badge-gold">IEEE</span>
+              </header>
+              <h3 class="plaque-title">Certificate of Presentation</h3>
+              <p class="plaque-detail">Presented at PPG Institute of Technology</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: IEEE_PPG_2026</span>
+              </footer>
+            </div>
+          </a>
+        </div>
+
+        <!-- Frame 2: IEEE Research Paper -->
+        <div class="gallery-frame stagger-2">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <a class="frame-inner glass-plaque" href="assets/Batch_13_IEEE_Paper submission.pdf" target="_blank" rel="noopener">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid2" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid2)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">2026</span>
+                <span class="plaque-badge badge-gold">IEEE</span>
+              </header>
+              <h3 class="plaque-title">IEEE Research Paper</h3>
+              <p class="plaque-detail">Published research paper for the Re:Vive platform</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: IEEE_REVIVE_2026</span>
+              </footer>
+            </div>
+          </a>
+        </div>
+
+        <!-- Frame 3: Coursera Cyber Security for Everyone -->
+        <div class="gallery-frame stagger-3">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <a class="frame-inner glass-plaque" href="assets/Coursera cyber security for everyone certificate.pdf" target="_blank" rel="noopener">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid3" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid3)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">Feb 2025</span>
+                <span class="plaque-badge badge-silver">Coursera</span>
+              </header>
+              <h3 class="plaque-title">Cyber Security for Everyone</h3>
+              <p class="plaque-detail">University of Maryland via Coursera</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: UMD_CYBER_2025</span>
+              </footer>
+            </div>
+          </a>
+        </div>
+
+        <!-- Frame 4: Coursera Supervised Machine Learning -->
+        <div class="gallery-frame stagger-4">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <div class="frame-inner glass-plaque">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid4" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid4)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">Sep 2025</span>
+                <span class="plaque-badge badge-silver">Coursera</span>
+              </header>
+              <h3 class="plaque-title">Supervised Machine Learning</h3>
+              <p class="plaque-detail">DeepLearning.AI & Stanford Online</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: DL_STANFORD_ML</span>
+              </footer>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frame 5: Oracle Data Science Professional -->
+        <div class="gallery-frame stagger-5">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <a class="frame-inner glass-plaque" href="assets/eCertificate (1)-datascience professional_Oracle.pdf" target="_blank" rel="noopener">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid5" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid5)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">Oct 2025</span>
+                <span class="plaque-badge badge-gold">Oracle</span>
+              </header>
+              <h3 class="plaque-title">Oracle Data Science Professional</h3>
+              <p class="plaque-detail">Oracle Corporation Certified</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: ORACLE_DS_2025</span>
+              </footer>
+            </div>
+          </a>
+        </div>
+
+        <!-- Frame 6: Oracle Cloud Database Services -->
+        <div class="gallery-frame stagger-6">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <a class="frame-inner glass-plaque" href="assets/eCertificate-clouddatabase_service_oracle.pdf" target="_blank" rel="noopener">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid6" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid6)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">Oct 2025</span>
+                <span class="plaque-badge badge-gold">Oracle</span>
+              </header>
+              <h3 class="plaque-title">Oracle Cloud Database Services</h3>
+              <p class="plaque-detail">Oracle Cloud Database Services</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: ORACLE_DB_2025</span>
+              </footer>
+            </div>
+          </a>
+        </div>
+
+        <!-- Frame 7: Introduction to Networking -->
+        <div class="gallery-frame stagger-7">
+          <div class="frame-hardware">
+            <div class="frame-nail"></div>
+            <div class="frame-wire"></div>
+          </div>
+          <div class="frame-inner glass-plaque">
+            <svg class="plaque-schematic" viewBox="0 0 320 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 12 24 L 12 12 L 24 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 24 L 308 12 L 296 12" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 12 196 L 12 208 L 24 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              <path d="M 308 196 L 308 208 L 296 208" stroke="rgba(255, 18, 63, 0.45)" stroke-width="1.5" fill="none" />
+              
+              <pattern id="cardGrid7" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+              </pattern>
+              <rect x="12" y="12" width="296" height="196" fill="url(#cardGrid7)" />
+              
+              <line x1="20" y1="36" x2="300" y2="36" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              <line x1="20" y1="184" x2="300" y2="184" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" stroke-dasharray="2 4" />
+              
+              <rect class="neon-trace" x="10" y="10" width="300" height="200" rx="6" fill="none" stroke="url(#neonGlowGrad)" stroke-width="1.5" stroke-dasharray="40 180" />
+            </svg>
+            
+            <div class="plaque-content">
+              <header class="plaque-header">
+                <span class="plaque-year">2025</span>
+                <span class="plaque-badge badge-bronze">Cisco</span>
+              </header>
+              <h3 class="plaque-title">Introduction to Networking</h3>
+              <p class="plaque-detail">Verified networking competency course</p>
+              <footer class="plaque-footer">
+                <span class="plaque-hash">// ID: CISCO_NET_2025</span>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad education-trajectory-section" id="education">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> Education</p>
+        <h2>The academic path behind the build habit.</h2>
+      </div>
+
+      <div class="trajectory-dashboard reveal">
+        <!-- Column 1: Orbital Map Canvas -->
+        <div class="trajectory-map-panel">
+          <svg viewBox="0 0 320 500" class="trajectory-svg-canvas" id="trajectory-svg-canvas" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Telemetry Trace Gradients -->
+              <linearGradient id="line-trace-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#00a8e8" />
+                <stop offset="50%" stop-color="#d4af37" />
+                <stop offset="100%" stop-color="#ff123f" />
+              </linearGradient>
+
+              <!-- Node Glow Filters -->
+              <filter id="glow-node-undergrad" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="glow-node-hsec" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+              <filter id="glow-node-sec" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Calibration Grid -->
+            <g class="calib-grid" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.5">
+              <line x1="20" y1="80" x2="300" y2="80" stroke-dasharray="2 4"/>
+              <line x1="20" y1="250" x2="300" y2="250" stroke-dasharray="2 4"/>
+              <line x1="20" y1="420" x2="300" y2="420" stroke-dasharray="2 4"/>
+              <line x1="60" y1="20" x2="60" y2="480" stroke-dasharray="2 4"/>
+              <line x1="180" y1="20" x2="180" y2="480" stroke-dasharray="2 4"/>
+            </g>
+
+            <!-- Altimeter Axis -->
+            <g class="altimeter-axis" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1">
+              <line x1="60" y1="50" x2="60" y2="450"/>
+              <!-- Ticks and text -->
+              <line x1="55" y1="80" x2="60" y2="80"/>
+              <text x="12" y="83" class="axis-label label-undergrad" fill="rgba(255, 255, 255, 0.4)" font-family="monospace" font-size="9">1,000 km</text>
+
+              <line x1="55" y1="250" x2="60" y2="250"/>
+              <text x="18" y="253" class="axis-label label-hsec" fill="rgba(255, 255, 255, 0.4)" font-family="monospace" font-size="9">400 km</text>
+
+              <line x1="55" y1="420" x2="60" y2="420"/>
+              <text x="18" y="423" class="axis-label label-sec" fill="rgba(255, 255, 255, 0.4)" font-family="monospace" font-size="9">120 km</text>
+
+              <line x1="55" y1="450" x2="60" y2="450"/>
+              <text x="30" y="453" class="axis-label" fill="rgba(255, 255, 255, 0.3)" font-family="monospace" font-size="8">0 km</text>
+            </g>
+
+            <!-- Flight Trajectory Lines -->
+            <!-- Background base path line -->
+            <path d="M 180 450 L 180 50" class="flight-base-line" stroke="rgba(255, 255, 255, 0.08)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            
+            <!-- Active vector line -->
+            <path d="M 180 450 L 180 80" class="flight-active-path" id="flight-active-path" stroke="url(#line-trace-grad)" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+            <!-- Moving light beam line -->
+            <path d="M 180 450 L 180 80" class="flight-light-beam" id="flight-light-beam" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+            <!-- Trajectory Stages -->
+            <!-- STAGE 01: Secondary (cx=180, cy=420) -->
+            <g class="flight-stage-node" id="stage-sec" data-index="2" cursor="pointer">
+              <!-- Connector line to axis -->
+              <line x1="60" y1="420" x2="180" y2="420" class="target-link-line" stroke="#00a8e8" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/>
+              <!-- Pulse Ring -->
+              <circle cx="180" cy="420" r="24" stroke="rgba(0, 168, 232, 0.2)" stroke-width="1" fill="none" class="stage-pulse"/>
+              <!-- Solid border -->
+              <circle cx="180" cy="420" r="15" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1.5" fill="#030203" class="stage-outer"/>
+              <!-- Core node -->
+              <circle cx="180" cy="420" r="8" fill="#00a8e8" filter="url(#glow-node-sec)" class="stage-core"/>
+              <!-- Label -->
+              <text x="210" y="424" class="stage-label" fill="#cccccc" font-family="monospace" font-size="10" letter-spacing="0.05em">SSLC (CLASS X)</text>
+            </g>
+
+            <!-- STAGE 02: Higher Secondary (cx=180, cy=250) -->
+            <g class="flight-stage-node" id="stage-hsec" data-index="1" cursor="pointer">
+              <line x1="60" y1="250" x2="180" y2="250" class="target-link-line" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/>
+              <circle cx="180" cy="250" r="26" stroke="rgba(212, 175, 55, 0.2)" stroke-width="1" fill="none" class="stage-pulse"/>
+              <circle cx="180" cy="250" r="16" stroke="rgba(212, 175, 55, 0.5)" stroke-width="1.5" fill="#030203" class="stage-outer"/>
+              <circle cx="180" cy="250" r="9" fill="#d4af37" filter="url(#glow-node-hsec)" class="stage-core"/>
+              <text x="210" y="254" class="stage-label" fill="#cccccc" font-family="monospace" font-size="10" letter-spacing="0.05em">HSC (CLASS XII)</text>
+            </g>
+
+            <!-- STAGE 03: Undergraduate (cx=180, cy=80) -->
+            <g class="flight-stage-node active" id="stage-undergrad" data-index="0" cursor="pointer">
+              <line x1="60" y1="80" x2="180" y2="80" class="target-link-line" stroke="#ff123f" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.6"/>
+              <circle cx="180" cy="80" r="28" stroke="rgba(255, 18, 63, 0.2)" stroke-width="1" fill="none" class="stage-pulse"/>
+              <circle cx="180" cy="80" r="18" stroke="rgba(255, 18, 63, 0.5)" stroke-width="1.5" fill="#030203" class="stage-outer"/>
+              <circle cx="180" cy="80" r="10" fill="#ff123f" filter="url(#glow-node-undergrad)" class="stage-core"/>
+              <text x="210" y="84" class="stage-label" fill="#ffffff" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="0.05em">B.TECH (IT)</text>
+            </g>
+
+            <!-- Spacecraft Rocket Element -->
+            <svg x="162" y="0" width="36" height="36" viewBox="0 0 512 512" class="trajectory-rocket" id="trajectory-rocket" style="transform: translateY(62px);">
+              <g transform="rotate(-45 256 256)">
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -99.7449 380.7263)" width="67.3" x="376" y="303.3"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -139.457 364.2759)" width="15" x="362.5" y="343"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 37.8495 191.83)" width="67.3" x="216.8" y="42.7"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1.8676 175.3689)" width="15" x="203.3" y="82.4"/>
+                <polygon fill="#CFF1FF" points="57,254.4 129.1,182.2 216.6,163.1 111.3,268.4  "/>
+                <polygon fill="#4CC3F2" points="138.3,419.6 120,401.3 144.7,376.6 134.1,366 109.4,390.7 93.3,374.6 137.2,311 200,373.7  "/>
+                <rect fill="#CFF1FF" height="155.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -173.2893 227.4088)" width="24.8" x="175.5" y="245.2"/>
+                <polygon fill="#CFF1FF" points="328.6,381.7 256.4,453.8 242.4,399.4 347.6,294.2  "/>
+                <path fill="#4CC3F2" d="M262.2,358.4L152.3,248.6L318.4,82.5l49.6,49.6l-36.1,36.1c-18.7-13.6-45-12-61.9,4.9   c-16.8,16.8-18.5,43.2-4.9,61.9l-31.3,31.3l10.6,10.6l31.3-31.3c18.7,13.6,45,11.9,61.9-4.9c16.8-16.8,18.5-43.2,4.9-61.9   l36.1-36.1l49.6,49.6L262.2,358.4z"/>
+                <path fill="#CFF1FF" d="M438.7,181.7L329.1,72c23.9-22,49.4-33.9,73.3-40l76.3,76.3C472.6,132.3,460.8,157.8,438.7,181.7z"/>
+                <path fill="#0A557F" d="M490.8,13.1c-1.6-0.1-3.3-0.3-5.1-0.4c-35.6-2.9-109.6-9.1-172.6,54l-76.9,76.9l-114.6,25l-93.8,93.8   l81.9,21.2l16.7,16.7l-52.5,76.2l24.9,24.9l-14.3,14.3l10.6,10.6l14.3-14.3l27.4,27.4l73.9-54.9l16.6,16.6l21.2,81.9l93.8-93.8   l25-114.6l76.9-76.9c63-63,56.9-137,54-172.6c-0.1-1.8-0.3-3.5-0.4-5.1l-0.5-6.4L490.8,13.1z M138.3,419.6L120,401.3l24.7-24.7   L134.1,366l-24.7,24.7l-16.1-16.1l43.9-63.6l62.8,62.8L138.3,419.6z M57,254.4l72.2-72.2l87.5-19.1L111.3,268.4L57,254.4z    M251.5,369L234,386.6L124.2,276.7l17.5-17.5L251.5,369z M328.6,381.7l-72.1,72.1l-14-54.4l105.3-105.3L328.6,381.7z M262.2,358.4   L152.3,248.6L318.4,82.5l49.6,49.6l-36.1,36.1c-18.7-13.6-45-12-61.9,4.9c-16.8,16.8-18.5,43.2-4.9,61.9l-31.3,31.3l10.6,10.6   l31.3-31.3c18.7,13.6,45,11.9,61.9-4.9c16.8-16.8,18.5-43.2,4.9-61.9l36.1-36.1l49.6,49.6L262.2,358.4z M327,183.8   c12.8,12.8,12.8,33.6,0,46.4c-12.8,12.8-33.6,12.8-46.4,0c-12.8-12.8-12.8-33.6,0-46.4C293.4,171,314.2,171,327,183.8z    M478.7,108.3c-6.1,23.9-17.9,49.4-40,73.3L329.1,72c23.9-22,49.4-33.9,73.3-40L478.7,108.3z M482.3,90.7L420,28.5   c25.4-3.9,47.9-2.2,63.2-0.9C484.5,42.9,486.2,65.4,482.3,90.7z"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -287.2091 180.2054)" width="15" x="66.4" y="429.3"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -293.9263 209.5747)" width="42.2" x="84.9" y="452.1"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7072 -0.7071 0.7071 0.7072 -324.727 196.7583)" width="15" x="67.7" y="482.9"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -272.2441 157.2359)" width="42.2" x="32.6" y="399.7"/>
+                <rect fill="#0A557F" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -303.087 144.4756)" width="15" x="15.3" y="430.6"/>
+                <rect fill="#FFFFFF" height="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -138.0137 242.0345)" width="15" x="215.6" y="280.1"/>
+              </g>
+            </svg>
+          </svg>
+        </div>
+
+        <!-- Column 2: Academic Telemetry Terminal -->
+        <div class="trajectory-telemetry-panel" id="spacecraft-telemetry-console">
+          <div class="console-top">
+            <div class="console-indicator-dot"></div>
+            <span class="console-title">// SENSOR_READOUT: SPACE_FLIGHT_LOG</span>
+            <span class="console-status-badge">MISSION_NOMINAL</span>
+          </div>
+          
+          <div class="console-body">
+            <div class="telemetry-screen">
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// FLIGHT_STAGE:</span>
+                <span class="telemetry-val" id="traj-stage">B.TECH (IT)</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// FLIGHT_ALTITUDE:</span>
+                <span class="telemetry-val highlight-val" id="traj-altitude">1,000 km (Low Earth Orbit Exit)</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// STAGE_STATUS:</span>
+                <span class="telemetry-val" id="traj-status" style="color: #ff123f; font-weight: bold;">PROPULSION_ACTIVE</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// ESTABLISHMENT:</span>
+                <span class="telemetry-val" id="traj-institution">M. Kumarasamy College of Engineering</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// MISSION_PERIOD:</span>
+                <span class="telemetry-val" id="traj-period">2023 - Present</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// GRADE_TELEMETRY:</span>
+                <span class="telemetry-val highlight-val" id="traj-score">CGPA: 7.9</span>
+              </div>
+              <div class="telemetry-row">
+                <span class="telemetry-tag">// STAGE_OBJECTIVE:</span>
+                <span class="telemetry-val" id="traj-focus">B.Tech in Information Technology</span>
+              </div>
+            </div>
+
+            <div class="console-footer">
+              <div class="sensor-logs">
+                <span class="log-tag">SENSOR_LOG:</span>
+                <span class="log-text" id="traj-log-desc">Tracking engineering foundations, database architectures, intelligence pipelines, and core programming systems.</span>
+              </div>
+              <div class="system-instructions">
+                <p>Hover or tap launch trajectory stages to update cockpit flight logs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad contact" id="contact">
+      <div class="contact-shell reveal">
+        <div>
+          <p class="eyebrow"><span></span> Contact</p>
+          <h2>Have an opportunity, collaboration, or ambitious project?</h2>
+          <p>
+            Send the details directly from here, or connect through LinkedIn and GitHub. I am open to internships,
+            AI/ML work, research collaboration, and product engineering opportunities.
+          </p>
+          <div class="social-row">
+            <a href="mailto:ksathyaseelan34@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/sathyaseelan-dev" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/sathyaseelan2006" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://medium.com/@ksathyaseelan34" target="_blank" rel="noopener">Medium</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2 11 13m11-11-7 20-4-9-9-4 20-7Z"/></svg>
+            Launch Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-quote">"Curiosity is the engine. Code is the trajectory."</p>
+    <a href="#top" class="back-to-top" id="backToTop">
+      Back to top
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle; transition: transform 0.2s ease;">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </a>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div id="project-detail-modal" class="project-modal" aria-hidden="true">
+    <div class="project-modal-backdrop"></div>
+    <div class="project-modal-wrapper">
+      <button class="project-modal-close" aria-label="Close modal">&times;</button>
+      <div class="project-modal-content"></div>
+    </div>
+  </div>
+
+  <script src="assets/profile_base64.js"></script>
+  <script src="assets/project_readmes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
