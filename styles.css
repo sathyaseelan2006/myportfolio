@@ -2684,10 +2684,14 @@ h3 {
   to { transform: rotate(360deg); }
 }
 
+#contact {
+  padding-bottom: 24px;
+}
+
 .site-footer {
   width: min(var(--max), calc(100vw - 32px));
   margin: 0 auto;
-  padding: 34px 0 46px;
+  padding: 24px 0 32px;
   display: flex;
   justify-content: space-between;
   gap: 18px;
