@@ -1078,11 +1078,21 @@ const growthNodes = {
 };
 
 let activeSkill = null;
-let currentView = "bar";
+let currentView = window.innerWidth <= 720 ? "spider" : "bar";
 
 // Render SVG chart depending on selection
 function initSkillsVisualizer() {
   if (!skillsVisualizer || !svgCanvas) return;
+
+  // Set initial active tab based on window size
+  chartTabs.forEach(t => {
+    t.classList.remove("active");
+    t.setAttribute("aria-selected", "false");
+    if (t.getAttribute("data-view") === currentView) {
+      t.classList.add("active");
+      t.setAttribute("aria-selected", "true");
+    }
+  });
 
   // Tab switching
   chartTabs.forEach(tab => {
