@@ -35,14 +35,32 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at 72% 2%, rgba(255, 18, 63, 0.18), transparent 28rem),
-    radial-gradient(circle at 12% 36%, rgba(255, 80, 58, 0.1), transparent 26rem),
-    linear-gradient(180deg, #050205 0%, #030203 54%, #090305 100%);
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
+  background: #030203;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 72% 2%, rgba(255, 18, 63, 0.18), transparent 28rem),
+    radial-gradient(circle at 12% 36%, rgba(255, 80, 58, 0.1), transparent 26rem),
+    linear-gradient(180deg, #050205 0%, #030203 54%, #090305 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body::before {
+    background:
+      radial-gradient(circle at 85% 2%, rgba(255, 18, 63, 0.15), transparent 16rem),
+      radial-gradient(circle at 10% 20%, rgba(255, 80, 58, 0.08), transparent 14rem),
+      linear-gradient(180deg, #050205 0%, #030203 50%, #090305 100%);
+  }
 }
 
 body.nav-open {
@@ -71,7 +89,8 @@ img {
   z-index: -3;
   width: 100%;
   height: 100%;
-  background: #030203;
+  background: transparent;
+  pointer-events: none;
 }
 
 .site-noise {
@@ -596,20 +615,27 @@ h3 {
 /* Global Realistic Background Black Hole */
 .global-blackhole {
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  width: 100vw;
-  height: 100vh;
+  inset: -10%;
+  width: 120%;
+  height: 120vh;
+  height: 120dvh;
   background-image: url('assets/realistic_black_hole_bg.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  z-index: -2; /* behind main content, in front of starfield canvas */
-  opacity: 0.25; /* subtle and elegant, doesn't interfere with readability */
+  z-index: -4; /* behind main content, behind starfield canvas if we want it deep, or keep at -4. Starfield is -3. */
+  opacity: 0.15; /* reduced opacity for better mobile contrast */
+  mix-blend-mode: screen;
   pointer-events: none;
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 90%);
+}
+
+@media (max-width: 768px) {
+  .global-blackhole {
+    opacity: 0.1;
+    background-position: top center;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -620,16 +646,16 @@ h3 {
 
 @keyframes floatGlobalBlackHole {
   0%, 100% {
-    transform: translate3d(-50%, 0, 0) scale(1.0);
+    transform: scale(1.0);
   }
   25% {
-    transform: translate3d(-49%, 1.2%, 0) scale(1.015);
+    transform: scale(1.015) translate3d(1%, 1%, 0);
   }
   50% {
-    transform: translate3d(-51%, -1.2%, 0) scale(1.03);
+    transform: scale(1.03) translate3d(-1%, 0.5%, 0);
   }
   75% {
-    transform: translate3d(-49.5%, -0.6%, 0) scale(1.015);
+    transform: scale(1.015) translate3d(0.5%, -1%, 0);
   }
 }
 
