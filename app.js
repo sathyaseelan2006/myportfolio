@@ -698,10 +698,25 @@ window.openProjectDetail = function() {
   const project = projectCases[activeProjectIndex];
   const markdown = (typeof PROJECT_READMES !== "undefined" && PROJECT_READMES) ? PROJECT_READMES[project.shortName] : null;
   
+  let videoHtml = "";
+  if (project.shortName === "Re:Vive") {
+    videoHtml = `
+      <div class="case-card-video-wrapper" style="margin-bottom: 24px;">
+        <video class="case-card-video" src="video_demo/revive-project_OwSZbMXm.mp4" autoplay loop muted playsinline controls></video>
+      </div>
+    `;
+  } else if (project.shortName === "DeskBot") {
+    videoHtml = `
+      <div class="case-card-video-wrapper" style="margin-bottom: 24px;">
+        <video class="case-card-video" src="video_demo/Systemperipheral-demo.mp4" autoplay loop muted playsinline controls></video>
+      </div>
+    `;
+  }
+
   if (markdown) {
-    modalContent.innerHTML = markdownToHtml(markdown);
+    modalContent.innerHTML = videoHtml + markdownToHtml(markdown);
   } else {
-    modalContent.innerHTML = buildFallbackDetailHtml(project);
+    modalContent.innerHTML = videoHtml + buildFallbackDetailHtml(project);
   }
   
   detailModal.classList.add("active");
